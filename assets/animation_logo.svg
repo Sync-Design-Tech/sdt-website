@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: Bauhaus93, 'Bauhaus 93';
+        font-size: 500px;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(80.54 566.75)"><tspan x="0" y="0">sdt</tspan></text>
+</svg>
