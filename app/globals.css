@@ -16,6 +16,13 @@
   }
 }
 
+@font-face {
+  font-family: 'bauhaus';
+  src: url('../assets/BAUHS93.TTF') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -32,4 +39,11 @@ body {
 
 .squircle {
   clip-path: url(#squircleClip);
+}
+
+.control-buttons button {
+  background: rgba(155, 155, 155, 0.2);
+  border-radius: 9px;
+  padding: 0.2rem .5rem;
+  cursor: pointer;
 }

@@ -71,10 +71,10 @@ export function Hero() {
         }}
       />
 
-      <div className="text-balance relative z-20 mx-auto mb-4 mt-4 max-w-4xl text-center text-3xl font-semibold tracking-tight text-gray-700 dark:text-neutral-300 md:text-7xl">
+      <div className="text-balance relative z-20 mx-auto mb-20 mt-4 max-w-4xl text-center text-3xl font-semibold tracking-tight text-gray-700 dark:text-neutral-300 md:text-7xl">
         <Balancer>
           <motion.h2>
-            {"YOUR ALL-IN-ONE TECH PARTNER"
+            {"YOUR ALL-IN-ONE DIGITAL PARTNER"
             //  for Web, Apps and Brand Success.
               .split(" ")
               .map((word, index) => (
@@ -93,7 +93,7 @@ export function Hero() {
                     duration: 0.4,
                     delay: index * 0.05,
                   }}
-                  className="inline-block"
+                  className="inline-block mt-10 md:mt-0"
                   key={index}
                 >
                   {word}&nbsp;
@@ -159,7 +159,7 @@ export function Hero() {
           data-cal-config={`{"layout":"${calOptions.layout}"}`}
           as="button"
           variant="primary"
-          className="hidden md:block w-40"
+          className="md:block w-40"
         >
           Book a call
         </Button>
@@ -171,10 +171,11 @@ export function Hero() {
         ref={containerRef}
         // className="relative mx-auto max-w-7xl rounded-[32px] border border-neutral-200/50 bg-neutral-100 p-2 backdrop-blur-lg dark:border-neutral-700 dark:bg-neutral-800/50 md:p-4"
         className="relative"
-        style={{ width: "100vw" }}
+        style={{ width: "100vw", position: "relative", bottom: "0" }}
       >
         {/* <LampDemo /> */}
-        <div className="border border-neutral-200 bg-white p-2 dark:border-neutral-700 dark:bg-neutral-950">
+        <div 
+        className="border border-neutral-200 bg-white p-2 dark:border-neutral-700 dark:bg-neutral-950">
           <BentoGridDemo />
           {/* <Image
             src="https://assets.aceternity.com/pro/dashboard-new.webp"
@@ -322,6 +323,7 @@ const CollisionMechanism = React.forwardRef<
           delay: beamOptions.delay || 0,
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
+        style={{opacity: .5}}
         className={cn(
           "absolute left-96 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-blue-600 via-cyan-900 to-transparent",
           beamOptions.className
@@ -336,6 +338,7 @@ const CollisionMechanism = React.forwardRef<
               left: `${collision.coordinates.x + 20}px`,
               top: `${collision.coordinates.y}px`,
               transform: "translate(-50%, -50%)",
+              opacity: .5
             }}
           />
         )}

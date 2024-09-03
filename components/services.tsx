@@ -1,24 +1,26 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import createGlobe from "cobe";
+import { AnimatedPinDemo } from "./animatedPin/animated";
+import { useTheme } from 'next-themes';
 
-export function Features() {
+export function Services() {
   return (
     <div
-      id="features"
+      id="services"
       className="w-full  mx-auto bg-white dark:bg-neutral-950 py-20 px-4 md:px-8"
     >
       <Header>
         <h2 className="font-sans text-bold text-xl text-center md:text-4xl w-fit mx-auto font-bold tracking-tight text-neutral-8000 dark:text-neutral-100 text-neutral-800">
-          Deployments made easy
+          Our Services
         </h2>
       </Header>
       <p className="max-w-lg text-sm text-neutral-600 text-center mx-auto mt-4 dark:text-neutral-400">
-        Deploy with ease, leave complexities to us.
+      Enhance your digital presence with our agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services.
       </p>
       <div className="mt-20  grid cols-1 md:grid-cols-5 gap-4 md:auto-rows-[25rem] max-w-7xl mx-auto">
         <Card className="flex flex-col justify-between md:col-span-3">
@@ -26,16 +28,16 @@ export function Features() {
             <SkeletonOne />
           </CardSkeletonBody>
           <CardContent className="h-40">
-            <CardTitle>One click deploy</CardTitle>
-            <CardDescription>
-              Deploy your app in seconds, with our one click deploy feature.
+          <CardTitle>Software Development - Websites and applications</CardTitle>
+          <CardDescription>
+              Put your business on the map with our custom software solutions. We specialize in web and mobile app development, ensuring your brand stands out in the digital landscape and your operations run seamlessly.
             </CardDescription>
           </CardContent>
         </Card>
 
         <Card className="flex flex-col justify-between md:col-span-2">
           <CardContent className="h-40">
-            <CardTitle>Intuitive workflow</CardTitle>
+            <CardTitle>UI/UX Design</CardTitle>
             <CardDescription>
               With our intuitive workflow, you can easily manage your app
               without complex steps.
@@ -56,10 +58,9 @@ export function Features() {
 
         <Card className="flex flex-col justify-between md:col-span-2">
           <CardContent className="h-40">
-            <CardTitle>Hosting over the edge</CardTitle>
+            <CardTitle>Reach audiences worldwide</CardTitle>
             <CardDescription>
-              With our edge network, we host your website by going into each
-              city by ourselves.
+            Empowering businesses to reach global audiences through innovative digital marketing strategies and cutting-edge e-commerce technology.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -68,16 +69,47 @@ export function Features() {
         </Card>
         <Card className="flex flex-col justify-between md:col-span-3">
           <CardContent className="h-40">
-            <CardTitle>Running out of copy</CardTitle>
+            <CardTitle>Graphic Design for your Brand</CardTitle>
             <CardDescription>
-              You are running out of copy for your website, we can generate copy
-              for you.
+            Elevate your brand's visual identity with our bespoke graphic design services, tailored to capture and communicate your unique story.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
             <div className="w-full h-full p-4 rounded-lg bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 ml-6 mt-2">
               <Image
-                src="https://assets.aceternity.com/pro/dashboard.webp"
+                src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/brandgraphics.png"
+                alt="Dashboard"
+                width={500}
+                height={500}
+                className="w-full object-cover rounded-lg "
+              />
+            </div>
+          </CardSkeletonBody>
+        </Card>
+        <Card className="flex flex-col justify-between md:col-span-3">
+          <div 
+          className="overflow-hidden relative w-full h-full">
+            <AnimatedPinDemo />
+          </div>
+          <CardContent className="h-40">
+            <CardTitle>Digital Marketing - SEA and SEO</CardTitle>
+            <CardDescription>
+              Unlock unparalleled online visibility and boost your business growth with our comprehensive Digital Marketing services, specializing in Search Engine Advertising (SEA) and Search Engine Optimization (SEO).
+            </CardDescription>
+          </CardContent>
+        </Card>
+
+        <Card className="flex flex-col justify-between md:col-span-2">
+          <CardContent className="h-40">
+            <CardTitle>Devices and hardware</CardTitle>
+            <CardDescription>
+              We provide the hardware and devices needed to run your business smoothly at the best price. Configured to server your needs.
+            </CardDescription>
+          </CardContent>
+          <CardSkeletonBody>
+            <div className="w-full h-full p-4 rounded-lg bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 ml-6 mt-2">
+              <Image
+                src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/samsung-tab-active4-pro.jpg"
                 alt="Dashboard"
                 width={500}
                 height={500}
@@ -372,6 +404,18 @@ export const SkeletonTwo = () => {
 
 export const Globe = ({ className }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme, resolvedTheme } = useTheme();
+  const [isDark, setIsDark] = useState(0);
+  const [color, setColor] = useState([0.19, 0.19, 0.19]);
+  const [glow, setGlow] = useState([0, 0, 0]);
+  const [markerColor, setMarkerColor] = useState([0.97, 0.81, 0.035]);
+
+  useEffect(() => {
+    setIsDark(theme === "dark" || resolvedTheme === "dark" ? 1 : 0);
+    setColor(theme === "dark" || resolvedTheme === "dark" ? [0.19, 0.19, 0.19] : [1,1,1]);
+    setGlow(theme === "dark" || resolvedTheme === "dark" ?  [0, .65, .71] : [0.5, 0.5, 0.5]);
+    setMarkerColor(theme === "dark" || resolvedTheme === "dark" ? [0, .65, .71] : [0.97, 0.81, 0.035]);
+  }, [theme, resolvedTheme]);
 
   useEffect(() => {
     let phi = 0;
@@ -384,13 +428,13 @@ export const Globe = ({ className }: { className?: string }) => {
       height: 600 * 2,
       phi: 0,
       theta: 0,
-      dark: 1,
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.0, 0.2, 0.6],
-      markerColor: [0, 0, 1],
-      glowColor: [1, 1, 1],
+      dark: isDark,
+      diffuse: 0.5,
+      mapSamples: 56000,
+      mapBrightness: 10,
+      baseColor: color,
+      markerColor: markerColor,
+      glowColor: glow,
       markers: [
         // longitude latitude
         { location: [37.7595, -122.4367], size: 0.03 },
@@ -400,14 +444,14 @@ export const Globe = ({ className }: { className?: string }) => {
         // Called on every animation frame.
         // `state` will be an empty object, return updated params.
         state.phi = phi;
-        phi += 0.01;
+        phi += 0.005;
       },
     });
 
     return () => {
       globe.destroy();
     };
-  }, []);
+  }, [isDark, color]);
 
   return (
     <canvas
@@ -471,7 +515,7 @@ const CardDescription = ({
   return (
     <p
       className={cn(
-        "font-sans max-w-xs text-base font-normal tracking-tight mt-2 text-neutral-500 dark:text-neutral-400",
+        "font-sans max-w-xm text-base font-normal tracking-tight mt-2 text-neutral-500 dark:text-neutral-400",
         className
       )}
     >
