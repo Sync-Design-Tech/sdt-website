@@ -418,7 +418,7 @@ const handleOnSkip = () => {
 style={{
 position: 'absolute',
 bottom: '100px',
-left: '95%',
+left: '90%',
 transform: 'translateX(-50%) rotate(90deg)',
 zIndex: '1000',
 cursor: 'pointer',
