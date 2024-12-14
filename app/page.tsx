@@ -8,6 +8,7 @@ import IntroAnimation from "@/components/introanimation/IntroAnimation";
 import { AboutUs } from "@/components/about-us";
 import { OurTechStack } from "@/components/our-tech-stack";
 import { ToastContainer } from 'react-toastify';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
 
     return (
         <main className="">
+            <SpeedInsights/>
             {showIntro ? <IntroAnimation onSkip={() => setShowIntro(false)} /> : null}
             <ToastContainer />
             <Hero />
