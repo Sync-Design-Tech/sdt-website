@@ -18,10 +18,13 @@
 
 @font-face {
   font-family: 'bauhaus';
-  src: url('../assets/BAUHS93.TTF') format('truetype');
+  src: 
+  url('../assets/BAUHS93.woff') format('woff'),
+  /* url('../assets/BAUHS93.woff2') format('woff2'), */
+  url('../assets/BAUHS93.TTF') format('truetype');
   font-weight: light;
   font-style: normal;
-}
+  }
 
 html {
   scroll-behavior: smooth;

@@ -8,7 +8,7 @@ export function CanvasRevealEffectDemo() {
   return (
     <>
       <div className="py-10 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-neutral-950 w-full gap-4 mx-auto px-0 max-w-7xl">
-        <Card title="Russian born, Spanish Raised and UK based Engineer and Designer." 
+        <Card title="Ruslan, a Russian-born, Spanish-raised engineer and designer based in the UK, possesses a profound passion for crafting comprehensive systems. His work ensures seamless integration and operation across diverse platforms, all while maintaining a keen eye for detail and aesthetics." 
         icon={<AceternityIcon name="Ruslan Sanakoev" title="Full Stack Developer"/>}>
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -53,7 +53,7 @@ export function CanvasRevealEffectDemo() {
           />
         </Card>
         <Card title="Venezuelan-born, UK-based Marketing and Public Relations professional with years of experience fostering positive relationships between organizations and media. Committed to maintaining the reputation of institutions, strengthening consumer loyalty, and establishing credibility with clients." 
-        icon={<AceternityIcon name="Valery Villanueva" title="Digital Marketing" />}>
+        icon={<AceternityIcon name="Valery Villanueva" title="PR / Digital Marketing" />}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-yellow-600"

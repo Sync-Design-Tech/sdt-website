@@ -90,7 +90,7 @@ export function Services() {
         </Card>
         <Card className="flex flex-col justify-between md:col-span-3">
           <div 
-          className="overflow-hidden relative w-full h-full">
+          className="overflow-hidden relative w-full h-full pt-8 px-8">
             <AnimatedPinDemo />
           </div>
           <CardContent className="h-40">
