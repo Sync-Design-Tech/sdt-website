@@ -7,10 +7,12 @@ import Tech from './Tech';
 import Sync from './Sync';
 import Design from './Design';
 import Stripe from './Stripe';
+import { TextPlugin } from "gsap/TextPlugin";
+gsap.registerPlugin(TextPlugin);
 
 import './style.css';
 
-const IntroAnimation = () => {
+const IntroAnimation = ({onSkip=()=>{}}) => {
     const syncS = useRef(null);
     const designD = useRef(null);
     const dotD = useRef(null);
@@ -26,6 +28,7 @@ const IntroAnimation = () => {
     const [stripes, setStripes] = useState([]);
     const [svgStripes, setSvg] = useState(null);
     const [position, setPosition] = useState("fixed");
+    gsap.ticker.lagSmoothing(1000, 16);
 
     const [timeOuts] = useState(4);
     const [timeInitial] = useState(2);
@@ -282,15 +285,22 @@ const IntroAnimation = () => {
         colorChange();
     }, [startAni]);
 
+    const adjustSvgSize = () => {
+        div.current.classList.add('slide-down');
+        setTimeout(() => onSkip(false), 1000);
+    };
 
     const adjustSvgPosition = () => {
-        setPosition("relative");
+        // setPosition("relative");
+        adjustSvgSize();
         setBallStart(true);
     };
 
 
 useEffect(() => {  
+    console.log(ballStart);
     if (!ballStart) return;
+    console.log("ballStart");
     function dotScale(x){
         const tl = gsap.timeline();
         tl.delay(1).to(x, {
@@ -310,10 +320,81 @@ useEffect(() => {
     dotScale(dot);
 }, [ballStart]);
 
+const arrowRef = useRef(null);
+const textRef = useRef(null);
+const tl = useRef(null);
+
+useEffect(() => {
+// Create a timeline for the animation
+tl.current = gsap.timeline({ paused: true });
+
+// Rotate and scale up the arrow with accelerating speed
+tl.current.to(arrowRef.current, {
+duration: 2,
+rotation: 1080, // 3 spins
+scale: 1.5,
+ease: "power2.in", // Accelerate
+}, 0);
+
+// Type in "Skip"
+tl.current.to(textRef.current, {
+duration: 1.5,
+text: "Skip",
+ease: "none"
+}, 0.5);
+
+// Rotate and scale back the arrow with decelerating speed
+tl.current.to(arrowRef.current, {
+duration: 2,
+rotation: "+=720", // 2 more spins
+scale: 1,
+ease: "power2.out", // Decelerate
+}, 2);
+
+// Rotate back to 0 degrees smoothly
+tl.current.to(arrowRef.current, {
+duration: 1,
+rotation: 0,
+ease: "power2.out"
+}, 4);
+
+// Hide "Skip" text after animation
+tl.current.to(textRef.current, {
+duration: 0.5,
+text: "",
+ease: "none"
+}, 4.5);
+
+}, []);
+
+const handleMouseEnter = () => {
+tl.current.restart();
+};
+
+const handleOnSkip = () => {
+    div.current.classList.add('slide-down');
+    setTimeout(() => onSkip(false), 1000);
+};
+
     return (
-        <div style={{ transformOrigin: "top center", transition: "all 1s ease 1s", zIndex:"100", height: "100vh", width:"100vw", display:"flex", position:position}} className={'bg-none'}>
-            <div ref={div} style={{ transformOrigin: "top center", height: "100%"}} className={'w-[100%] background-container'}>
-                <Link className='logo-animation-container logo h-[100%] w-[100%]' href={"/"}>
+        <div
+            style={{
+                transformOrigin: "top center",
+                transition: "all 1s ease 1s",
+                zIndex: "100",
+                height: "100vh",
+                width: "100vw",
+                display: "flex",
+                position: position
+            }}
+            className="bg-none"
+        >
+            <div
+                ref={div}
+                style={{ transformOrigin: "top center", height: "100%" }}
+                className="w-[100%] background-container"
+            >
+                <Link className="logo-animation-container logo h-[100%] w-[100%]" href="/" onClick={handleOnSkip}>
                     <Sync ref={syncS} />
                     <Design ref={designD} />
                     <Dot ref={dotD} />
@@ -332,6 +413,45 @@ useEffect(() => {
                     </h1>
                 </div>
             </div>
+            {/* Skip Arrow */}
+            <div
+style={{
+position: 'absolute',
+bottom: '100px',
+left: '95%',
+transform: 'translateX(-50%) rotate(90deg)',
+zIndex: '1000',
+cursor: 'pointer',
+display: 'flex',
+alignItems: 'center',
+userSelect: 'none'
+}}
+onClick={handleOnSkip}
+onMouseEnter={handleMouseEnter}
+>
+<svg
+ref={arrowRef}
+width="48" // Increased size for better visibility
+height="48"
+viewBox="0 0 24 24"
+style={{ flexShrink: 0 }}
+>
+<path d="M12 2L18 12H13V18H11V12H6L12 2Z" fill="#fff" />
+</svg>
+<div
+ref={textRef}
+style={{
+marginLeft: '12px',
+color: '#fff',
+fontFamily: '"Museo Sans", sans-serif', // Updated font
+fontSize: '24px',
+whiteSpace: 'nowrap',
+overflow: 'hidden',
+}}
+>
+{/* Text will be typed in */}
+</div>
+</div>
         </div>
     );
 };

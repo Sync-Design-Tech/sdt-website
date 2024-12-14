@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/context/providers";
+import { Ubuntu } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  variable: "--font-ubuntu",
+  weight: ["300", "400", "500", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Sync Design Tech",
@@ -22,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn("antialiased dark:bg-black bg-white", inter.className)}
+        className={cn(
+          "antialiased dark:bg-black bg-white",
+          ubuntu.variable
+        )}
       >
         <ThemeProvider
           attribute="class"

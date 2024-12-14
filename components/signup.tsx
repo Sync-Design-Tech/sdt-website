@@ -7,18 +7,11 @@ import { motion } from "framer-motion";
 
 export function Login() {
   return (
-    <div className="w-full min-h-screen md:min-h-[calc(100vh-4rem)] grid grid-cols-1 md:grid-cols-2 mt-20">
+    <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 my-20">
       <Form />
       <div className="relative w-full z-20 hidden md:flex border-l border-neutral-100 dark:border-neutral-800 overflow-hidden bg-white dark:bg-neutral-900 items-center justify-center">
         <div className="max-w-sm mx-auto">
           {/* <FeaturedTestimonials /> */}
-          <p
-            className={cn(
-              "font-semibold text-xl text-center text-neutral-600 dark:text-neutral-400 mb-10"
-            )}
-          >
-            The Oracle
-          </p>
           <p
             className={cn(
               "font-semibold text-xl text-center text-neutral-600 dark:text-neutral-400"
@@ -28,7 +21,7 @@ export function Login() {
           </p>
           <p
             className={cn(
-              "font-normal text-base text-center text-neutral-500 dark:text-neutral-400 mt-8 mb-20"
+              "font-normal text-base text-center text-neutral-500 dark:text-neutral-400 mt-8"
             )}
           >
             Log in to access your AI tools and get started with your projects.
@@ -69,13 +62,30 @@ function Form() {
         <div className="mx-auto w-full max-w-md">
           <div>
             <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-black dark:text-white">
-              Log in
+              Sign up for an account
             </h2>
           </div>
 
           <div className="mt-10">
             <div>
               <form onSubmit={onSubmit} className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium leading-6 text-neutral-700 dark:text-neutral-400"
+                  >
+                    Full name
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      id="name"
+                      type="name"
+                      placeholder="Manu Arora"
+                      className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                    />
+                  </div>
+                </div>
+
                 <div>
                   <label
                     htmlFor="email"
@@ -88,7 +98,7 @@ function Form() {
                     <input
                       id="email"
                       type="email"
-                      placeholder="hello@syncdesing.tech"
+                      placeholder="hello@johndoe.com"
                       className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
                     />
                   </div>
@@ -114,7 +124,7 @@ function Form() {
 
                 <div>
                   <button className="bg-black relative z-10 hover:bg-black/90  text-white text-sm md:text-sm transition font-medium duration-200  rounded-full px-4 py-2  flex items-center justify-center w-full dark:text-black dark:bg-white dark:hover:bg-neutral-100 dark:hover:shadow-xl">
-                    Sign in
+                    Sign Up
                   </button>
                   <p
                     className={cn(
@@ -122,8 +132,8 @@ function Form() {
                     )}
                   >
                     Already have an account?{" "}
-                    <Link href="mailto:info@syncdesign.tech" className="text-black dark:text-neutral-500">
-                      Contact us
+                    <Link href="#" className="text-black dark:text-white">
+                      Sign in
                     </Link>
                   </p>
                 </div>
@@ -148,32 +158,26 @@ function Form() {
               <div className="mt-6 w-full flex items-center justify-center">
                 <button
                   onClick={() => {}}
-                  disabled
-                  // className="bg-neutral-300 relative z-10 hover:bg-black/90  text-white text-sm md:text-sm transition font-medium duration-200  rounded-full px-4 py-1.5  flex items-center justify-center w-full dark:text-black dark:bg-neutral-800 dark:hover:bg-neutral-100 dark:hover:shadow-xl group"
-                  className="bg-neutral-300 relative z-10 text-white text-sm md:text-sm transition font-medium duration-200  rounded-full px-4 py-1.5  flex items-center justify-center w-full dark:text-black dark:bg-neutral-800 group"
-                  >
-
+                  className="bg-black relative z-10 hover:bg-black/90  text-white text-sm md:text-sm transition font-medium duration-200  rounded-full px-4 py-1.5  flex items-center justify-center w-full dark:text-black dark:bg-white dark:hover:bg-neutral-100 dark:hover:shadow-xl"
+                >
                   <IconBrandGithub className="h-5 w-5" />
                   <span className="text-sm font-semibold leading-6">
-                  Github
+                    Github
                   </span>
-                    <span className="absolute bottom-full mb-2 w-max px-2 py-1 text-xs text-white bg-black rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                      Github log in disabled, contact info@syncdesign.tech for help!
-                    </span>
                 </button>
               </div>
 
               <p className="text-neutral-600 dark:text-neutral-400 text-sm text-center mt-8">
                 By clicking on sign up, you agree to our{" "}
                 <Link
-                  href="/terms-of-services"
+                  href="#"
                   className="text-neutral-500 dark:text-neutral-300"
                 >
                   Terms of Service
                 </Link>{" "}
                 and{" "}
                 <Link
-                  href="/privacy-policy"
+                  href="#"
                   className="text-neutral-500 dark:text-neutral-300"
                 >
                   Privacy Policy

@@ -2,43 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Logo } from "./logo";
+import { CONSTANTS } from "@/constants/links";
 
 export function Footer() {
   const pages = [
     {
       title: "Home",
-      href: "#",
+      href: "/#",
     },
     {
-      title: "Features",
-      href: "#",
+      title: "Services",
+      href: "/#services",
     },
     {
-      title: "Pricing",
-      href: "#",
+      title: "About us",
+      href: "/#aboutus",
     },
     {
       title: "Contact",
-      href: "#",
+      href: "/#contact",
     },
-    {
-      title: "Blog",
-      href: "#",
-    },
+    // {
+    //   title: "Blog",
+    //   href: "#",
+    // },
   ];
 
   const socials = [
-    {
-      title: "Facebook",
-      href: "#",
-    },
+    // {
+    //   title: "Facebook",
+    //   href: "#",
+    // },
     {
       title: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/syncdesigntech/?igsh=MW9iMDh5YWNydm1yNA%3D%3D",
     },
     {
-      title: "Twitter",
-      href: "#",
+      title: "Github",
+      href: "https://github.com/Sync-Design-Tech",
     },
     {
       title: "LinkedIn",
@@ -48,30 +49,30 @@ export function Footer() {
   const legals = [
     {
       title: "Privacy Policy",
-      href: "#",
+      href: "/privacy-policy",
     },
     {
       title: "Terms of Service",
-      href: "#",
+      href: "/terms-of-services",
     },
     {
       title: "Cookie Policy",
-      href: "#",
+      href: "/cookies",
     },
   ];
 
   const signups = [
     {
       title: "Sign Up",
-      href: "#",
+      href: "/login",
     },
     {
       title: "Login",
-      href: "#",
+      href: "/login",
     },
     {
       title: "Book a demo",
-      href: "#",
+      href: "/book-a-call",
     },
   ];
   return (

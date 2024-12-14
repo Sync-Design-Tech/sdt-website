@@ -43,3 +43,17 @@
     font-family: Bauhaus93, 'Bauhaus 93';
     font-size: 500px;
 }
+
+
+@keyframes slideDown {
+    from {
+    transform: translateY(0);
+    }
+    to {
+    transform: translateY(100vh);
+    }
+    }
+    
+    .slide-down {
+    animation: slideDown 0.8s ease-in-out forwards;
+    }

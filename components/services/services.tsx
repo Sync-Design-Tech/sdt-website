@@ -68,10 +68,20 @@ export function BentoGridDemo() {
   );
 }
 
-const Skeleton = (props) => {
+interface SkeletonProps {
+  url: string;
+  darkUrl: string;
+  alt: string;
+  link: string;
+  idx: number;
+  title: string;
+  description: string;
+}
+
+const Skeleton = (props: SkeletonProps) => {
   return (
     <div className="flex flex-1 w-full h-full min-h-[6rem]">
-      <CardHoverEffectDemo clients={props} />
+      <CardHoverEffectDemo client={props} />
     </div>
   );
 };
@@ -80,36 +90,36 @@ const items = [
   {
     title: "S3 Maintenance Services",
     description: "Construction",
-    header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/logo-emblem--dark.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/logo-emblem.png" alt="s3-logo" link="https://s3maintenance.co.uk/" idx={0} />,
+    header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/logo-emblem--dark.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/logo-emblem.png" alt="s3-logo" link="https://s3maintenance.co.uk/" idx={0} title={""} description={""} />,
     icon: <IconCode className="h-4 w-4 text-neutral-500" />,
     idx: 0,
   },
   {
     title: "Xepak",
     description: "Construction",
-    header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/qxepak.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/qxepak-08.png" alt="xepak-logo" link="/" idx={1} />,
+    header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/qxepak.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/qxepak-08.png" alt="xepak-logo" link="/" idx={1} title={""} description={""} />,
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     idx: 1,
   },
   {
     title: "Made4Living",
     description: "Construction & Design",
-    header: <Skeleton url="https://made4living.co.uk/static/media/logo-full.53edbd83bc6f955461c4.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/m4l-white.png" alt="m4l-logo" link="https://made4living.co.uk/" idx={2} />,
+    header: <Skeleton url="https://made4living.co.uk/static/media/logo-full.53edbd83bc6f955461c4.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/m4l-white.png" alt="m4l-logo" link="https://made4living.co.uk/" idx={2} title={""} description={""} />,
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     idx: 2,
   },
   {
     title: "My Coffee Marbella",
-    description: "F&B",
-    header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/favicon.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/favicon.png" alt="mc-logo" link="https://sad-hermann-405b8a.netlify.app/" idx={3} />,
+    description: "Food & Beverage",
+    header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/favicon.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/favicon.png" alt="mc-logo" link="/" idx={3} title={""} description={""} />,
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     idx: 3,
   },
-  {
-    title: "HCGB",
-    description: "Real Estate",
-    header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/download.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/download-white.png" alt="logo-5" link="/" idx={4} />,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
-    idx: 4,
-  },
+  // {
+  //   title: "HCGB",
+  //   description: "Real Estate",
+  //   header: <Skeleton url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/download.png" darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/download-white.png" alt="logo-5" link="/" idx={4} />,
+  //   icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
+  //   idx: 4,
+  // },
 ];

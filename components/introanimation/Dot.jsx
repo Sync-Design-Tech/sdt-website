@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 
+// eslint-disable-next-line react/display-name
 const Dot = forwardRef((props, ref) => {
 
     return (

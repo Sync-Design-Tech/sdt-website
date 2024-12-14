@@ -12,55 +12,65 @@ import {
   stagger,
 } from "framer-motion";
 
+import { SignupFormDemo } from "./contactForm/form"; 
 import { BsStarFill } from "react-icons/bs";
-import { HiArrowRight } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
-import { useCalEmbed } from "@/app/hooks/useCalEmbed";
-import { CONSTANTS } from "@/constants/links";
 
 export function CTA() {
-  const calOptions = useCalEmbed({
-    namespace: CONSTANTS.CALCOM_NAMESPACE,
-    styles: {
-      branding: {
-        brandColor: CONSTANTS.CALCOM_BRAND_COLOR,
-      },
-    },
-    hideEventTypeDetails: CONSTANTS.CALCOM_HIDE_EVENT_TYPE_DETAILS,
-    layout: CONSTANTS.CALCOM_LAYOUT,
-  });
+
   return (
     <div
       id="contact"
-      className=" px-4  w-full md:px-8 bg-white dark:bg-neutral-950 py-20"
+      className=" px-4  w-full md:px-8 bg-white dark:bg-neutral-950 pb-20"
     >
       <div className="max-w-7xl mx-auto 0 flex flex-col md:flex-row justify-between items-center w-full">
         <div className="flex flex-col">
-          <motion.h2 className="text-black dark:text-white text-xl text-center md:text-left md:text-3xl font-bold mx-auto md:mx-0 max-w-xl ">
-            Host your websites <br />
-            with zero friction today.
-          </motion.h2>
+            <motion.h2 className="text-black dark:text-white text-xl text-center md:text-left md:text-3xl font-bold mx-auto md:mx-0 max-w-xl ">
+            Get in touch with us today and lets create something amazing together!
+            </motion.h2>
           <p className="max-w-md mt-8 text-center md:text-left text-sm md:text-base mx-auto md:mx-0 text-neutral-600 dark:text-neutral-400">
-            Experience lightning-fast hosting with unparalleled reliability. Our
-            cutting-edge infrastructure ensures your website stays online 24/7,
-            with 99.9% uptime guaranteed.
+            Outsource Your Digital Transformation, Leave the Heavy Lifting to us.
           </p>
-          <FeaturedImages
-            textClassName="lg:text-left text-center"
-            className="lg:justify-start justify-start items-center"
-            containerClassName="md:items-start"
-            showStars
-          />
+          <div className="mt-8 text-center md:text-left">
+            <p className="text-black dark:text-white text-xl font-bold pb-5">
+              Our London address:
+            </p>
+            <address className="not-italic text-neutral-600 dark:text-neutral-400 mb-4">
+            <strong>Sync Design Tech Limited</strong>
+            <br />
+            71-75 Shelton Street
+            <br />
+            Covent Garden
+            <br />
+            London, WC2H 9JQ
+            <br />
+            United Kingdom
+            <br />
+            </address>
+            <p className="text-neutral-600 dark:text-neutral-400">
+              <br />
+              Email:{' '}
+              <a href="mailto:info@syncdesign.tech" className="text-blue-600 hover:underline">
+                info@syncdesign.tech
+              </a>
+              <br />
+              Phone:{' '}
+              <a href="tel:+447490462682" className="text-blue-600 hover:underline">
+                +44 (0) 7490 462682
+              </a>
+            </p>
+            <div className="relative m-6 mx-auto md:mx-0 w-full max-w-md h-64">
+              <Image
+                src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/office.webp"
+                alt="Office"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
         </div>
-        <button
-          data-cal-namespace={calOptions.namespace}
-          data-cal-link={CONSTANTS.CALCOM_LINK}
-          data-cal-config={`{"layout":"${calOptions.layout}"}`}
-          className="flex space-x-2 items-center group text-base px-4 py-2 rounded-lg bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]"
-        >
-          <span>Book a call</span>
-          <HiArrowRight className="text-white group-hover:translate-x-1 stroke-[1px] h-3 w-3 mt-0.5 transition-transform duration-200" />
-        </button>
+        <SignupFormDemo />
       </div>
     </div>
   );
@@ -205,7 +215,7 @@ export const FeaturedImages = ({
           textClassName
         )}
       >
-        Trusted by 27,000+ developers
+        {/* Trusted by 27,000+ developers */}
       </p>
     </div>
   );

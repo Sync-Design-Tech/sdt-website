@@ -18,7 +18,8 @@ export function CanvasRevealEffectDemo() {
             ]}
           />
         </Card>
-        <Card title="" icon={<AceternityIcon name="Olav Nuland Sole" title="Software Engineer"/>}>
+        <Card title="Olav holds a Master’s in Computer Science and has also studied economics, administration, and drama. His expertise in computer science allows him to integrate technical skills with broader perspectives, making him adept at seeing the bigger picture in various contexts. This unique combination positions Olav as a versatile and innovative thinker in both technology and the arts." 
+        icon={<AceternityIcon name="Olav Nuland Sole" title="Software Engineer"/>}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-black"
@@ -31,7 +32,8 @@ export function CanvasRevealEffectDemo() {
           {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-white dark:bg-neutral-950" />
         </Card>
-        <Card title="" icon={<AceternityIcon name="Alfonso Villanueva" title="Full Stack Developer" />}>
+        <Card title="A passionate Full Stack Developer with a diverse background, originally from Venezuela and currently residing in the vibrant tech community of Spain. With a strong foundation in both front-end and back-end technologies, I create seamless, user-friendly experiences from concept to implementation." 
+        icon={<AceternityIcon name="Alfonso Villanueva" title="Full Stack Developer" />}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-slate-600"
@@ -40,7 +42,7 @@ export function CanvasRevealEffectDemo() {
             ]}
           />
         </Card>
-        <Card title="" icon={<AceternityIcon name="Andres Clerc" title="Graphic designer" />}>
+        <Card title="Andres is an art director and motion designer from Venezuela currenly living in Paris. He is experienced working on Branding, Logo Design, Custom Lettering, Packaging and Motion Graphics. With over a decade of experience. Andres has collaborated with awesome folks in the industry such as Studio Chong, Golden Wolf, Anomaly, BBDO and JKR" icon={<AceternityIcon name="Andres Clerc" title="Graphic / Motion designer" />}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-red-600"
@@ -110,15 +112,20 @@ const Card = ({
   );
 };
 
-const AceternityIcon = (props) => {
+interface AceternityIconProps {
+  name: string;
+  title: string;
+}
+
+const AceternityIcon: React.FC<AceternityIconProps> = (props) => {
   return (
-    <div style={{display:"flex", flexDirection:"column"}}>
-    <h2 className="text-black dark:text-white text-xl mb-4">
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <h2 className="text-black dark:text-white text-xl mb-4">
         {props.name}
-    </h2>
-    <p className="text-black dark:text-white text-xl mb-4">
-      {props.title}
-    </p>
+      </h2>
+      <p className="text-black dark:text-white text-xl mb-4">
+        {props.title}
+      </p>
     </div>
   );
 };

@@ -33,10 +33,10 @@ export const Navbar = () => {
       name: "About us",
       link: "/#aboutus",
     },
-    {
-      name: "Testimonials",
-      link: "/#testimonials",
-    },
+    // {
+    //   name: "Testimonials",
+    //   link: "/#testimonials",
+    // },
     {
       name: "Contact",
       link: "/#contact",

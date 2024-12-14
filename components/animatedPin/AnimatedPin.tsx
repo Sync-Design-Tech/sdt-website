@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export const PinContainer = ({
   children,
+  // onClick,
   title,
   href,
   className,
@@ -13,6 +14,7 @@ export const PinContainer = ({
 }: {
   children: React.ReactNode;
   title?: string;
+  // onClick?: (event: React.MouseEvent) => void;
   href?: string;
   className?: string;
   containerClassName?: string;
@@ -53,7 +55,9 @@ export const PinContainer = ({
           <div className={cn(" relative z-50 ", className)}>{children}</div>
         </div>
       </div>
-      <PinPerspective title={title} href={href} />
+      <PinPerspective title={title} href={href} 
+      // onClick={onClick} 
+      />
     </div>
   );
 };

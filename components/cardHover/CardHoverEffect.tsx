@@ -5,50 +5,35 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from 'next-themes';
 
-export const HoverEffect = ({
-    props,
-}: {
-    props: {
-        title: string;
-        description: string;
+interface HoverEffectProps {
+    client: {
         link: string;
+        darkUrl: string;
         url: string;
         alt: string;
-        darkUrl: string;
-    }[];
-}) => {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    };
+}
+
+export const HoverEffect: React.FC<HoverEffectProps> = ({ client }) => {
+    const [isHovered, setIsHovered] = useState(false);
     const { theme, resolvedTheme } = useTheme();
     const [isDark, setIsDark] = useState(false);
-  
-    console.log(props)
-  
-    const { idx, link, url, darkUrl, alt } = props.clients;
-    const imageUrl = isDark ? darkUrl : url;
-
-    console.log(link)
-
 
     useEffect(() => {
         setIsDark(theme === 'dark' || resolvedTheme === 'dark');
     }, [theme, resolvedTheme]);
 
     return (
-        <div
-            className={cn(
-                "grid m-auto h-full w-full",
-            )}
-        >
+        <div className={cn("grid m-auto h-full w-full")}>
             <Link
-                href={link}
-                key={link}
+                href={client.link}
                 className="relative group block p-2 h-20 w-full"
                 style={{ alignContent: "center" }}
-                onMouseEnter={() => setHoveredIndex(idx)}
-                onMouseLeave={() => setHoveredIndex(null)}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
             >
                 <AnimatePresence>
-                    {hoveredIndex === idx && (
+                    {isHovered && (
                         <motion.span
                             className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl m-auto"
                             layoutId="hoverBackground"
@@ -62,8 +47,8 @@ export const HoverEffect = ({
                 style={{ alignContent: "center" }}
                 >
                     <Image
-                        src={imageUrl}
-                        alt={alt}
+                        src={isDark ? client.darkUrl : client.url}
+                        alt={client.alt}
                         width={1920}
                         height={200}
                         className=""

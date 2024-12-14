@@ -150,7 +150,7 @@ export function Hero() {
           variant="dark"
           className="hidden md:block w-40 text-center"
         >
-          Create account
+          Go to The Oracle
         </Button>
 
         <Button
@@ -277,7 +277,7 @@ const CollisionMechanism = React.forwardRef<
     const animationInterval = setInterval(checkCollision, 50);
 
     return () => clearInterval(animationInterval);
-  }, [cycleCollisionDetected, containerRef]);
+  }, [cycleCollisionDetected, containerRef, parentRef]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {

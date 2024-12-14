@@ -1,13 +1,26 @@
 import { HoverEffect } from "./CardHoverEffect";
 
-export function CardHoverEffectDemo(clients) {
+interface Client {
+  title: string;
+  description: string;
+  link: string;
+  url: string;
+  alt: string;
+  darkUrl: string;
+}
+
+interface CardHoverEffectDemoProps {
+  client: Client;
+}
+
+export function CardHoverEffectDemo({ client }: CardHoverEffectDemoProps) {
   return (
     <div className="max-w-5xl m-auto w-full h-full">
-      <HoverEffect props={clients} />
+      <HoverEffect client={client} />
     </div>
   );
 }
-// export const clients = [
+// export const client = {
 //   {
 //     title: "Stripe",
 //     description:

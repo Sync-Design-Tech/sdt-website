@@ -4,12 +4,16 @@ import { PinContainer } from "./AnimatedPin";
 import Image from "next/image";
 
 export function AnimatedPinDemo() {
+  // const handleClick = (event: React.MouseEvent<Element, MouseEvent>): void => {
+  //   event.preventDefault();
+  // };
   return (
     <div className="h-[40rem] w-full flex items-baseline pt-8 justify-center ">
       <PinContainer
         title="YourDomain.com"
-        href="javascript:void(0);"
-      >
+        href="#" 
+        // onClick={handleClick}
+        >
         <div className="flex basis-full flex-col p-4 tracking-tight text-neutral-8000 dark:text-neutral-100 text-neutral-800 sm:basis-1/2 w-[30rem] h-[20rem] ">
           <h3 className="max-w-xs !pb-2 !m-0 text-base">
             Put your business on the map

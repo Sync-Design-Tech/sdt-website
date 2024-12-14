@@ -71,16 +71,18 @@ export function Services() {
           <CardContent className="h-40">
             <CardTitle>Graphic Design for your Brand</CardTitle>
             <CardDescription>
-            Elevate your brand's visual identity with our bespoke graphic design services, tailored to capture and communicate your unique story.
+            Elevate your brands visual identity with our bespoke graphic design services, tailored to capture and communicate your unique story.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
             <div className="w-full h-full p-4 rounded-lg bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 ml-6 mt-2">
               <Image
-                src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/brandgraphics.png"
-                alt="Dashboard"
-                width={500}
-                height={500}
+                src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/gd.png"
+                // src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/agd.png"
+                alt="Brand Design"
+                width={1500}
+                height={1500}
+                quality={100}
                 className="w-full object-cover rounded-lg "
               />
             </div>
@@ -406,9 +408,9 @@ export const Globe = ({ className }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme, resolvedTheme } = useTheme();
   const [isDark, setIsDark] = useState(0);
-  const [color, setColor] = useState([0.19, 0.19, 0.19]);
-  const [glow, setGlow] = useState([0, 0, 0]);
-  const [markerColor, setMarkerColor] = useState([0.97, 0.81, 0.035]);
+  const [color, setColor] = useState<[number, number, number]>([0.19, 0.19, 0.19]);
+  const [glow, setGlow] = useState<[number, number, number]>([0, 0, 0]);
+  const [markerColor, setMarkerColor] = useState<[number, number, number]>([0.97, 0.81, 0.035]);
 
   useEffect(() => {
     setIsDark(theme === "dark" || resolvedTheme === "dark" ? 1 : 0);

@@ -2,9 +2,9 @@ import { Login } from "@/components/login";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Signup | Aceternity Template",
+  title: "Log in | SDT",
   description:
-    "Startup landing is a simple one page landing page for startups and agencies. Built with Next.js, Tailwind CSS, TypeScript and framer motion.",
+    "Log in to use SDT's AI tools. Enhance your web design projects with our advanced AI solutions tailored for web design agencies.",
 };
 
 export default function LoginPage() {

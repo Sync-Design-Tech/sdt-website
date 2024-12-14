@@ -1,5 +1,6 @@
 import React, { forwardRef, useRef, useImperativeHandle } from 'react';
 
+// eslint-disable-next-line react/display-name
 const Sync = forwardRef((props, ref) => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
