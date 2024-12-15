@@ -178,7 +178,7 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
   const [open, setOpen] = useState(false);
 
   const calOptions = useCalEmbed({
-    namespace: "chat-with-manu-demo",
+    namespace: "ruslan-sanakoev-377bgj",
     styles: {
       branding: {
         brandColor: "#000000",
@@ -258,7 +258,7 @@ const MobileNav = ({ navItems, visible }: NavbarProps) => {
               </Button>
               <Button
                 data-cal-namespace={calOptions.namespace}
-                data-cal-link={`manu-arora-vesr9s/chat-with-manu-demo`}
+                data-cal-link={`ruslan-sanakoev-377bgj`}
                 data-cal-config={`{"layout":"${calOptions.layout}"}`}
                 as="button"
                 onClick={() => setOpen(false)}

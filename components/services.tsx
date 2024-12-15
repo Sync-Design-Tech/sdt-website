@@ -20,24 +20,24 @@ export function Services() {
         </h2>
       </Header>
       <p className="max-w-lg text-sm text-neutral-600 text-center mx-auto mt-4 dark:text-neutral-400">
-      Enhance your digital presence with our agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services.
+       Enhance your digital presence with our agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services.
       </p>
       <div className="mt-20  grid cols-1 md:grid-cols-5 gap-4 md:auto-rows-[25rem] max-w-7xl mx-auto">
-        <Card className="flex flex-col justify-between md:col-span-3">
-          <CardSkeletonBody>
-            <SkeletonOne />
-          </CardSkeletonBody>
-          <CardContent className="h-40">
-          <CardTitle>Software Development - Websites and applications</CardTitle>
-          <CardDescription>
-              Put your business on the map with our custom software solutions. We specialize in web and mobile app development, ensuring your brand stands out in the digital landscape and your operations run seamlessly.
-            </CardDescription>
-          </CardContent>
-        </Card>
+      <Card className="flex flex-col justify-between md:col-span-3">
+      <CardSkeletonBody>
+        <SkeletonOne />
+      </CardSkeletonBody>
+      <CardContent className="p-4 md:p-6 flex flex-col">
+        <CardTitle className="text-lg md:text-xl font-bold mb-2">Software Development - Websites and applications</CardTitle>
+        <CardDescription className="text-sm md:text-base flex-grow">
+          Put your business on the map with our custom software solutions. We specialize in web and mobile app development, ensuring your brand stands out in the digital landscape and your operations run seamlessly.
+        </CardDescription>
+      </CardContent>
+    </Card>
 
-        <Card className="flex flex-col justify-between md:col-span-2">
-          <CardContent className="h-40">
-            <CardTitle>UI/UX Design</CardTitle>
+    <Card className="flex flex-col justify-between md:col-span-2">
+      <CardContent className="p-4 md:p-6 flex flex-col">
+        <CardTitle className="text-lg md:text-xl font-bold mb-2">UI/UX Design</CardTitle>
             <CardDescription>
               With our intuitive workflow, you can easily manage your app
               without complex steps.
@@ -57,10 +57,10 @@ export function Services() {
         </Card>
 
         <Card className="flex flex-col justify-between md:col-span-2">
-          <CardContent className="h-40">
-            <CardTitle>Reach audiences worldwide</CardTitle>
+        <CardContent className="p-4 md:p-6 flex flex-col">
+        <CardTitle className="text-lg md:text-xl font-bold mb-2">Reach audiences worldwide</CardTitle>
             <CardDescription>
-            Empowering businesses to reach global audiences through innovative digital marketing strategies and cutting-edge e-commerce technology.
+            Empowering businesses to reach global audiences through innovative digital marketing strategies and cutting-edge technology.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -68,8 +68,8 @@ export function Services() {
           </CardSkeletonBody>
         </Card>
         <Card className="flex flex-col justify-between md:col-span-3">
-          <CardContent className="h-40">
-            <CardTitle>Graphic Design for your Brand</CardTitle>
+      <CardContent className="p-4 md:p-6 flex flex-col">
+        <CardTitle className="text-lg md:text-xl font-bold mb-2">Graphic Design for your Brand</CardTitle>
             <CardDescription>
             Elevate your brands visual identity with our bespoke graphic design services, tailored to capture and communicate your unique story.
             </CardDescription>
@@ -93,8 +93,8 @@ export function Services() {
           className="overflow-hidden relative w-full h-full pt-8 px-8">
             <AnimatedPinDemo />
           </div>
-          <CardContent className="h-40">
-            <CardTitle>Digital Marketing - SEA and SEO</CardTitle>
+      <CardContent className="p-4 md:p-6 flex flex-col">
+        <CardTitle className="text-lg md:text-xl font-bold mb-2">Digital Marketing - SEA and SEO</CardTitle>
             <CardDescription>
               Unlock unparalleled online visibility and boost your business growth with our comprehensive Digital Marketing services, specializing in Search Engine Advertising (SEA) and Search Engine Optimization (SEO).
             </CardDescription>
@@ -102,8 +102,8 @@ export function Services() {
         </Card>
 
         <Card className="flex flex-col justify-between md:col-span-2">
-          <CardContent className="h-40">
-            <CardTitle>Devices and hardware</CardTitle>
+      <CardContent className="p-4 md:p-6 flex flex-col">
+        <CardTitle className="text-lg md:text-xl font-bold mb-2">Devices and hardware</CardTitle>
             <CardDescription>
               We provide the hardware and devices needed to run your business smoothly at the best price. Configured to server your needs.
             </CardDescription>

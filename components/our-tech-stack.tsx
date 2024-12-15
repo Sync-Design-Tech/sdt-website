@@ -24,18 +24,17 @@ export type Plan = {
 
 export function OurTechStack() {
   return (
-    <div
+<div
       id="techstack"
-      className="relative isolate bg-white dark:bg-neutral-950 w-full px-4 py-0 sm:py-20 lg:px-4 pb-20 "
+      className="relative isolate bg-white dark:bg-neutral-950 w-full px-4 py-8 sm:py-20 lg:px-8"
     >
-        
-        <div className="max-w-7xl mx-auto 0 flex flex-col md:flex-row justify-between items-center w-full relative">
-        <div className="flex flex-col pr-10">
-          <motion.h2 className="text-black dark:text-white text-xl text-center md:text-left md:text-3xl font-bold mx-auto md:mx-0 max-w-xl ">
-             Our Technology Stack
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center w-full relative">
+        <div className="flex flex-col md:pr-10 w-full md:w-auto mb-8 md:mb-0">
+          <motion.h2 className="text-black dark:text-white text-2xl md:text-3xl font-bold text-center md:text-left mb-4">
+            Our Technology Stack
           </motion.h2>
-          <p className="max-w-md mt-8 text-center md:text-left text-sm md:text-base mx-auto md:mx-0 text-neutral-600 dark:text-neutral-400">
-            We are use the latest technologies to build our products. We are always learning and adapting to new technologies to provide the best solutions to our customers.
+          <p className="text-neutral-600 dark:text-neutral-400 text-base text-center md:text-left max-w-md mx-auto md:mx-0">
+            We use the latest technologies to build our products. We are always learning and adapting to new technologies to provide the best solutions to our customers.
           </p>
         </div>
         <FocusCardsDemo />

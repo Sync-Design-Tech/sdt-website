@@ -30,7 +30,7 @@ export function Hero() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-10 md:px-8 md:pt-40 bg-neutral-50 dark:bg-neutral-900"
     >
       <BackgroundGrids />
-      <CollisionMechanism
+      {/* <CollisionMechanism
         beamOptions={{
           initialX: -400,
           translateX: 600,
@@ -39,8 +39,8 @@ export function Hero() {
         }}
         containerRef={containerRef}
         parentRef={parentRef}
-      />
-      <CollisionMechanism
+      /> */}
+      {/* <CollisionMechanism
         beamOptions={{
           initialX: -200,
           translateX: 800,
@@ -49,8 +49,8 @@ export function Hero() {
         }}
         containerRef={containerRef}
         parentRef={parentRef}
-      />
-      <CollisionMechanism
+      /> */}
+      {/* <CollisionMechanism
         beamOptions={{
           initialX: 200,
           translateX: 1200,
@@ -59,7 +59,7 @@ export function Hero() {
         }}
         containerRef={containerRef}
         parentRef={parentRef}
-      />
+      /> */}
       <CollisionMechanism
         containerRef={containerRef}
         parentRef={parentRef}
