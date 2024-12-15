@@ -15,7 +15,7 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "Sync Design Tech",
+  title: "Sync Design Technologies",
   description:
     "Your All-in-One Digital Partner for Web, Apps, and Brand Success | Your Brand, Your Ideas, Your Identity",
 };

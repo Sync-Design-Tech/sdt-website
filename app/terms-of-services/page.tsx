@@ -16,7 +16,7 @@ export default function TermsOfServicePage() {
                 <div className="max-w-7xl mx-auto flex flex-col items-center w-full">
                     <div className="flex flex-col w-full">
                         <h1 className="text-black dark:text-white text-3xl md:text-5xl font-bold text-center md:text-left my-8">
-                            Sync Design Tech - Terms of Service
+                        Sync Design Technologies - Terms of Service
                         </h1>
                         <p className="text-neutral-600 dark:text-neutral-400 text-center md:text-left mb-4">
                             <em>Last Updated: October 2024</em>

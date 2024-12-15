@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
   }
 
   const sender = {
-    name: "Sync Design Tech",
+    name: "Sync Design Technologies",
     address: process.env.MY_EMAIL
   }
 
