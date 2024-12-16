@@ -29,6 +29,7 @@ export function Hero() {
       ref={parentRef}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-10 md:px-8 md:pt-40 bg-neutral-50 dark:bg-neutral-900"
     >
+      
       <BackgroundGrids />
       {/* <CollisionMechanism
         beamOptions={{
@@ -71,62 +72,63 @@ export function Hero() {
         }}
       />
 
-      <div className="text-balance relative z-20 mx-auto mb-20 mt-4 max-w-4xl text-center text-3xl font-semibold tracking-tight text-gray-700 dark:text-neutral-300 md:text-7xl">
+<div className="text-balance relative z-20 mx-auto mb-10 mt-5 md:mt-5 max-w-4xl text-center text-3xl font-semibold tracking-tight text-gray-700 dark:text-neutral-300 md:text-7xl">
         <Balancer>
-          <motion.h2>
-            {"YOUR ALL-IN-ONE DIGITAL PARTNER"
-            //  for Web, Apps and Brand Success.
-              .split(" ")
-              .map((word, index) => (
-                <motion.span
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 10,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.05,
-                  }}
-                  className="inline-block mt-10 md:mt-0"
-                  key={index}
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
-          </motion.h2>
-          <motion.h6>
-            {"DIGITAL, WEB & TECH SOLUTIONS FOR BRAND SUCCESS"
-              .split(" ")
-              .map((word, index) => (
-                <motion.span
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 10,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    delay: index * 0.05,
-                  }}
-                  className="inline-block"
-                  key={index}
-                  style={{ fontSize: "1.8rem" }}
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
-          </motion.h6>
+        <motion.h1 className="leading-none text-3xl md:text-7xl mb-10 mt-20 md:mb-10 md:mt-0">
+        {"YOUR ALL-IN-ONE DIGITAL PARTNER"
+          .split(" ")
+          .map((word, index) => (
+            <motion.span
+              initial={{
+                filter: "blur(10px)",
+                opacity: 0,
+                y: 10,
+              }}
+              animate={{
+                filter: "blur(0px)",
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.05,
+              }}
+              className="inline-block mt-2 md:mt-5"
+              key={index}
+            >
+              {word}&nbsp;
+            </motion.span>
+          ))}
+      </motion.h1>
+
+      <motion.h6 className="text-lg md:text-2xl mt-2 tracking-wider">
+  {"TECHNOLOGY, MARKETING AND DESIGN SOLUTIONS FOR BRAND SUCCESS"
+    .split(" ")
+    .map((word, index) => (
+      <motion.span
+        initial={{
+          filter: "blur(10px)",
+          opacity: 0,
+          y: 10,
+        }}
+        animate={{
+          filter: "blur(0px)",
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.4,
+          delay: index * 0.05,
+        }}
+        className="inline-block"
+        key={index}
+        style={{ fontSize: "1.6rem", "@media (min-width: 768px)": { fontSize: "1.8rem" } }}
+      >
+        {word}&nbsp;
+      </motion.span>
+    ))}
+</motion.h6>
+
         </Balancer>
       </div>
       <motion.p
