@@ -9,7 +9,16 @@ import { AboutUs } from "@/components/about-us";
 import { OurTechStack } from "@/components/our-tech-stack";
 import { ToastContainer } from 'react-toastify';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Head from 'next/head';
 import 'react-toastify/dist/ReactToastify.css';
+
+function IndexPage() {
+    return (
+        <Head>
+          <meta name="robots" content="all" />
+        </Head>
+    );
+  }
 
 export default function Home() {
     const [showIntro, setShowIntro] = useState(false);
@@ -25,6 +34,8 @@ export default function Home() {
     }, []);
 
     return (
+        <>
+        <IndexPage />
         <main className="">
             <SpeedInsights/>
             {showIntro ? <IntroAnimation onSkip={() => setShowIntro(false)} /> : null}
@@ -36,5 +47,6 @@ export default function Home() {
             {/* <Pricing /> */}
             <CTA />
         </main>
+        </>
     );
 }
