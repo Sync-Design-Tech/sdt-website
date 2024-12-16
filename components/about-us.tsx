@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useTheme } from 'next-themes';
 import createGlobe from "cobe";
 import { Skeleton } from "three";
+import { Metadata } from "next";
 
 export enum plan {
   hobby = "hobby",
@@ -27,6 +28,11 @@ export type Plan = {
   additionalFeatures?: string[];
   onClick: () => void;
 };
+
+export const metadata: Metadata = {
+  title: "About us",
+  description: "Discover our passionate team of experts in web development, design, and digital marketing. We're an international group based in London with members in Madrid, Oslo, and Paris, dedicated to providing innovative solutions for businesses worldwide. Our mission is to help companies grow and succeed in the digital landscape through high-quality services and unwavering support. Learn how our collaborative approach and diverse expertise can propel your business towards its goals in today's competitive online environment.",
+};  
 
 export function AboutUs() {
   return (

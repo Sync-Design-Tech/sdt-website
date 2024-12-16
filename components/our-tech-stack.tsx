@@ -2,6 +2,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import { motion } from "framer-motion";
 import { FocusCardsDemo } from "./focusCard/card";
+import { Metadata } from "next";
 
 export enum plan {
   hobby = "hobby",
@@ -21,6 +22,11 @@ export type Plan = {
   additionalFeatures?: string[];
   onClick: () => void;
 };
+
+export const metadata: Metadata = {
+  title: "Our Technology Stack",
+  description: "Discover our cutting-edge technology stack powering innovative digital solutions. We leverage the latest technologies to build superior products, constantly adapting and learning to deliver the best web and mobile applications. Our expert team combines state-of-the-art tools with continuous innovation to provide unparalleled solutions for our clients' evolving needs.",
+};  
 
 export function OurTechStack() {
   return (

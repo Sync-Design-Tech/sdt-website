@@ -7,6 +7,12 @@ import Image from "next/image";
 import createGlobe from "cobe";
 import { AnimatedPinDemo } from "./animatedPin/animated";
 import { useTheme } from 'next-themes';
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description: "Elevate your digital presence with our comprehensive services: custom software development, intuitive UI/UX design, global digital marketing strategies, bespoke graphic design, SEO/SEA optimization, and tailored hardware solutions. From startups to established businesses, our expert team delivers innovative web and mobile applications, brand identity enhancements, and cutting-edge technology to boost your online visibility and business growth.",
+};  
 
 export function Services() {
   return (
