@@ -122,7 +122,7 @@ export function Hero() {
         }}
         className="inline-block"
         key={index}
-        style={{ fontSize: "1.6rem", "@media (min-width: 768px)": { fontSize: "1.8rem" } }}
+        style={{ fontSize: "1.6rem" }}
       >
         {word}&nbsp;
       </motion.span>
