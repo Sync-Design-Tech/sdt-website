@@ -29,6 +29,7 @@ export default function Home() {
     return (
         <>
         <main className="">
+            <Analytics/>
             <SpeedInsights/>
             {showIntro ? <IntroAnimation onSkip={() => setShowIntro(false)} /> : null}
             <ToastContainer />
