@@ -11,7 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Head from 'next/head';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
     const [showIntro, setShowIntro] = useState(false);
