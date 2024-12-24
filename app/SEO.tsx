@@ -4,7 +4,6 @@ import "./globals.css";
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { usePathname } from 'next/navigation';
-import { GoogleTagManager } from '@next/third-parties/google'
  
 type Section = 'home' | 'services' | 'ourTechStack' | 'aboutUs' | 'contact';
 
@@ -56,6 +55,7 @@ export default function SEO() {
     const { title, description } = metadataDes[currentSection] || metadataDes.home;
 
     return (
+        <>
         <Head>
             <title>{title}</title>
             <meta name="description" content={description} />
@@ -66,7 +66,7 @@ export default function SEO() {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
-            <GoogleTagManager gtmId="G-3XPXCMYMXF" />
         </Head>
+        </>
     );
 }

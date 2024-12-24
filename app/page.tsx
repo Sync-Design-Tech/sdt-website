@@ -12,6 +12,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Head from 'next/head';
 import 'react-toastify/dist/ReactToastify.css';
 import { Analytics } from "@vercel/analytics/react"
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export default function Home() {
     const [showIntro, setShowIntro] = useState(false);
@@ -30,6 +31,7 @@ export default function Home() {
         <>
         <main className="">
             <Analytics/>
+            <GoogleTagManager gtmId="G-3XPXCMYMXF" />
             <SpeedInsights/>
             {showIntro ? <IntroAnimation onSkip={() => setShowIntro(false)} /> : null}
             <ToastContainer />
