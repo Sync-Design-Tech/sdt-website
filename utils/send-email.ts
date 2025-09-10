@@ -10,9 +10,9 @@ export async function sendEmail(data: FormData): Promise<void> {
     })
         .then((res) => res.json())
         .then((response) => {
-            console.log(response);
+            // console.log(response);
         })
         .catch((err) => {
-            console.log(err);
+            // console.log(err);
         });
 }

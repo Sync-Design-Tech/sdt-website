@@ -53,7 +53,7 @@ export function Login() {
 
 function Form() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    console.log("submitted form", e);
+    // console.log("submitted form", e);
   }
 
   return (

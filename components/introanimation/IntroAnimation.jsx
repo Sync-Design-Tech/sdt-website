@@ -298,9 +298,7 @@ const IntroAnimation = ({onSkip=()=>{}}) => {
 
 
 useEffect(() => {  
-    console.log(ballStart);
     if (!ballStart) return;
-    console.log("ballStart");
     function dotScale(x){
         const tl = gsap.timeline();
         tl.delay(1).to(x, {

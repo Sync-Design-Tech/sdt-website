@@ -6,7 +6,6 @@ import { address } from 'framer-motion/client';
 
 export async function POST(request: NextRequest) {
   const { email, given_name, family_name, phone, message, type } = await request.json();
-  console.log("email", email)
   const emailBody = EmailTemplate( email, given_name, family_name, phone, message, type );
 
   const transport = nodemailer.createTransport({
@@ -61,7 +60,6 @@ export async function POST(request: NextRequest) {
     await sendMailPromise();
     return NextResponse.json({ message: 'Email sent' });
   } catch (err) {
-    console.log(err);
     return NextResponse.json({ error: err }, { status: 500 });
   }
 }

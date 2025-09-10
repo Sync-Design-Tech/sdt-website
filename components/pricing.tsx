@@ -39,7 +39,7 @@ const plans: Array<Plan> = [
     ],
     buttonText: "Get Hobby",
     onClick: () => {
-      console.log("Get Hobby");
+      // console.log("Get Hobby");
     },
   },
   {
@@ -58,7 +58,7 @@ const plans: Array<Plan> = [
     buttonText: "Get Starter",
     additionalFeatures: ["Everything in Hobby Plan"],
     onClick: () => {
-      console.log("Get Starter");
+      // console.log("Get Starter");
     },
   },
   {
@@ -77,7 +77,7 @@ const plans: Array<Plan> = [
     additionalFeatures: ["Everything in Hobby Plan", "Everything in Pro Plan"],
     buttonText: "Get Pro",
     onClick: () => {
-      console.log("Get Pro");
+      // console.log("Get Pro");
     },
   },
 ];

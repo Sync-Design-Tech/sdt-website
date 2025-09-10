@@ -79,7 +79,6 @@ export const SignupFormDemo: NextPage = () => {
         isLoading: false,
         autoClose: 3000,
       });
-      console.error("Error while sending email:", error);
     }
   }
 
