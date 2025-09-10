@@ -1,26 +1,29 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { Logo } from "./logo";
-import { CONSTANTS } from "@/constants/links";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { Logo } from './logo';
+import { CONSTANTS } from '@/constants/links';
 
 export function Footer() {
   const pages = [
     {
-      title: "Home",
-      href: "/#",
+      title: 'Home',
+      href: '/',
     },
     {
-      title: "Services",
-      href: "/#services",
+      title: 'Services',
+      href: '/services',
+      altHref: '/#services',
     },
     {
-      title: "About us",
-      href: "/#aboutus",
+      title: 'About us',
+      href: '/about',
+      altHref: '/#aboutus',
     },
     {
-      title: "Contact",
-      href: "/#contact",
+      title: 'Contact',
+      href: '/contact',
+      altHref: '/#contact',
     },
     // {
     //   title: "Blog",
@@ -34,45 +37,45 @@ export function Footer() {
     //   href: "#",
     // },
     {
-      title: "Instagram",
-      href: "https://www.instagram.com/syncdesigntech/?igsh=MW9iMDh5YWNydm1yNA%3D%3D",
+      title: 'Instagram',
+      href: 'https://www.instagram.com/syncdesigntech/?igsh=MW9iMDh5YWNydm1yNA%3D%3D',
     },
     {
-      title: "Github",
-      href: "https://github.com/Sync-Design-Tech",
+      title: 'Github',
+      href: 'https://github.com/Sync-Design-Tech',
     },
     {
-      title: "LinkedIn",
-      href: "https://www.linkedin.com/company/sync-design-tech/?viewAsMember=true",
+      title: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/sync-design-tech/?viewAsMember=true',
     },
   ];
   const legals = [
     {
-      title: "Privacy Policy",
-      href: "/privacy-policy",
+      title: 'Privacy Policy',
+      href: '/privacy-policy',
     },
     {
-      title: "Terms of Service",
-      href: "/terms-of-services",
+      title: 'Terms of Service',
+      href: '/terms-of-services',
     },
     {
-      title: "Cookie Policy",
-      href: "/cookies",
+      title: 'Cookie Policy',
+      href: '/cookies',
     },
   ];
 
   const signups = [
     {
-      title: "Sign Up",
-      href: "/login",
+      title: 'Sign Up',
+      href: '/login',
     },
     {
-      title: "Login",
-      href: "/login",
+      title: 'Login',
+      href: '/login',
     },
     {
-      title: "Book a demo",
-      href: "/book-a-call",
+      title: 'Book a demo',
+      href: '/book-a-call',
     },
   ];
   return (
@@ -83,9 +86,7 @@ export function Footer() {
             <Logo />
           </div>
 
-          <div className="ml-2 mt-2">
-            &copy; copyright Sync Design Tech Limited 2024. All rights reserved.
-          </div>
+          <div className="ml-2 mt-2">&copy; copyright Sync Design Tech Limited 2024. All rights reserved.</div>
         </div>
         <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-4">
           <div className="flex w-full flex-col justify-center space-y-4">
@@ -94,11 +95,8 @@ export function Footer() {
             </p>
             <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
               {pages.map((page, idx) => (
-                <li key={"pages" + idx} className="list-none">
-                  <Link
-                    className="hover:text-text-neutral-800 transition-colors"
-                    href={page.href}
-                  >
+                <li key={'pages' + idx} className="list-none">
+                  <Link className="hover:text-text-neutral-800 transition-colors" href={page.href}>
                     {page.title}
                   </Link>
                 </li>
@@ -112,11 +110,8 @@ export function Footer() {
             </p>
             <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
               {socials.map((social, idx) => (
-                <li key={"social" + idx} className="list-none">
-                  <Link
-                    className="hover:text-text-neutral-800 transition-colors"
-                    href={social.href}
-                  >
+                <li key={'social' + idx} className="list-none">
+                  <Link className="hover:text-text-neutral-800 transition-colors" href={social.href}>
                     {social.title}
                   </Link>
                 </li>
@@ -130,11 +125,8 @@ export function Footer() {
             </p>
             <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
               {legals.map((legal, idx) => (
-                <li key={"legal" + idx} className="list-none">
-                  <Link
-                    className="hover:text-text-neutral-800 transition-colors"
-                    href={legal.href}
-                  >
+                <li key={'legal' + idx} className="list-none">
+                  <Link className="hover:text-text-neutral-800 transition-colors" href={legal.href}>
                     {legal.title}
                   </Link>
                 </li>
@@ -147,11 +139,8 @@ export function Footer() {
             </p>
             <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
               {signups.map((auth, idx) => (
-                <li key={"auth" + idx} className="list-none">
-                  <Link
-                    className="hover:text-text-neutral-800 transition-colors"
-                    href={auth.href}
-                  >
+                <li key={'auth' + idx} className="list-none">
+                  <Link className="hover:text-text-neutral-800 transition-colors" href={auth.href}>
                     {auth.title}
                   </Link>
                 </li>
