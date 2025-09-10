@@ -123,12 +123,7 @@ export const SignupFormDemo: NextPage = () => {
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input
-            id="email"
-            placeholder="your-email@syncdesign.tech"
-            type="email"
-            {...register('email', { required: true })}
-          />
+          <Input id="email" placeholder="your-email@domain" type="email" {...register('email', { required: true })} />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="phone">Phone Number</Label>

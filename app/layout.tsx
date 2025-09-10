@@ -5,6 +5,7 @@ import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { ThemeProvider } from '@/context/providers';
 import { Ubuntu } from 'next/font/google';
+import { siteSchema } from '@/constants/schema';
 import { MetadataProvider } from '@/context/metadata';
 
 const ubuntu = Ubuntu({
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     description:
       'Your All-in-One Digital Partner for Web, Apps, and Brand Success | Your Brand, Your Ideas, Your Identity',
     type: 'website',
-    url: 'https://s3maintenance.co.uk',
+    url: 'https://www.syncdesign.tech/',
   },
   twitter: {
     card: 'summary_large_image',
@@ -46,6 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
+      </head>
       <body className={cn('bg-white antialiased dark:bg-black', ubuntu.variable)}>
         <MetadataProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
