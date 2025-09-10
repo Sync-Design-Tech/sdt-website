@@ -45,16 +45,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <MetadataProvider>
-      <html lang="en">
-        <body className={cn('bg-white antialiased dark:bg-black', ubuntu.variable)}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn('bg-white antialiased dark:bg-black', ubuntu.variable)}>
+        <MetadataProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <Navbar />
             {children}
             <Footer />
           </ThemeProvider>
-        </body>
-      </html>
-    </MetadataProvider>
+        </MetadataProvider>
+      </body>
+    </html>
   );
 }
