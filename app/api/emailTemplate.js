@@ -95,11 +95,17 @@ const ContactUs = (email, given_name, family_name, phone, message) => {
 
   const emailContent = `
   <div>
-  ${displayData.map(elem => elem.value ? `
+  ${displayData
+    .map((elem) =>
+      elem.value
+        ? `
   <p class="">
   ${elem.label}: ${elem.value}
   </p>
-  ` : '').join('')}
+  `
+        : "",
+    )
+    .join("")}
   <p>Message: </p>
   <div class="message-box">
   ${message}
@@ -110,25 +116,33 @@ const ContactUs = (email, given_name, family_name, phone, message) => {
   return emailContent;
 };
 
-const EmailTemplate = (email, given_name, family_name, phone, message, type) => {
+const EmailTemplate = (
+  email,
+  given_name,
+  family_name,
+  phone,
+  message,
+  type,
+) => {
   let content = ContactUs(email, given_name, family_name, phone, message);
   let emailSubject = "Contact request";
 
-  let emailBodies = type === "confirmation" ? 
-  {
-    subject: `Thank you for your contact request`,
-    html: createCustomerEmail(given_name),
-    attachments: [],
-    to: email,
-    info: { type: "confirmation", email }
-  } : 
-  {
-    subject: emailSubject,
-    html: createInternalEmail(content, emailSubject),
-    attachments: [],
-    to: process.env.MY_EMAIL,
-    info: { type, email }
-  };
+  let emailBodies =
+    type === "confirmation"
+      ? {
+          subject: `Thank you for your contact request`,
+          html: createCustomerEmail(given_name),
+          attachments: [],
+          to: email,
+          info: { type: "confirmation", email },
+        }
+      : {
+          subject: emailSubject,
+          html: createInternalEmail(content, emailSubject),
+          attachments: [],
+          to: process.env.MY_EMAIL,
+          info: { type, email },
+        };
   return emailBodies;
 };
 

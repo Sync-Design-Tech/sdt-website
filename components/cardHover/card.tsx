@@ -15,7 +15,7 @@ interface CardHoverEffectDemoProps {
 
 export function CardHoverEffectDemo({ client }: CardHoverEffectDemoProps) {
   return (
-    <div className="max-w-5xl m-auto w-full h-full">
+    <div className="m-auto h-full w-full max-w-5xl">
       <HoverEffect client={client} />
     </div>
   );

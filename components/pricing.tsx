@@ -86,17 +86,17 @@ export function Pricing() {
   return (
     <div
       id="pricing"
-      className="relative isolate bg-white dark:bg-neutral-950 w-full px-4 py-0 sm:py-20 lg:px-4 "
+      className="relative isolate w-full bg-white px-4 py-0 dark:bg-neutral-950 sm:py-20 lg:px-4"
     >
       <div
         className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl"
         aria-hidden="true"
       ></div>
       <>
-        <h2 className="pt-4 font-bold text-lg md:text-4xl text-center text-neutral-800 dark:text-neutral-100">
+        <h2 className="pt-4 text-center text-lg font-bold text-neutral-800 dark:text-neutral-100 md:text-4xl">
           Simple pricing for advanced people
         </h2>
-        <p className="max-w-md mx-auto text-base text-center text-neutral-600 dark:text-neutral-300 mt-4">
+        <p className="mx-auto mt-4 max-w-md text-center text-base text-neutral-600 dark:text-neutral-300">
           Our pricing is designed for advanced people who need more features and
           more flexibility.
         </p>
@@ -104,8 +104,8 @@ export function Pricing() {
 
       <div
         className={cn(
-          "mx-auto grid grid-cols-1 gap-4  mt-20 ",
-          "max-w-7xl mx-auto  md:grid-cols-2 xl:grid-cols-3"
+          "mx-auto mt-20 grid grid-cols-1 gap-4",
+          "mx-auto max-w-7xl md:grid-cols-2 xl:grid-cols-3",
         )}
       >
         {plans.map((tier, tierIdx) => {
@@ -120,19 +120,19 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
   return (
     <div
       className={cn(
-        "p-1 sm:p-4 md:p-4 rounded-3xl bg-gray-50 dark:bg-neutral-900 border border-gray-100 dark:border-neutral-800"
+        "rounded-3xl border border-gray-100 bg-gray-50 p-1 dark:border-neutral-800 dark:bg-neutral-900 sm:p-4 md:p-4",
       )}
     >
-      <div className="flex flex-col gap-4 h-full justify-start">
+      <div className="flex h-full flex-col justify-start gap-4">
         <div
           className={cn(
-            "p-4 bg-white dark:bg-neutral-800 rounded-2xl shadow-input w-full dark:shadow-[0px_-1px_0px_0px_var(--neutral-700)]"
+            "w-full rounded-2xl bg-white p-4 shadow-input dark:bg-neutral-800 dark:shadow-[0px_-1px_0px_0px_var(--neutral-700)]",
           )}
         >
-          <div className="flex justify-between items-start ">
-            <div className="flex gap-2 flex-col">
+          <div className="flex items-start justify-between">
+            <div className="flex flex-col gap-2">
               <p
-                className={cn("font-medium text-lg text-black dark:text-white")}
+                className={cn("text-lg font-medium text-black dark:text-white")}
               >
                 {plan.name}
               </p>
@@ -141,19 +141,19 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
             {plan.featured && (
               <div
                 className={cn(
-                  "font-medium text-xs px-3 py-1 rounded-full relative bg-neutral-900 dark:bg-white dark:text-black text-white"
+                  "relative rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black",
                 )}
               >
-                <div className="absolute inset-x-0 bottom-0 w-3/4 mx-auto h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
+                <div className="absolute inset-x-0 bottom-0 mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
                 Featured
               </div>
             )}
           </div>
-          <div className="mt-8 ">
+          <div className="mt-8">
             <div className="flex items-end">
               <span
                 className={cn(
-                  "text-lg font-bold text-neutral-500 dark:text-neutral-200"
+                  "text-lg font-bold text-neutral-500 dark:text-neutral-200",
                 )}
               >
                 {plan.currency}
@@ -161,7 +161,7 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
               <div className="flex items-start gap-2">
                 <span
                   className={cn(
-                    "text-3xl md:text-7xl font-bold dark:text-neutral-50 text-neutral-800"
+                    "text-3xl font-bold text-neutral-800 dark:text-neutral-50 md:text-7xl",
                   )}
                 >
                   {plan?.price}
@@ -169,14 +169,14 @@ const Card = ({ plan, onClick }: { plan: Plan; onClick: () => void }) => {
               </div>
               <span
                 className={cn(
-                  "text-base font-normal text-neutral-500 dark:text-neutral-200 mb-1 md:mb-2"
+                  "mb-1 text-base font-normal text-neutral-500 dark:text-neutral-200 md:mb-2",
                 )}
               >
                 {plan.subText}
               </span>
             </div>
           </div>
-          <Button variant="gradient" className="w-full mt-10" onClick={onClick}>
+          <Button variant="gradient" className="mt-10 w-full" onClick={onClick}>
             {plan.buttonText}
           </Button>
         </div>
@@ -209,16 +209,16 @@ const Step = ({
   featured?: boolean;
 }) => {
   return (
-    <div className="flex items-start justify-start gap-2 my-4">
+    <div className="my-4 flex items-start justify-start gap-2">
       <div
         className={cn(
-          "h-4 w-4 rounded-full bg-neutral-700 flex items-center justify-center flex-shrink-0 mt-0.5",
-          additional ? "bg-sky-500" : "bg-neutral-700"
+          "mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-neutral-700",
+          additional ? "bg-sky-500" : "bg-neutral-700",
         )}
       >
-        <IconCheck className="h-3 w-3 [stroke-width:4px] text-neutral-300" />
+        <IconCheck className="h-3 w-3 text-neutral-300 [stroke-width:4px]" />
       </div>
-      <div className={cn("font-medium text-black text-sm dark:text-white")}>
+      <div className={cn("text-sm font-medium text-black dark:text-white")}>
         {children}
       </div>
     </div>
@@ -228,16 +228,16 @@ const Step = ({
 const Divider = () => {
   return (
     <div className="relative">
-      <div className={cn("w-full h-px dark:bg-neutral-950 bg-white")} />
-      <div className={cn("w-full h-px bg-neutral-200 dark:bg-neutral-800")} />
+      <div className={cn("h-px w-full bg-white dark:bg-neutral-950")} />
+      <div className={cn("h-px w-full bg-neutral-200 dark:bg-neutral-800")} />
       <div
         className={cn(
-          "absolute inset-0 h-5 w-5 m-auto rounded-xl dark:bg-neutral-800 bg-white shadow-[0px_-1px_0px_0px_var(--neutral-200)] dark:shadow-[0px_-1px_0px_0px_var(--neutral-700)] flex items-center justify-center"
+          "absolute inset-0 m-auto flex h-5 w-5 items-center justify-center rounded-xl bg-white shadow-[0px_-1px_0px_0px_var(--neutral-200)] dark:bg-neutral-800 dark:shadow-[0px_-1px_0px_0px_var(--neutral-700)]",
         )}
       >
         <IconPlus
           className={cn(
-            "h-3 w-3 [stroke-width:4px] dark:text-neutral-300 text-black"
+            "h-3 w-3 text-black [stroke-width:4px] dark:text-neutral-300",
           )}
         />
       </div>

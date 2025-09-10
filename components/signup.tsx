@@ -7,21 +7,21 @@ import { motion } from "framer-motion";
 
 export function Login() {
   return (
-    <div className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 my-20">
+    <div className="my-20 grid min-h-screen w-full grid-cols-1 md:grid-cols-2">
       <Form />
-      <div className="relative w-full z-20 hidden md:flex border-l border-neutral-100 dark:border-neutral-800 overflow-hidden bg-white dark:bg-neutral-900 items-center justify-center">
-        <div className="max-w-sm mx-auto">
+      <div className="relative z-20 hidden w-full items-center justify-center overflow-hidden border-l border-neutral-100 bg-white dark:border-neutral-800 dark:bg-neutral-900 md:flex">
+        <div className="mx-auto max-w-sm">
           {/* <FeaturedTestimonials /> */}
           <p
             className={cn(
-              "font-semibold text-xl text-center text-neutral-600 dark:text-neutral-400"
+              "text-center text-xl font-semibold text-neutral-600 dark:text-neutral-400",
             )}
           >
             Log in for AI tools
           </p>
           <p
             className={cn(
-              "font-normal text-base text-center text-neutral-500 dark:text-neutral-400 mt-8"
+              "mt-8 text-center text-base font-normal text-neutral-500 dark:text-neutral-400",
             )}
           >
             Log in to access your AI tools and get started with your projects.
@@ -30,19 +30,19 @@ export function Login() {
         </div>
 
         <GridLineHorizontal
-          className="top-0  left-1/2 -translate-x-1/2"
+          className="left-1/2 top-0 -translate-x-1/2"
           offset="-10px"
         />
         <GridLineHorizontal
-          className="bottom-0 top-auto  left-1/2 -translate-x-1/2"
+          className="bottom-0 left-1/2 top-auto -translate-x-1/2"
           offset="-10px"
         />
         <GridLineVertical
-          className="left-10  top-1/2 -translate-y-1/2"
+          className="left-10 top-1/2 -translate-y-1/2"
           offset="-10px"
         />
         <GridLineVertical
-          className="right-10 left-auto top-1/2 -translate-y-1/2"
+          className="left-auto right-10 top-1/2 -translate-y-1/2"
           offset="-10px"
         />
         {/* <GridLineVertical className="left-80 transform" /> */}
@@ -58,7 +58,7 @@ function Form() {
 
   return (
     <form className="bg-gray-50 dark:bg-neutral-950" onSubmit={onSubmit}>
-      <div className="flex items-center w-full justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-32 max-w-2xl mx-auto">
+      <div className="mx-auto flex w-full max-w-2xl items-center justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-32">
         <div className="mx-auto w-full max-w-md">
           <div>
             <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-black dark:text-white">
@@ -81,7 +81,7 @@ function Form() {
                       id="name"
                       type="name"
                       placeholder="Manu Arora"
-                      className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                      className="block w-full rounded-md border-0 bg-white px-4 py-1.5 text-black shadow-input placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:bg-neutral-900 dark:text-white sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -99,7 +99,7 @@ function Form() {
                       id="email"
                       type="email"
                       placeholder="hello@johndoe.com"
-                      className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                      className="block w-full rounded-md border-0 bg-white px-4 py-1.5 text-black shadow-input placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:bg-neutral-900 dark:text-white sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -117,18 +117,18 @@ function Form() {
                       id="password"
                       type="password"
                       placeholder="••••••••"
-                      className="block w-full bg-white dark:bg-neutral-900 px-4 rounded-md border-0 py-1.5  shadow-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-neutral-400 focus:outline-none sm:text-sm sm:leading-6 dark:text-white"
+                      className="block w-full rounded-md border-0 bg-white px-4 py-1.5 text-black shadow-input placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:bg-neutral-900 dark:text-white sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <button className="bg-black relative z-10 hover:bg-black/90  text-white text-sm md:text-sm transition font-medium duration-200  rounded-full px-4 py-2  flex items-center justify-center w-full dark:text-black dark:bg-white dark:hover:bg-neutral-100 dark:hover:shadow-xl">
+                  <button className="relative z-10 flex w-full items-center justify-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition duration-200 hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-100 dark:hover:shadow-xl md:text-sm">
                     Sign Up
                   </button>
                   <p
                     className={cn(
-                      "text-sm text-neutral-600 text-center mt-4  dark:text-neutral-400"
+                      "mt-4 text-center text-sm text-neutral-600 dark:text-neutral-400",
                     )}
                   >
                     Already have an account?{" "}
@@ -149,16 +149,16 @@ function Form() {
                   <div className="w-full border-t border-neutral-300 dark:border-neutral-700" />
                 </div>
                 <div className="relative flex justify-center text-sm font-medium leading-6">
-                  <span className="bg-gray-50 px-6 text-neutral-400 dark:text-neutral-500 dark:bg-neutral-950">
+                  <span className="bg-gray-50 px-6 text-neutral-400 dark:bg-neutral-950 dark:text-neutral-500">
                     Or continue with
                   </span>
                 </div>
               </div>
 
-              <div className="mt-6 w-full flex items-center justify-center">
+              <div className="mt-6 flex w-full items-center justify-center">
                 <button
                   onClick={() => {}}
-                  className="bg-black relative z-10 hover:bg-black/90  text-white text-sm md:text-sm transition font-medium duration-200  rounded-full px-4 py-1.5  flex items-center justify-center w-full dark:text-black dark:bg-white dark:hover:bg-neutral-100 dark:hover:shadow-xl"
+                  className="relative z-10 flex w-full items-center justify-center rounded-full bg-black px-4 py-1.5 text-sm font-medium text-white transition duration-200 hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-neutral-100 dark:hover:shadow-xl md:text-sm"
                 >
                   <IconBrandGithub className="h-5 w-5" />
                   <span className="text-sm font-semibold leading-6">
@@ -167,7 +167,7 @@ function Form() {
                 </button>
               </div>
 
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm text-center mt-8">
+              <p className="mt-8 text-center text-sm text-neutral-600 dark:text-neutral-400">
                 By clicking on sign up, you agree to our{" "}
                 <Link
                   href="#"
@@ -195,7 +195,7 @@ const Logo = () => {
   return (
     <Link
       href="/"
-      className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image
         src="https://assets.aceternity.com/logo-dark.png"
@@ -244,16 +244,16 @@ export const FeaturedTestimonials = ({
     },
   ];
   return (
-    <div className={cn("flex flex-col items-center ", containerClassName)}>
+    <div className={cn("flex flex-col items-center", containerClassName)}>
       <div
         className={cn(
-          "flex flex-col sm:flex-row items-center justify-center mb-2",
-          className
+          "mb-2 flex flex-col items-center justify-center sm:flex-row",
+          className,
         )}
       >
-        <div className="flex flex-row items-center mb-4 sm:mb-0">
+        <div className="mb-4 flex flex-row items-center sm:mb-0">
           {images.map((image, idx) => (
-            <div className="-mr-4  relative group" key={image.name}>
+            <div className="group relative -mr-4" key={image.name}>
               <div>
                 <motion.div
                   whileHover={{
@@ -263,14 +263,14 @@ export const FeaturedTestimonials = ({
                   transition={{
                     duration: 0.2,
                   }}
-                  className="rounded-full overflow-hidden border-2  border-neutral-200  relative"
+                  className="relative overflow-hidden rounded-full border-2 border-neutral-200"
                 >
                   <Image
                     height={100}
                     width={100}
                     src={image.src}
                     alt={image.name}
-                    className="object-cover object-top  md:h-14 md:w-14 h-8 w-8 "
+                    className="h-8 w-8 object-cover object-top md:h-14 md:w-14"
                   />
                 </motion.div>
               </div>
@@ -304,14 +304,14 @@ const GridLineHorizontal = ({
         } as React.CSSProperties
       }
       className={cn(
-        "absolute w-[calc(100%+var(--offset))] h-[var(--height)] left-[calc(var(--offset)/2*-1)]",
+        "absolute left-[calc(var(--offset)/2*-1)] h-[var(--height)] w-[calc(100%+var(--offset))]",
         "bg-[linear-gradient(to_right,var(--color),var(--color)_50%,transparent_0,transparent)]",
         "[background-size:var(--width)_var(--height)]",
         "[mask:linear-gradient(to_left,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_right,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]",
         "[mask-composite:exclude]",
         "z-30",
         "dark:bg-[linear-gradient(to_right,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
-        className
+        className,
       )}
     ></div>
   );
@@ -339,14 +339,14 @@ const GridLineVertical = ({
         } as React.CSSProperties
       }
       className={cn(
-        "absolute h-[calc(100%+var(--offset))] w-[var(--width)] top-[calc(var(--offset)/2*-1)]",
+        "absolute top-[calc(var(--offset)/2*-1)] h-[calc(100%+var(--offset))] w-[var(--width)]",
         "bg-[linear-gradient(to_bottom,var(--color),var(--color)_50%,transparent_0,transparent)]",
         "[background-size:var(--width)_var(--height)]",
         "[mask:linear-gradient(to_top,var(--background)_var(--fade-stop),transparent),_linear-gradient(to_bottom,var(--background)_var(--fade-stop),transparent),_linear-gradient(black,black)]",
         "[mask-composite:exclude]",
         "z-30",
         "dark:bg-[linear-gradient(to_bottom,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
-        className
+        className,
       )}
     ></div>
   );

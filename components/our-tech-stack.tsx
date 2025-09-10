@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FocusCardsDemo } from "./focusCard/card";
 import { Metadata } from "next";
@@ -25,22 +25,25 @@ export type Plan = {
 
 export const metadata: Metadata = {
   title: "Our Technology Stack",
-  description: "Discover our cutting-edge technology stack powering innovative digital solutions. We leverage the latest technologies to build superior products, constantly adapting and learning to deliver the best web and mobile applications. Our expert team combines state-of-the-art tools with continuous innovation to provide unparalleled solutions for our clients' evolving needs.",
-};  
+  description:
+    "Discover our cutting-edge technology stack powering innovative digital solutions. We leverage the latest technologies to build superior products, constantly adapting and learning to deliver the best web and mobile applications. Our expert team combines state-of-the-art tools with continuous innovation to provide unparalleled solutions for our clients' evolving needs.",
+};
 
 export function OurTechStack() {
   return (
-<div
+    <div
       id="techstack"
-      className="relative isolate bg-white dark:bg-neutral-950 w-full px-4 py-8 sm:py-20 lg:px-8"
+      className="relative isolate w-full bg-white px-4 py-8 dark:bg-neutral-950 sm:py-20 lg:px-8"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center w-full relative">
-        <div className="flex flex-col md:pr-10 w-full md:w-auto mb-8 md:mb-0">
-          <motion.h2 className="text-black dark:text-white text-2xl md:text-3xl font-bold text-center md:text-left mb-4">
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center justify-between md:flex-row">
+        <div className="mb-8 flex w-full flex-col md:mb-0 md:w-auto md:pr-10">
+          <motion.h2 className="mb-4 text-center text-2xl font-bold text-black dark:text-white md:text-left md:text-3xl">
             Our Technology Stack
           </motion.h2>
-          <p className="text-neutral-600 dark:text-neutral-400 text-base text-center md:text-left max-w-md mx-auto md:mx-0">
-            We use the latest technologies to build our products. We are always learning and adapting to new technologies to provide the best solutions to our customers.
+          <p className="mx-auto max-w-md text-center text-base text-neutral-600 dark:text-neutral-400 md:mx-0 md:text-left">
+            We use the latest technologies to build our products. We are always
+            learning and adapting to new technologies to provide the best
+            solutions to our customers.
           </p>
         </div>
         <FocusCardsDemo />

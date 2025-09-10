@@ -7,7 +7,7 @@ export function FocusCardsDemo() {
       src: "nextjs",
     },
     {
-      title: "React", 
+      title: "React",
       src: "reactjs",
     },
     {
@@ -26,13 +26,13 @@ export function FocusCardsDemo() {
       title: "NodeJS",
       src: "nodejs",
     },
-// --------------
+    // --------------
     {
       title: "PWA",
       src: "pwa",
     },
     {
-      title: "Android", 
+      title: "Android",
       src: "android",
     },
     {
@@ -51,13 +51,13 @@ export function FocusCardsDemo() {
       title: "Adobe",
       src: "adobe",
     },
-// --------------
+    // --------------
     {
       title: "AWS",
       src: "aws",
     },
     {
-      title: "Google Cloud", 
+      title: "Google Cloud",
       src: "gcloud",
     },
     {

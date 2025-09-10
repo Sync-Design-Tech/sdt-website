@@ -27,9 +27,8 @@ export function Hero() {
   return (
     <div
       ref={parentRef}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 pt-10 md:px-8 md:pt-40 bg-neutral-50 dark:bg-neutral-900"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-50 px-4 pt-10 dark:bg-neutral-900 md:px-8 md:pt-40"
     >
-      
       <BackgroundGrids />
       {/* <CollisionMechanism
         beamOptions={{
@@ -72,63 +71,60 @@ export function Hero() {
         }}
       />
 
-<div className="text-balance relative z-20 mx-auto mb-10 mt-5 md:mt-5 max-w-4xl text-center text-3xl font-semibold tracking-tight text-gray-700 dark:text-neutral-300 md:text-7xl">
+      <div className="relative z-20 mx-auto mb-10 mt-5 max-w-4xl text-balance text-center text-3xl font-semibold tracking-tight text-gray-700 dark:text-neutral-300 md:mt-5 md:text-7xl">
         <Balancer>
-        <motion.h1 className="leading-none text-3xl md:text-7xl mb-10 mt-20 md:mb-10 md:mt-0">
-        {"YOUR ALL-IN-ONE DIGITAL PARTNER"
-          .split(" ")
-          .map((word, index) => (
-            <motion.span
-              initial={{
-                filter: "blur(10px)",
-                opacity: 0,
-                y: 10,
-              }}
-              animate={{
-                filter: "blur(0px)",
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.4,
-                delay: index * 0.05,
-              }}
-              className="inline-block mt-2 md:mt-5"
-              key={index}
-            >
-              {word}&nbsp;
-            </motion.span>
-          ))}
-      </motion.h1>
+          <motion.h1 className="mb-10 mt-20 text-3xl leading-none md:mb-10 md:mt-0 md:text-7xl">
+            {"YOUR ALL-IN-ONE DIGITAL PARTNER".split(" ").map((word, index) => (
+              <motion.span
+                initial={{
+                  filter: "blur(10px)",
+                  opacity: 0,
+                  y: 10,
+                }}
+                animate={{
+                  filter: "blur(0px)",
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.05,
+                }}
+                className="mt-2 inline-block md:mt-5"
+                key={index}
+              >
+                {word}&nbsp;
+              </motion.span>
+            ))}
+          </motion.h1>
 
-      <motion.h6 className="text-lg md:text-2xl mt-2 tracking-wider">
-  {"TECHNOLOGY, MARKETING AND DESIGN SOLUTIONS FOR BRAND SUCCESS"
-    .split(" ")
-    .map((word, index) => (
-      <motion.span
-        initial={{
-          filter: "blur(10px)",
-          opacity: 0,
-          y: 10,
-        }}
-        animate={{
-          filter: "blur(0px)",
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.4,
-          delay: index * 0.05,
-        }}
-        className="inline-block"
-        key={index}
-        style={{ fontSize: "1.6rem" }}
-      >
-        {word}&nbsp;
-      </motion.span>
-    ))}
-</motion.h6>
-
+          <motion.h6 className="mt-2 text-lg tracking-wider md:text-2xl">
+            {"TECHNOLOGY, MARKETING AND DESIGN SOLUTIONS FOR BRAND SUCCESS"
+              .split(" ")
+              .map((word, index) => (
+                <motion.span
+                  initial={{
+                    filter: "blur(10px)",
+                    opacity: 0,
+                    y: 10,
+                  }}
+                  animate={{
+                    filter: "blur(0px)",
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.05,
+                  }}
+                  className="inline-block"
+                  key={index}
+                  style={{ fontSize: "1.6rem" }}
+                >
+                  {word}&nbsp;
+                </motion.span>
+              ))}
+          </motion.h6>
         </Balancer>
       </div>
       <motion.p
@@ -137,8 +133,9 @@ export function Hero() {
         transition={{ duration: 0.2, delay: 0.5 }}
         className="relative z-20 mx-auto mt-4 max-w-lg px-4 text-center text-base/6 text-gray-600 dark:text-gray-200"
       >
-        Use the Calendar widget and schedule a 30 min discovery call where you’ll tell us about your needs.
-      {/* Enhance your digital presence with our premier tech agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services. */}
+        Use the Calendar widget and schedule a 30 min discovery call where
+        you’ll tell us about your needs.
+        {/* Enhance your digital presence with our premier tech agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services. */}
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -150,7 +147,7 @@ export function Hero() {
           as={Link}
           href="/login"
           variant="dark"
-          className="hidden md:block w-40 text-center"
+          className="hidden w-40 text-center md:block"
         >
           Go to The Oracle
         </Button>
@@ -161,7 +158,7 @@ export function Hero() {
           data-cal-config={`{"layout":"${calOptions.layout}"}`}
           as="button"
           variant="primary"
-          className="md:block w-40"
+          className="w-40 md:block"
         >
           Book a call
         </Button>
@@ -176,8 +173,7 @@ export function Hero() {
         style={{ width: "100vw", position: "relative", bottom: "0" }}
       >
         {/* <LampDemo /> */}
-        <div 
-        className="border border-neutral-200 bg-white p-2 dark:border-neutral-700 dark:bg-neutral-950">
+        <div className="border border-neutral-200 bg-white p-2 dark:border-neutral-700 dark:bg-neutral-950">
           <BentoGridDemo />
           {/* <Image
             src="https://assets.aceternity.com/pro/dashboard-new.webp"
@@ -325,10 +321,10 @@ const CollisionMechanism = React.forwardRef<
           delay: beamOptions.delay || 0,
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
-        style={{opacity: .5}}
+        style={{ opacity: 0.5 }}
         className={cn(
           "absolute left-96 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-blue-600 via-cyan-900 to-transparent",
-          beamOptions.className
+          beamOptions.className,
         )}
       />
       <AnimatePresence>
@@ -340,7 +336,7 @@ const CollisionMechanism = React.forwardRef<
               left: `${collision.coordinates.x + 20}px`,
               top: `${collision.coordinates.y}px`,
               transform: "translate(-50%, -50%)",
-              opacity: .5
+              opacity: 0.5,
             }}
           />
         )}
@@ -415,7 +411,7 @@ const GridLineVertical = ({
         "[mask-composite:exclude]",
         "z-30",
         "dark:bg-[linear-gradient(to_bottom,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
-        className
+        className,
       )}
     ></div>
   );

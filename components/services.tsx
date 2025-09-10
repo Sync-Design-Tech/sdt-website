@@ -6,67 +6,81 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import createGlobe from "cobe";
 import { AnimatedPinDemo } from "./animatedPin/animated";
-import { useTheme } from 'next-themes';
+import { useTheme } from "next-themes";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Services",
-  description: "Elevate your digital presence with our comprehensive services: custom software development, intuitive UI/UX design, global digital marketing strategies, bespoke graphic design, SEO/SEA optimization, and tailored hardware solutions. From startups to established businesses, our expert team delivers innovative web and mobile applications, brand identity enhancements, and cutting-edge technology to boost your online visibility and business growth.",
-};  
+  description:
+    "Elevate your digital presence with our comprehensive services: custom software development, intuitive UI/UX design, global digital marketing strategies, bespoke graphic design, SEO/SEA optimization, and tailored hardware solutions. From startups to established businesses, our expert team delivers innovative web and mobile applications, brand identity enhancements, and cutting-edge technology to boost your online visibility and business growth.",
+};
 
 export function Services() {
   return (
     <div
       id="services"
-      className="w-full  mx-auto bg-white dark:bg-neutral-950 py-20 px-4 md:px-8"
+      className="mx-auto w-full bg-white px-4 py-20 dark:bg-neutral-950 md:px-8"
     >
       <Header>
-        <h2 className="font-sans text-bold text-xl text-center md:text-4xl w-fit mx-auto font-bold tracking-tight text-neutral-8000 dark:text-neutral-100 text-neutral-800">
+        <h2 className="text-bold text-neutral-8000 mx-auto w-fit text-center font-sans text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 md:text-4xl">
           Our Services
         </h2>
       </Header>
-      <p className="max-w-lg text-sm text-neutral-600 text-center mx-auto mt-4 dark:text-neutral-400">
-       Enhance your digital presence with our agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services.
+      <p className="mx-auto mt-4 max-w-lg text-center text-sm text-neutral-600 dark:text-neutral-400">
+        Enhance your digital presence with our agency. We specialize in software
+        development, digital marketing, and graphic design. Whether a startup or
+        established business, our expert team brings your vision to life.
+        Elevate your brand with our tailored services.
       </p>
-      <div className="mt-20  grid cols-1 md:grid-cols-5 gap-4 md:auto-rows-[25rem] max-w-7xl mx-auto">
-      <Card className="flex flex-col justify-between md:col-span-3">
-      <CardSkeletonBody>
-        <SkeletonOne />
-      </CardSkeletonBody>
-      <CardContent className="p-4 md:p-6 flex flex-col">
-        <CardTitle className="text-lg md:text-xl font-bold mb-2">Software Development - Websites and applications</CardTitle>
-        <CardDescription className="text-sm md:text-base flex-grow">
-          Put your business on the map with our custom software solutions. We specialize in web and mobile app development, ensuring your brand stands out in the digital landscape and your operations run seamlessly.
-        </CardDescription>
-      </CardContent>
-    </Card>
+      <div className="cols-1 mx-auto mt-20 grid max-w-7xl gap-4 md:auto-rows-[25rem] md:grid-cols-5">
+        <Card className="flex flex-col justify-between md:col-span-3">
+          <CardSkeletonBody>
+            <SkeletonOne />
+          </CardSkeletonBody>
+          <CardContent className="flex flex-col p-4 md:p-6">
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
+              Software Development - Websites and applications
+            </CardTitle>
+            <CardDescription className="flex-grow text-sm md:text-base">
+              Put your business on the map with our custom software solutions.
+              We specialize in web and mobile app development, ensuring your
+              brand stands out in the digital landscape and your operations run
+              seamlessly.
+            </CardDescription>
+          </CardContent>
+        </Card>
 
-    <Card className="flex flex-col justify-between md:col-span-2">
-      <CardContent className="p-4 md:p-6 flex flex-col">
-        <CardTitle className="text-lg md:text-xl font-bold mb-2">UI/UX Design</CardTitle>
+        <Card className="flex flex-col justify-between md:col-span-2">
+          <CardContent className="flex flex-col p-4 md:p-6">
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
+              UI/UX Design
+            </CardTitle>
             <CardDescription>
               With our intuitive workflow, you can easily manage your app
               without complex steps.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
-            <div className="w-full h-full p-4 rounded-lg bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 ml-6 mt-2">
+            <div className="ml-6 mt-2 h-full w-full rounded-lg border border-neutral-200 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800">
               <Image
                 src="https://assets.aceternity.com/pro/dashboard.webp"
                 alt="Dashboard"
                 width={500}
                 height={500}
-                className="w-full object-cover rounded-lg "
+                className="w-full rounded-lg object-cover"
               />
             </div>
           </CardSkeletonBody>
         </Card>
 
         <Card className="flex flex-col justify-between md:col-span-2">
-        <CardContent className="p-4 md:p-6 flex flex-col">
-        <CardTitle className="text-lg md:text-xl font-bold mb-2">Reach audiences worldwide</CardTitle>
+          <CardContent className="flex flex-col p-4 md:p-6">
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
+              Reach audiences worldwide
+            </CardTitle>
             <CardDescription>
-            Empowering businesses to reach global audiences through innovative digital marketing strategies and cutting-edge technology.
+              Empowering businesses to reach global audiences through innovative
+              digital marketing strategies and cutting-edge technology.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -74,14 +88,18 @@ export function Services() {
           </CardSkeletonBody>
         </Card>
         <Card className="flex flex-col justify-between md:col-span-3">
-      <CardContent className="p-4 md:p-6 flex flex-col">
-        <CardTitle className="text-lg md:text-xl font-bold mb-2">Graphic Design for your Brand</CardTitle>
+          <CardContent className="flex flex-col p-4 md:p-6">
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
+              Graphic Design for your Brand
+            </CardTitle>
             <CardDescription>
-            Elevate your brands visual identity with our bespoke graphic design services, tailored to capture and communicate your unique story.
+              Elevate your brands visual identity with our bespoke graphic
+              design services, tailored to capture and communicate your unique
+              story.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
-            <div className="w-full h-full p-4 rounded-lg bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 ml-6 mt-2">
+            <div className="ml-6 mt-2 h-full w-full rounded-lg border border-neutral-200 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800">
               <Image
                 src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/gd.png"
                 // src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/agd.png"
@@ -89,39 +107,46 @@ export function Services() {
                 width={1500}
                 height={1500}
                 quality={100}
-                className="w-full object-cover rounded-lg "
+                className="w-full rounded-lg object-cover"
               />
             </div>
           </CardSkeletonBody>
         </Card>
         <Card className="flex flex-col justify-between md:col-span-3">
-          <div 
-          className="overflow-hidden relative w-full h-full pt-8 px-8">
+          <div className="relative h-full w-full overflow-hidden px-8 pt-8">
             <AnimatedPinDemo />
           </div>
-      <CardContent className="p-4 md:p-6 flex flex-col">
-        <CardTitle className="text-lg md:text-xl font-bold mb-2">Digital Marketing - SEA and SEO</CardTitle>
+          <CardContent className="flex flex-col p-4 md:p-6">
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
+              Digital Marketing - SEA and SEO
+            </CardTitle>
             <CardDescription>
-              Unlock unparalleled online visibility and boost your business growth with our comprehensive Digital Marketing services, specializing in Search Engine Advertising (SEA) and Search Engine Optimization (SEO).
+              Unlock unparalleled online visibility and boost your business
+              growth with our comprehensive Digital Marketing services,
+              specializing in Search Engine Advertising (SEA) and Search Engine
+              Optimization (SEO).
             </CardDescription>
           </CardContent>
         </Card>
 
         <Card className="flex flex-col justify-between md:col-span-2">
-      <CardContent className="p-4 md:p-6 flex flex-col">
-        <CardTitle className="text-lg md:text-xl font-bold mb-2">Devices and hardware</CardTitle>
+          <CardContent className="flex flex-col p-4 md:p-6">
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
+              Devices and hardware
+            </CardTitle>
             <CardDescription>
-              We provide the hardware and devices needed to run your business smoothly at the best price. Configured to server your needs.
+              We provide the hardware and devices needed to run your business
+              smoothly at the best price. Configured to server your needs.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
-            <div className="w-full h-full p-4 rounded-lg bg-neutral-100 border border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 ml-6 mt-2">
+            <div className="ml-6 mt-2 h-full w-full rounded-lg border border-neutral-200 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800">
               <Image
                 src="https://s3websitedata.s3.eu-west-2.amazonaws.com/public/samsung-tab-active4-pro.jpg"
                 alt="Dashboard"
                 width={500}
                 height={500}
-                className="w-full object-cover rounded-lg "
+                className="w-full rounded-lg object-cover"
               />
             </div>
           </CardSkeletonBody>
@@ -133,7 +158,7 @@ export function Services() {
 
 const Header = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative w-fit mx-auto p-4 flex items-center justify-center">
+    <div className="relative mx-auto flex w-fit items-center justify-center p-4">
       <motion.div
         initial={{
           width: 0,
@@ -151,31 +176,31 @@ const Header = ({ children }: { children: React.ReactNode }) => {
           duration: 1,
           ease: "easeInOut",
         }}
-        className="absolute inset-0 h-full border border-neutral-200 dark:border-neutral-800 w-full"
+        className="absolute inset-0 h-full w-full border border-neutral-200 dark:border-neutral-800"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.1, ease: "easeInOut" }}
-          className="absolute -top-1 -left-1 h-2 w-2 dark:bg-neutral-800 bg-neutral-200"
+          className="absolute -left-1 -top-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.1, ease: "easeInOut" }}
-          className="absolute -top-1 -right-1 h-2 w-2 dark:bg-neutral-800 bg-neutral-200"
+          className="absolute -right-1 -top-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.1, ease: "easeInOut" }}
-          className="absolute -bottom-1 -left-1 h-2 w-2 dark:bg-neutral-800 bg-neutral-200"
+          className="absolute -bottom-1 -left-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.1, ease: "easeInOut" }}
-          className="absolute -bottom-1 -right-1 h-2 w-2 dark:bg-neutral-800 bg-neutral-200"
+          className="absolute -bottom-1 -right-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
       </motion.div>
       {children}
@@ -196,8 +221,8 @@ export const SkeletonOne = () => {
       <motion.div
         {...props}
         className={cn(
-          "w-full h-14 md:h-40 p-2 rounded-lg relative shadow-lg flex items-center bg-gradient-to-b from-white to-white dark:from-neutral-800 dark:to-neutral-700 justify-center",
-          props.className
+          "relative flex h-14 w-full items-center justify-center rounded-lg bg-gradient-to-b from-white to-white p-2 shadow-lg dark:from-neutral-800 dark:to-neutral-700 md:h-40",
+          props.className,
         )}
       >
         {children}
@@ -205,13 +230,13 @@ export const SkeletonOne = () => {
     );
   };
   return (
-    <div className="relative flex items-center justify-center  w-full h-full">
+    <div className="relative flex h-full w-full items-center justify-center">
       <svg
         width="128"
         height="69"
         viewBox="0 0 128 69"
         fill="none"
-        className="absolute left-1/2 -translate-x-[90%]  -top-2 text-neutral-200 dark:text-neutral-800"
+        className="absolute -top-2 left-1/2 -translate-x-[90%] text-neutral-200 dark:text-neutral-800"
       >
         <path
           d="M1.00002 0.5L1.00001 29.5862C1 36.2136 6.37259 41.5862 13 41.5862H115C121.627 41.5862 127 46.9588 127 53.5862L127 75"
@@ -258,7 +283,7 @@ export const SkeletonOne = () => {
         height="105"
         viewBox="0 0 62 105"
         fill="none"
-        className="absolute left-1/2 -translate-x-0  -bottom-2 dark:text-neutral-800 text-neutral-200"
+        className="absolute -bottom-2 left-1/2 -translate-x-0 text-neutral-200 dark:text-neutral-800"
       >
         <path
           d="M1.00001 -69L1 57.5C1 64.1274 6.37258 69.5 13 69.5H49C55.6274 69.5 61 74.8726 61 81.5L61 105"
@@ -297,7 +322,7 @@ export const SkeletonOne = () => {
           </motion.linearGradient>
         </defs>
       </svg>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-lg mx-auto w-full relative z-30 [perspective:1000px] [transform-style:preserve-3d] p-8 sm:p-0">
+      <div className="relative z-30 mx-auto grid w-full max-w-lg grid-cols-1 gap-4 p-8 [perspective:1000px] [transform-style:preserve-3d] sm:p-0 md:grid-cols-3">
         <Container
           initial={{ y: 0 }}
           animate={{ y: [0, -10, 0], rotateX: [0, 10, 0] }}
@@ -307,13 +332,13 @@ export const SkeletonOne = () => {
             repeat: Infinity,
             repeatDelay: 6,
           }}
-          className="overflow-hidden px-2 flex-col justify-center font-mono items-start text-neutral-800 dark:text-neutral-300"
+          className="flex-col items-start justify-center overflow-hidden px-2 font-mono text-neutral-800 dark:text-neutral-300"
         >
-          <p className="text-[8px] bg-transparent ">git add .</p>
-          <p className="text-[8px] bg-transparent">
+          <p className="bg-transparent text-[8px]">git add .</p>
+          <p className="bg-transparent text-[8px]">
             git commit -m &quot;update&quot;
           </p>
-          <p className="text-[8px] bg-transparent">git push</p>
+          <p className="bg-transparent text-[8px]">git push</p>
         </Container>
         <Container
           initial={{ y: 0 }}
@@ -338,10 +363,10 @@ export const SkeletonOne = () => {
             repeat: Infinity,
             repeatDelay: 6,
           }}
-          className="flex flex-col justify-center items-center"
+          className="flex flex-col items-center justify-center"
         >
           <AWSLogo />
-          <p className="text-[8px] bg-transparent ">your site is live ✨</p>
+          <p className="bg-transparent text-[8px]">your site is live ✨</p>
         </Container>
       </div>
     </div>
@@ -404,8 +429,8 @@ const AWSLogo = () => {
 
 export const SkeletonTwo = () => {
   return (
-    <div className="h-60 md:h-60  flex flex-col items-center relative bg-transparent dark:bg-transparent mt-10">
-      <Globe className="absolute -right-0 md:-right-10 -bottom-80 md:-bottom-72" />
+    <div className="relative mt-10 flex h-60 flex-col items-center bg-transparent dark:bg-transparent md:h-60">
+      <Globe className="absolute -bottom-80 -right-0 md:-bottom-72 md:-right-10" />
     </div>
   );
 };
@@ -414,15 +439,31 @@ export const Globe = ({ className }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme, resolvedTheme } = useTheme();
   const [isDark, setIsDark] = useState(0);
-  const [color, setColor] = useState<[number, number, number]>([0.19, 0.19, 0.19]);
+  const [color, setColor] = useState<[number, number, number]>([
+    0.19, 0.19, 0.19,
+  ]);
   const [glow, setGlow] = useState<[number, number, number]>([0, 0, 0]);
-  const [markerColor, setMarkerColor] = useState<[number, number, number]>([0.97, 0.81, 0.035]);
+  const [markerColor, setMarkerColor] = useState<[number, number, number]>([
+    0.97, 0.81, 0.035,
+  ]);
 
   useEffect(() => {
     setIsDark(theme === "dark" || resolvedTheme === "dark" ? 1 : 0);
-    setColor(theme === "dark" || resolvedTheme === "dark" ? [0.19, 0.19, 0.19] : [1,1,1]);
-    setGlow(theme === "dark" || resolvedTheme === "dark" ?  [0, .65, .71] : [0.5, 0.5, 0.5]);
-    setMarkerColor(theme === "dark" || resolvedTheme === "dark" ? [0, .65, .71] : [0.97, 0.81, 0.035]);
+    setColor(
+      theme === "dark" || resolvedTheme === "dark"
+        ? [0.19, 0.19, 0.19]
+        : [1, 1, 1],
+    );
+    setGlow(
+      theme === "dark" || resolvedTheme === "dark"
+        ? [0, 0.65, 0.71]
+        : [0.5, 0.5, 0.5],
+    );
+    setMarkerColor(
+      theme === "dark" || resolvedTheme === "dark"
+        ? [0, 0.65, 0.71]
+        : [0.97, 0.81, 0.035],
+    );
   }, [theme, resolvedTheme]);
 
   useEffect(() => {
@@ -479,7 +520,7 @@ const CardSkeletonBody = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("overflow-hidden relative w-full h-full", className)}>
+    <div className={cn("relative h-full w-full overflow-hidden", className)}>
       {children}
     </div>
   );
@@ -505,8 +546,8 @@ const CardTitle = ({
   return (
     <h3
       className={cn(
-        "font-sans  text-base font-medium tracking-tight text-neutral-700 dark:text-neutral-100",
-        className
+        "font-sans text-base font-medium tracking-tight text-neutral-700 dark:text-neutral-100",
+        className,
       )}
     >
       {children}
@@ -523,8 +564,8 @@ const CardDescription = ({
   return (
     <p
       className={cn(
-        "font-sans max-w-xm text-base font-normal tracking-tight mt-2 text-neutral-500 dark:text-neutral-400",
-        className
+        "max-w-xm mt-2 font-sans text-base font-normal tracking-tight text-neutral-500 dark:text-neutral-400",
+        className,
       )}
     >
       {children}
@@ -543,8 +584,8 @@ const Card = ({
     <motion.div
       whileHover="animate"
       className={cn(
-        "group isolate flex flex-col rounded-2xl bg-white dark:bg-neutral-900 shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] overflow-hidden",
-        className
+        "group isolate flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] dark:bg-neutral-900",
+        className,
       )}
     >
       {children}

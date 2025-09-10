@@ -1,15 +1,23 @@
-import { type NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import Mail from 'nodemailer/lib/mailer';
-import {EmailTemplate} from '@/app/api/emailTemplate';
-import { address } from 'framer-motion/client';
+import { type NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import Mail from "nodemailer/lib/mailer";
+import { EmailTemplate } from "@/app/api/emailTemplate";
+import { address } from "framer-motion/client";
 
 export async function POST(request: NextRequest) {
-  const { email, given_name, family_name, phone, message, type } = await request.json();
-  const emailBody = EmailTemplate( email, given_name, family_name, phone, message, type );
+  const { email, given_name, family_name, phone, message, type } =
+    await request.json();
+  const emailBody = EmailTemplate(
+    email,
+    given_name,
+    family_name,
+    phone,
+    message,
+    type,
+  );
 
   const transport = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     /* 
       setting service as 'gmail' is same as providing these setings:
       host: "smtp.gmail.com",
@@ -25,16 +33,16 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  const {html, attachments, subject, to, info} ={...emailBody}
+  const { html, attachments, subject, to, info } = { ...emailBody };
 
   if (!process.env.MY_EMAIL) {
-    throw new Error('MY_EMAIL environment variable is not defined');
+    throw new Error("MY_EMAIL environment variable is not defined");
   }
 
   const sender = {
     name: "Sync Design Technologies",
-    address: process.env.MY_EMAIL
-  }
+    address: process.env.MY_EMAIL,
+  };
 
   const mailOptions: Mail.Options = {
     from: sender,
@@ -42,14 +50,14 @@ export async function POST(request: NextRequest) {
     subject,
     // cc: cc,
     html,
-    attachments
+    attachments,
   };
 
   const sendMailPromise = () =>
     new Promise<string>((resolve, reject) => {
       transport.sendMail(mailOptions, function (err) {
         if (!err) {
-          resolve('Email sent');
+          resolve("Email sent");
         } else {
           reject(err.message);
         }
@@ -58,7 +66,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Email sent' });
+    return NextResponse.json({ message: "Email sent" });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }
