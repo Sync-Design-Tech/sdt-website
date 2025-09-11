@@ -1,18 +1,16 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
+import { PHONE_NUMBER } from '@/constants/constants';
 
 export const metadata: Metadata = {
-  title: "Cookies Policy | SDT",
+  title: 'Cookies Policy | SDT',
   description:
-    "Review the Cookies Policy for SDT and understand how we use cookies and similar technologies on our website.",
+    'Review the Cookies Policy for SDT and understand how we use cookies and similar technologies on our website.',
 };
 
 export default function CookiesPolicyPage() {
   return (
     <main className="mt-20">
-      <div
-        id="cookies-policy"
-        className="w-full bg-white px-4 pb-20 dark:bg-neutral-950 md:px-8"
-      >
+      <div id="cookies-policy" className="w-full bg-white px-4 pb-20 dark:bg-neutral-950 md:px-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
           <div className="flex w-full flex-col">
             <h1 className="my-8 text-center text-3xl font-bold text-black dark:text-white md:text-left md:text-5xl">
@@ -28,10 +26,9 @@ export default function CookiesPolicyPage() {
               content={
                 <>
                   <p>
-                    Sync Design Tech Limited (we, us, or our) uses cookies and
-                    similar technologies to improve your experience on our
-                    website. This Cookies Policy explains what cookies are, how
-                    we use them, and how you can manage them.
+                    Sync Design Tech Limited (we, us, or our) uses cookies and similar technologies to improve your
+                    experience on our website. This Cookies Policy explains what cookies are, how we use them, and how
+                    you can manage them.
                   </p>
                 </>
               }
@@ -42,11 +39,9 @@ export default function CookiesPolicyPage() {
               content={
                 <>
                   <p>
-                    Cookies are small text files that are placed on your device
-                    (computer, smartphone, or other electronic device) when you
-                    visit a website. They help the website to recognize your
-                    device and store some information about your preferences or
-                    past actions.
+                    Cookies are small text files that are placed on your device (computer, smartphone, or other
+                    electronic device) when you visit a website. They help the website to recognize your device and
+                    store some information about your preferences or past actions.
                   </p>
                 </>
               }
@@ -71,39 +66,26 @@ export default function CookiesPolicyPage() {
               title="4. Types of Cookies We Use"
               content={
                 <>
-                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    Essential Cookies
-                  </h3>
+                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">Essential Cookies</h3>
                   <p className="mb-4">
-                    These cookies are necessary for the website to function and
-                    cannot be switched off in our systems. They are usually only
-                    set in response to actions made by you, such as setting your
-                    privacy preferences or filling in forms.
+                    These cookies are necessary for the website to function and cannot be switched off in our systems.
+                    They are usually only set in response to actions made by you, such as setting your privacy
+                    preferences or filling in forms.
                   </p>
-                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    Performance Cookies
-                  </h3>
+                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">Performance Cookies</h3>
                   <p className="mb-4">
-                    These cookies collect information about how visitors use a
-                    website, such as which pages are visited most often. This
-                    helps us improve how our website works.
+                    These cookies collect information about how visitors use a website, such as which pages are visited
+                    most often. This helps us improve how our website works.
                   </p>
-                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    Functionality Cookies
-                  </h3>
+                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">Functionality Cookies</h3>
                   <p className="mb-4">
-                    These cookies allow the website to provide enhanced
-                    functionality and personalization. They may be set by us or
-                    by third-party providers whose services we have added to our
-                    pages.
+                    These cookies allow the website to provide enhanced functionality and personalization. They may be
+                    set by us or by third-party providers whose services we have added to our pages.
                   </p>
-                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">
-                    Targeting/Advertising Cookies
-                  </h3>
+                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white">Targeting/Advertising Cookies</h3>
                   <p className="mb-4">
-                    These cookies are used to deliver advertisements that are
-                    more relevant to you and your interests. They may be set
-                    through our site by our advertising partners.
+                    These cookies are used to deliver advertisements that are more relevant to you and your interests.
+                    They may be set through our site by our advertising partners.
                   </p>
                 </>
               }
@@ -114,15 +96,13 @@ export default function CookiesPolicyPage() {
               content={
                 <>
                   <p>
-                    You can manage or disable cookies at any time by adjusting
-                    your browser settings. However, please note that disabling
-                    cookies may affect the functionality of our website and your
-                    ability to access certain features.
+                    You can manage or disable cookies at any time by adjusting your browser settings. However, please
+                    note that disabling cookies may affect the functionality of our website and your ability to access
+                    certain features.
                   </p>
                   <p className="my-4">
-                    For more information on how to manage cookies in your
-                    browser, please visit your browsers help section or the
-                    following links:
+                    For more information on how to manage cookies in your browser, please visit your browsers help
+                    section or the following links:
                   </p>
                   <ul className="my-4 list-inside list-disc text-neutral-600 dark:text-neutral-400">
                     <li>
@@ -175,10 +155,9 @@ export default function CookiesPolicyPage() {
               content={
                 <>
                   <p>
-                    We may allow third-party service providers to place cookies
-                    on your device for advertising and analytics purposes. These
-                    cookies are subject to the respective privacy policies of
-                    these third parties.
+                    We may allow third-party service providers to place cookies on your device for advertising and
+                    analytics purposes. These cookies are subject to the respective privacy policies of these third
+                    parties.
                   </p>
                 </>
               }
@@ -189,11 +168,9 @@ export default function CookiesPolicyPage() {
               content={
                 <>
                   <p>
-                    We may update this Cookies Policy from time to time to
-                    reflect changes in technology or legislation affecting the
-                    way we use cookies. We encourage you to review this page
-                    periodically for the latest information on our cookie
-                    practices.
+                    We may update this Cookies Policy from time to time to reflect changes in technology or legislation
+                    affecting the way we use cookies. We encourage you to review this page periodically for the latest
+                    information on our cookie practices.
                   </p>
                 </>
               }
@@ -203,10 +180,7 @@ export default function CookiesPolicyPage() {
               title="8. Contact Us"
               content={
                 <>
-                  <p>
-                    If you have any questions or concerns about our use of
-                    cookies, please contact us at:
-                  </p>
+                  <p>If you have any questions or concerns about our use of cookies, please contact us at:</p>
                   <br />
                   <address className="mb-4 not-italic text-neutral-600 dark:text-neutral-400">
                     <strong>Sync Design Tech Limited</strong>
@@ -221,20 +195,14 @@ export default function CookiesPolicyPage() {
                     <br />
                   </address>
                   <p className="text-neutral-600 dark:text-neutral-400">
-                    Email:{" "}
-                    <a
-                      href="mailto:info@syncdesign.tech"
-                      className="text-blue-600 hover:underline"
-                    >
+                    Email:{' '}
+                    <a href="mailto:info@syncdesign.tech" className="text-blue-600 hover:underline">
                       info@syncdesign.tech
                     </a>
                     <br />
-                    Phone:{" "}
-                    <a
-                      href="tel:+447490462682"
-                      className="text-blue-600 hover:underline"
-                    >
-                      +44 (0) 7490 462682
+                    Phone:{' '}
+                    <a href={`tel:${PHONE_NUMBER}`} className="text-blue-600 hover:underline">
+                      {PHONE_NUMBER}
                     </a>
                   </p>
                 </>
@@ -245,8 +213,8 @@ export default function CookiesPolicyPage() {
 
             <p className="mt-8 text-center text-neutral-600 dark:text-neutral-400">
               <strong>
-                Thank you for visiting Sync Design Tech. We value your privacy
-                and are committed to protecting your personal information.
+                Thank you for visiting Sync Design Tech. We value your privacy and are committed to protecting your
+                personal information.
               </strong>
             </p>
           </div>
@@ -256,21 +224,11 @@ export default function CookiesPolicyPage() {
   );
 }
 
-function Section({
-  title,
-  content,
-}: {
-  title: string;
-  content: React.ReactNode;
-}) {
+function Section({ title, content }: { title: string; content: React.ReactNode }) {
   return (
     <section className="mb-12">
-      <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">
-        {title}
-      </h2>
-      <div className="mb-4 text-neutral-600 dark:text-neutral-400">
-        {content}
-      </div>
+      <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">{title}</h2>
+      <div className="mb-4 text-neutral-600 dark:text-neutral-400">{content}</div>
       <hr className="my-8 border-neutral-300 dark:border-neutral-700" />
     </section>
   );

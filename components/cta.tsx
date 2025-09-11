@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-
+import { PHONE_NUMBER } from '@/constants/constants';
 import { motion, useTransform, AnimatePresence, useMotionValue, useSpring, animate, stagger } from 'framer-motion';
 
 import { SignupFormDemo } from './contactForm/form';
@@ -41,8 +41,8 @@ export function CTA() {
               </a>
               <br />
               Phone:{' '}
-              <a href="tel:+447490462682" className="text-blue-600 hover:underline">
-                +44 (0) 7490 462682
+              <a href={`tel:${PHONE_NUMBER}`} className="text-blue-600 hover:underline">
+                {PHONE_NUMBER}
               </a>
             </p>
             <div className="relative m-6 mx-auto h-64 w-full max-w-md md:mx-0">

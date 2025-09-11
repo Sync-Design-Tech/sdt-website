@@ -1,18 +1,16 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
+import { PHONE_NUMBER } from '@/constants/constants';
 
 export const metadata: Metadata = {
-  title: "Terms of Service | SDT",
+  title: 'Terms of Service | SDT',
   description:
-    "Review the Terms of Service for SDT and understand the conditions and guidelines for using our digital technology and marketing services.",
+    'Review the Terms of Service for SDT and understand the conditions and guidelines for using our digital technology and marketing services.',
 };
 
 export default function TermsOfServicePage() {
   return (
     <main className="mt-20">
-      <div
-        id="terms-of-service"
-        className="w-full bg-white px-4 pb-20 dark:bg-neutral-950 md:px-8"
-      >
+      <div id="terms-of-service" className="w-full bg-white px-4 pb-20 dark:bg-neutral-950 md:px-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
           <div className="flex w-full flex-col">
             <h1 className="my-8 text-center text-3xl font-bold text-black dark:text-white md:text-left md:text-5xl">
@@ -39,14 +37,9 @@ export default function TermsOfServicePage() {
                 <>
                   <p>As a condition of using our services, you agree to:</p>
                   <ul className="mb-4 list-inside list-disc text-neutral-600 dark:text-neutral-400">
-                    <li>
-                      Provide accurate and complete information when requested.
-                    </li>
+                    <li>Provide accurate and complete information when requested.</li>
                     <li>Comply with all applicable laws and regulations.</li>
-                    <li>
-                      Respect our intellectual property rights and those of
-                      third parties.
-                    </li>
+                    <li>Respect our intellectual property rights and those of third parties.</li>
                   </ul>
                 </>
               }
@@ -57,18 +50,14 @@ export default function TermsOfServicePage() {
               content={
                 <>
                   <p>
-                    You agree not to use our services for any unlawful or
-                    prohibited activities, including but not limited to:
+                    You agree not to use our services for any unlawful or prohibited activities, including but not
+                    limited to:
                   </p>
                   <ul className="mb-4 list-inside list-disc text-neutral-600 dark:text-neutral-400">
-                    <li>
-                      Engaging in any form of harassment or offensive behavior.
-                    </li>
+                    <li>Engaging in any form of harassment or offensive behavior.</li>
                     <li>Transmitting harmful or malicious code.</li>
                     <li>Infringing upon any intellectual property rights.</li>
-                    <li>
-                      Attempting to gain unauthorized access to our systems.
-                    </li>
+                    <li>Attempting to gain unauthorized access to our systems.</li>
                   </ul>
                 </>
               }
@@ -79,17 +68,13 @@ export default function TermsOfServicePage() {
               content={
                 <>
                   <p>
-                    All content, features, and functionality (including but not
-                    limited to information, software, text, displays, images,
-                    video, and audio) are owned by Sync Design Tech or its
-                    licensors and are protected by international copyright,
-                    trademark, patent, trade secret, and other intellectual
-                    property laws.
+                    All content, features, and functionality (including but not limited to information, software, text,
+                    displays, images, video, and audio) are owned by Sync Design Tech or its licensors and are protected
+                    by international copyright, trademark, patent, trade secret, and other intellectual property laws.
                   </p>
                   <p>
-                    You may not reproduce, distribute, modify, or create
-                    derivative works of any material from our services without
-                    prior written permission.
+                    You may not reproduce, distribute, modify, or create derivative works of any material from our
+                    services without prior written permission.
                   </p>
                 </>
               }
@@ -129,9 +114,7 @@ export default function TermsOfServicePage() {
               title="12. Contact Information"
               content={
                 <>
-                  <p>
-                    For any questions about these Terms, please contact us at:
-                  </p>
+                  <p>For any questions about these Terms, please contact us at:</p>
                   <br />
                   <address className="mb-4 not-italic text-neutral-600 dark:text-neutral-400">
                     <strong>Sync Design Tech Limited</strong>
@@ -146,20 +129,14 @@ export default function TermsOfServicePage() {
                     <br />
                   </address>
                   <p className="text-neutral-600 dark:text-neutral-400">
-                    Email:{" "}
-                    <a
-                      href="mailto:info@syncdesign.tech"
-                      className="text-blue-600 hover:underline"
-                    >
+                    Email:{' '}
+                    <a href="mailto:info@syncdesign.tech" className="text-blue-600 hover:underline">
                       info@syncdesign.tech
                     </a>
                     <br />
-                    Phone:{" "}
-                    <a
-                      href="tel:+447490462682"
-                      className="text-blue-600 hover:underline"
-                    >
-                      +44 (0) 7490 462682
+                    Phone:{' '}
+                    <a href={`tel:${PHONE_NUMBER}`} className="text-blue-600 hover:underline">
+                      {PHONE_NUMBER}
                     </a>
                   </p>
                 </>
@@ -170,8 +147,8 @@ export default function TermsOfServicePage() {
 
             <p className="mt-8 text-center text-neutral-600 dark:text-neutral-400">
               <strong>
-                Thank you for choosing Sync Design Tech. We appreciate your
-                business and look forward to working with you.
+                Thank you for choosing Sync Design Tech. We appreciate your business and look forward to working with
+                you.
               </strong>
             </p>
           </div>
@@ -181,21 +158,11 @@ export default function TermsOfServicePage() {
   );
 }
 
-function Section({
-  title,
-  content,
-}: {
-  title: string;
-  content: React.ReactNode;
-}) {
+function Section({ title, content }: { title: string; content: React.ReactNode }) {
   return (
     <section className="mb-12">
-      <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">
-        {title}
-      </h2>
-      <div className="mb-4 text-neutral-600 dark:text-neutral-400">
-        {content}
-      </div>
+      <h2 className="mb-4 text-2xl font-bold text-black dark:text-white">{title}</h2>
+      <div className="mb-4 text-neutral-600 dark:text-neutral-400">{content}</div>
       <hr className="my-8 border-neutral-300 dark:border-neutral-700" />
     </section>
   );

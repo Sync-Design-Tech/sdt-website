@@ -1,9 +1,10 @@
-"use client";
-import { Metadata } from "next";
-import { Button } from "../../components/button";
-import { CONSTANTS } from "@/constants/links";
-import { useCalEmbed } from "@/app/hooks/useCalEmbed";
-import { SignupFormDemo } from "../../components/contactForm/form";
+'use client';
+import { Metadata } from 'next';
+import { Button } from '../../components/button';
+import { CONSTANTS } from '@/constants/links';
+import { useCalEmbed } from '@/app/hooks/useCalEmbed';
+import { SignupFormDemo } from '../../components/contactForm/form';
+import { PHONE_NUMBER } from '@/constants/constants';
 
 // export const metadata: Metadata = {
 //   title: "Log in | SDT",
@@ -24,10 +25,7 @@ export default function BookACallPage() {
   });
   return (
     <main className="mt-20">
-      <div
-        id="privacy-policy"
-        className="w-full bg-white px-4 pb-20 dark:bg-neutral-950 md:px-8"
-      >
+      <div id="privacy-policy" className="w-full bg-white px-4 pb-20 dark:bg-neutral-950 md:px-8">
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
           <div className="flex w-full flex-col">
             <h1 className="mt-8 text-center text-3xl font-bold text-black dark:text-white md:text-left md:text-5xl">
@@ -37,11 +35,9 @@ export default function BookACallPage() {
               <div className="flex justify-center">
                 <div className="mt-8 text-center md:text-left">
                   <p className="mx-auto mt-8 max-w-md text-center text-sm text-neutral-600 dark:text-neutral-400 md:mx-0 md:text-left md:text-base">
-                    Enhance your digital presence with our agency. We specialize
-                    in software development, digital marketing, and graphic
-                    design. Whether a startup or established business, our
-                    expert team brings your vision to life. Elevate your brand
-                    with our tailored services.
+                    Enhance your digital presence with our agency. We specialize in software development, digital
+                    marketing, and graphic design. Whether a startup or established business, our expert team brings
+                    your vision to life. Elevate your brand with our tailored services.
                   </p>
                   <Button
                     data-cal-namespace={calOptions.namespace}
@@ -67,20 +63,14 @@ export default function BookACallPage() {
                   </address>
                   <p className="text-neutral-600 dark:text-neutral-400">
                     <br />
-                    Email:{" "}
-                    <a
-                      href="mailto:info@syncdesign.tech"
-                      className="text-blue-600 hover:underline"
-                    >
+                    Email:{' '}
+                    <a href="mailto:info@syncdesign.tech" className="text-blue-600 hover:underline">
                       info@syncdesign.tech
                     </a>
                     <br />
-                    Phone:{" "}
-                    <a
-                      href="tel:+447490462682"
-                      className="text-blue-600 hover:underline"
-                    >
-                      +44 (0) 7490 462682
+                    Phone:{' '}
+                    <a href={`tel:${PHONE_NUMBER}`} className="text-blue-600 hover:underline">
+                      {PHONE_NUMBER}
                     </a>
                   </p>
                 </div>

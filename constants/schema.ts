@@ -1,3 +1,5 @@
+import { PHONE_NUMBER } from './constants';
+
 export const siteSchema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -21,13 +23,13 @@ export const siteSchema = {
         url: 'https://www.syncdesign.tech/icon.png',
       },
       email: 'info@syncdesign.tech',
-      telephone: '+44 7490 462682',
+      telephone: `${PHONE_NUMBER}`,
       contactPoint: [
         {
           '@type': 'ContactPoint',
           contactType: 'sales',
           email: 'info@syncdesign.tech',
-          telephone: '+44 7490 462682',
+          telephone: `${PHONE_NUMBER}`,
           availableLanguage: ['en'],
         },
       ],
@@ -62,7 +64,7 @@ export const siteSchema = {
         'Hardware solutions',
       ],
       provider: { '@id': 'https://www.syncdesign.tech/#organization' },
-      telephone: '+44 7490 462682',
+      telephone: `${PHONE_NUMBER}`,
       logo: {
         '@type': 'ImageObject',
         url: 'https://www.syncdesign.tech/icon.png',
