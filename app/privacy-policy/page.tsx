@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | SDT',
   description:
     "Read SDT's Privacy Policy to understand how we handle your data. Learn about our commitment to protecting your privacy and ensuring the security of your information at our digital technology and marketing agency.",
+  alternates: {
+    canonical: '/privacy-policy',
+  },
+  keywords: ['privacy policy', 'data protection', 'GDPR', 'personal data', 'Sync Design Technologies privacy'],
 };
 
 export default function PrivacyPage() {

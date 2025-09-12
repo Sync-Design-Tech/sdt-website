@@ -15,9 +15,21 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://syncdesign.tech'),
   title: 'Sync Design Technologies',
   description:
     'Your All-in-One Digital Partner for technology, marketing, and design solutions for Brand Success | Your Brand, Your Ideas, Your Identity',
+  alternates: {
+    canonical: '/',
+  },
+  keywords: [
+    'technology agency London',
+    'custom software development',
+    'UI UX design',
+    'digital marketing agency',
+    'branding and design',
+    'Sync Design Technologies',
+  ],
   robots: {
     index: true,
     googleBot: {
@@ -30,13 +42,23 @@ export const metadata: Metadata = {
     description:
       'Your All-in-One Digital Partner for Web, Apps, and Brand Success | Your Brand, Your Ideas, Your Identity',
     type: 'website',
-    url: 'https://www.syncdesign.tech/',
+    url: 'https://syncdesign.tech/',
+    siteName: 'Sync Design Technologies',
+    images: [
+      {
+        url: '/logos/sdt-open-graph.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sync Design Technologies',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sync Design Technologies',
     description:
       'Your All-in-One Digital Partner for Web, Apps, and Brand Success | Your Brand, Your Ideas, Your Identity',
+    images: ['/logos/sdt-open-graph.png'],
   },
 };
 

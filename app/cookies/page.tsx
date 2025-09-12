@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: 'Cookies Policy | SDT',
   description:
     'Review the Cookies Policy for SDT and understand how we use cookies and similar technologies on our website.',
+  alternates: {
+    canonical: '/cookies',
+  },
+  keywords: [
+    'cookies policy',
+    'cookie usage',
+    'website cookies',
+    'tracking technologies',
+    'Sync Design Technologies cookies',
+  ],
 };
 
 export default function CookiesPolicyPage() {

@@ -1,16 +1,9 @@
 'use client';
-import { Metadata } from 'next';
 import { Button } from '../../components/button';
 import { CONSTANTS } from '@/constants/links';
 import { useCalEmbed } from '@/app/hooks/useCalEmbed';
 import { SignupFormDemo } from '../../components/contactForm/form';
 import { PHONE_NUMBER } from '@/constants/constants';
-
-// export const metadata: Metadata = {
-//   title: "Log in | SDT",
-//   description:
-//     "Log in to use SDT's AI tools. Enhance your web design projects with our advanced AI solutions tailored for web design agencies.",
-// };
 
 export default function BookACallPage() {
   const calOptions = useCalEmbed({

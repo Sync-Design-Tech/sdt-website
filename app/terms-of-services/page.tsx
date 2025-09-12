@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: 'Terms of Service | SDT',
   description:
     'Review the Terms of Service for SDT and understand the conditions and guidelines for using our digital technology and marketing services.',
+  alternates: {
+    canonical: '/terms-of-services',
+  },
+  keywords: ['terms of service', 'terms and conditions', 'service terms', 'Sync Design Technologies terms'],
 };
 
 export default function TermsOfServicePage() {

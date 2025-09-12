@@ -1,5 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  redirects: async () => [
+    {
+      source: '/:path*',
+      has: [
+        {
+          type: 'host',
+          value: 'www.syncdesign.tech',
+        },
+      ],
+      destination: 'https://syncdesign.tech/:path*',
+      permanent: true,
+    },
+  ],
   images: {
     remotePatterns: [
       { hostname: 'assets.aceternity.com' },
