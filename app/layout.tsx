@@ -15,7 +15,7 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://syncdesign.tech'),
+  metadataBase: new URL('https://www.syncdesign.tech'),
   title: 'Sync Design Technologies',
   description:
     'Your All-in-One Digital Partner for technology, marketing, and design solutions for Brand Success | Your Brand, Your Ideas, Your Identity',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description:
       'Your All-in-One Digital Partner for Web, Apps, and Brand Success | Your Brand, Your Ideas, Your Identity',
     type: 'website',
-    url: 'https://syncdesign.tech/',
+    url: 'https://www.syncdesign.tech/',
     siteName: 'Sync Design Technologies',
     images: [
       {

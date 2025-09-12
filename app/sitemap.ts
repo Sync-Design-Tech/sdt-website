@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://syncdesign.tech';
+  const baseUrl = 'https://www.syncdesign.tech';
 
   const routes: Array<{ url: string; lastModified: string; priority?: number }> = [
     { url: `${baseUrl}/`, lastModified: new Date().toISOString(), priority: 1.0 },

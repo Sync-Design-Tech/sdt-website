@@ -6,10 +6,10 @@ const nextConfig = {
       has: [
         {
           type: 'host',
-          value: 'www.syncdesign.tech',
+          value: 'syncdesign.tech',
         },
       ],
-      destination: 'https://syncdesign.tech/:path*',
+      destination: 'https://www.syncdesign.tech/:path*',
       permanent: true,
     },
   ],

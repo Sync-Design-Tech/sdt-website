@@ -5,22 +5,22 @@ export const siteSchema = {
   '@graph': [
     {
       '@type': 'WebSite',
-      '@id': 'https://syncdesign.tech/#website',
-      url: 'https://syncdesign.tech/',
+      '@id': 'https://www.syncdesign.tech/#website',
+      url: 'https://www.syncdesign.tech/',
       name: 'Sync Design Technologies',
       description:
         'Your All-in-One Digital Partner for Web, Apps, and Brand Success | Your Brand, Your Ideas, Your Identity',
-      publisher: { '@id': 'https://syncdesign.tech/#organization' },
+      publisher: { '@id': 'https://www.syncdesign.tech/#organization' },
       inLanguage: 'en',
     },
     {
       '@type': 'Organization',
-      '@id': 'https://syncdesign.tech/#organization',
+      '@id': 'https://www.syncdesign.tech/#organization',
       name: 'Sync Design Technologies',
-      url: 'https://syncdesign.tech/',
+      url: 'https://www.syncdesign.tech/',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://syncdesign.tech/icon.png',
+        url: 'https://www.syncdesign.tech/icon.png',
       },
       email: 'info@syncdesign.tech',
       telephone: `${PHONE_NUMBER}`,
@@ -50,9 +50,9 @@ export const siteSchema = {
     },
     {
       '@type': 'ProfessionalService',
-      '@id': 'https://syncdesign.tech/#professionalservice',
+      '@id': 'https://www.syncdesign.tech/#professionalservice',
       name: 'Sync Design Technologies',
-      url: 'https://syncdesign.tech/',
+      url: 'https://www.syncdesign.tech/',
       areaServed: 'GB',
       availableLanguage: ['en'],
       serviceType: [
@@ -63,11 +63,11 @@ export const siteSchema = {
         'SEO/SEA optimization',
         'Hardware solutions',
       ],
-      provider: { '@id': 'https://syncdesign.tech/#organization' },
+      provider: { '@id': 'https://www.syncdesign.tech/#organization' },
       telephone: `${PHONE_NUMBER}`,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://syncdesign.tech/icon.png',
+        url: 'https://www.syncdesign.tech/icon.png',
       },
       address: {
         '@type': 'PostalAddress',
