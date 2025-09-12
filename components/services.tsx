@@ -1,36 +1,32 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import createGlobe from "cobe";
-import { AnimatedPinDemo } from "./animatedPin/animated";
-import { useTheme } from "next-themes";
-import { Metadata } from "next";
+import { cn } from '@/lib/utils';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import createGlobe from 'cobe';
+import { AnimatedPinDemo } from './animatedPin/animated';
+import { useTheme } from 'next-themes';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: 'Our Services',
   description:
-    "Elevate your digital presence with our comprehensive services: custom software development, intuitive UI/UX design, global digital marketing strategies, bespoke graphic design, SEO/SEA optimization, and tailored hardware solutions. From startups to established businesses, our expert team delivers innovative web and mobile applications, brand identity enhancements, and cutting-edge technology to boost your online visibility and business growth.",
+    'Elevate your digital presence with our comprehensive services: custom software development, intuitive UI/UX design, global digital marketing strategies, bespoke graphic design, SEO/SEA optimization, and tailored hardware solutions. From startups to established businesses, our expert team delivers innovative web and mobile applications, brand identity enhancements, and cutting-edge technology to boost your online visibility and business growth.',
 };
 
 export function Services() {
   return (
-    <div
-      id="services"
-      className="mx-auto w-full bg-white px-4 py-20 dark:bg-neutral-950 md:px-8"
-    >
+    <div id="services" className="mx-auto w-full bg-white px-4 py-20 dark:bg-neutral-950 md:px-8">
       <Header>
         <h2 className="text-bold text-neutral-8000 mx-auto w-fit text-center font-sans text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 md:text-4xl">
           Our Services
         </h2>
       </Header>
       <p className="mx-auto mt-4 max-w-lg text-center text-sm text-neutral-600 dark:text-neutral-400">
-        Enhance your digital presence with our agency. We specialize in software
-        development, digital marketing, and graphic design. Whether a startup or
-        established business, our expert team brings your vision to life.
-        Elevate your brand with our tailored services.
+        Enhance your digital presence with our agency. We specialize in software development, digital marketing, and
+        graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate
+        your brand with our tailored services.
       </p>
       <div className="cols-1 mx-auto mt-20 grid max-w-7xl gap-4 md:auto-rows-[25rem] md:grid-cols-5">
         <Card className="flex flex-col justify-between md:col-span-3">
@@ -42,22 +38,17 @@ export function Services() {
               Software Development - Websites and applications
             </CardTitle>
             <CardDescription className="flex-grow text-sm md:text-base">
-              Put your business on the map with our custom software solutions.
-              We specialize in web and mobile app development, ensuring your
-              brand stands out in the digital landscape and your operations run
-              seamlessly.
+              Put your business on the map with our custom software solutions. We specialize in web and mobile app
+              development, ensuring your brand stands out in the digital landscape and your operations run seamlessly.
             </CardDescription>
           </CardContent>
         </Card>
 
         <Card className="flex flex-col justify-between md:col-span-2">
           <CardContent className="flex flex-col p-4 md:p-6">
-            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
-              UI/UX Design
-            </CardTitle>
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">UI/UX Design</CardTitle>
             <CardDescription>
-              With our intuitive workflow, you can easily manage your app
-              without complex steps.
+              With our intuitive workflow, you can easily manage your app without complex steps.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -75,12 +66,10 @@ export function Services() {
 
         <Card className="flex flex-col justify-between md:col-span-2">
           <CardContent className="flex flex-col p-4 md:p-6">
-            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
-              Reach audiences worldwide
-            </CardTitle>
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">Reach audiences worldwide</CardTitle>
             <CardDescription>
-              Empowering businesses to reach global audiences through innovative
-              digital marketing strategies and cutting-edge technology.
+              Empowering businesses to reach global audiences through innovative digital marketing strategies and
+              cutting-edge technology.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -89,13 +78,10 @@ export function Services() {
         </Card>
         <Card className="flex flex-col justify-between md:col-span-3">
           <CardContent className="flex flex-col p-4 md:p-6">
-            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
-              Graphic Design for your Brand
-            </CardTitle>
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">Graphic Design for your Brand</CardTitle>
             <CardDescription>
-              Elevate your brands visual identity with our bespoke graphic
-              design services, tailored to capture and communicate your unique
-              story.
+              Elevate your brands visual identity with our bespoke graphic design services, tailored to capture and
+              communicate your unique story.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -117,26 +103,20 @@ export function Services() {
             <AnimatedPinDemo />
           </div>
           <CardContent className="flex flex-col p-4 md:p-6">
-            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
-              Digital Marketing - SEA and SEO
-            </CardTitle>
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">Digital Marketing - SEA and SEO</CardTitle>
             <CardDescription>
-              Unlock unparalleled online visibility and boost your business
-              growth with our comprehensive Digital Marketing services,
-              specializing in Search Engine Advertising (SEA) and Search Engine
-              Optimization (SEO).
+              Unlock unparalleled online visibility and boost your business growth with our comprehensive Digital
+              Marketing services, specializing in Search Engine Advertising (SEA) and Search Engine Optimization (SEO).
             </CardDescription>
           </CardContent>
         </Card>
 
         <Card className="flex flex-col justify-between md:col-span-2">
           <CardContent className="flex flex-col p-4 md:p-6">
-            <CardTitle className="mb-2 text-lg font-bold md:text-xl">
-              Devices and hardware
-            </CardTitle>
+            <CardTitle className="mb-2 text-lg font-bold md:text-xl">Devices and hardware</CardTitle>
             <CardDescription>
-              We provide the hardware and devices needed to run your business
-              smoothly at the best price. Configured to server your needs.
+              We provide the hardware and devices needed to run your business smoothly at the best price. Configured to
+              server your needs.
             </CardDescription>
           </CardContent>
           <CardSkeletonBody>
@@ -161,45 +141,45 @@ const Header = ({ children }: { children: React.ReactNode }) => {
     <div className="relative mx-auto flex w-fit items-center justify-center p-4">
       <motion.div
         initial={{
-          width: 0,
-          height: 0,
+          scaleX: 0,
+          scaleY: 0,
           borderRadius: 0,
         }}
         whileInView={{
-          width: "100%",
-          height: "100%",
+          scaleX: 1,
+          scaleY: 1,
         }}
         style={{
-          transformOrigin: "top-left",
+          transformOrigin: 'top-left',
         }}
         transition={{
           duration: 1,
-          ease: "easeInOut",
+          ease: 'easeInOut',
         }}
         className="absolute inset-0 h-full w-full border border-neutral-200 dark:border-neutral-800"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.1, ease: "easeInOut" }}
+          transition={{ duration: 1.1, ease: 'easeInOut' }}
           className="absolute -left-1 -top-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.1, ease: "easeInOut" }}
+          transition={{ duration: 1.1, ease: 'easeInOut' }}
           className="absolute -right-1 -top-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.1, ease: "easeInOut" }}
+          transition={{ duration: 1.1, ease: 'easeInOut' }}
           className="absolute -bottom-1 -left-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.1, ease: "easeInOut" }}
+          transition={{ duration: 1.1, ease: 'easeInOut' }}
           className="absolute -bottom-1 -right-1 h-2 w-2 bg-neutral-200 dark:bg-neutral-800"
         />
       </motion.div>
@@ -214,15 +194,13 @@ export const SkeletonOne = () => {
   const Container = ({
     children,
     ...props
-  }: { children: React.ReactNode } & React.ComponentProps<
-    typeof motion.div
-  >) => {
+  }: { children: React.ReactNode } & React.ComponentProps<typeof motion.div>) => {
     return (
       <motion.div
         {...props}
         className={cn(
-          "relative flex h-14 w-full items-center justify-center rounded-lg bg-gradient-to-b from-white to-white p-2 shadow-lg dark:from-neutral-800 dark:to-neutral-700 md:h-40",
-          props.className,
+          'relative flex h-14 w-full items-center justify-center rounded-lg bg-gradient-to-b from-white to-white p-2 shadow-lg dark:from-neutral-800 dark:to-neutral-700 md:h-40',
+          props.className
         )}
       >
         {children}
@@ -252,21 +230,21 @@ export const SkeletonOne = () => {
         <defs>
           <motion.linearGradient
             initial={{
-              x1: "0%",
-              y1: "0%",
-              x2: "0%",
-              y2: "0%",
+              x1: '0%',
+              y1: '0%',
+              x2: '0%',
+              y2: '0%',
             }}
             animate={{
-              x1: "100%",
-              y1: "90%",
-              x2: "120%",
-              y2: "120%",
+              x1: '100%',
+              y1: '90%',
+              x2: '120%',
+              y2: '120%',
             }}
             id="gradient-2"
             transition={{
               duration: Math.random() * (7 - 2) + 2,
-              ease: "linear",
+              ease: 'linear',
               repeat: Infinity,
             }}
           >
@@ -298,21 +276,21 @@ export const SkeletonOne = () => {
         <defs>
           <motion.linearGradient
             initial={{
-              x1: "0%",
-              y1: "0%",
-              x2: "0%",
-              y2: "0%",
+              x1: '0%',
+              y1: '0%',
+              x2: '0%',
+              y2: '0%',
             }}
             animate={{
-              x1: "100%",
-              y1: "90%",
-              x2: "120%",
-              y2: "120%",
+              x1: '100%',
+              y1: '90%',
+              x2: '120%',
+              y2: '120%',
             }}
             id="gradient-1"
             transition={{
               duration: Math.random() * (7 - 2) + 2,
-              ease: "linear",
+              ease: 'linear',
               repeat: Infinity,
             }}
           >
@@ -328,16 +306,14 @@ export const SkeletonOne = () => {
           animate={{ y: [0, -10, 0], rotateX: [0, 10, 0] }}
           transition={{
             duration: 2,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             repeat: Infinity,
             repeatDelay: 6,
           }}
           className="flex-col items-start justify-center overflow-hidden px-2 font-mono text-neutral-800 dark:text-neutral-300"
         >
           <p className="bg-transparent text-[8px]">git add .</p>
-          <p className="bg-transparent text-[8px]">
-            git commit -m &quot;update&quot;
-          </p>
+          <p className="bg-transparent text-[8px]">git commit -m &quot;update&quot;</p>
           <p className="bg-transparent text-[8px]">git push</p>
         </Container>
         <Container
@@ -346,7 +322,7 @@ export const SkeletonOne = () => {
           transition={{
             duration: 2,
             delay: 2,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             repeat: Infinity,
             repeatDelay: 6,
           }}
@@ -359,7 +335,7 @@ export const SkeletonOne = () => {
           transition={{
             duration: 2,
             delay: 4,
-            ease: "easeInOut",
+            ease: 'easeInOut',
             repeat: Infinity,
             repeatDelay: 6,
           }}
@@ -383,18 +359,8 @@ const GitHubLogo = () => {
       xmlns="http://www.w3.org/2000/svg"
       className="h-8 w-8 object-contain text-black dark:text-white"
     >
-      <g
-        id="Page-1"
-        stroke="none"
-        strokeWidth="1"
-        fill="none"
-        fillRule="evenodd"
-      >
-        <g
-          id="Dribbble-Light-Preview"
-          transform="translate(-140.000000, -7559.000000)"
-          fill="currentColor"
-        >
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="currentColor">
           <g id="icons" transform="translate(56.000000, 160.000000)">
             <path
               d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
@@ -439,31 +405,15 @@ export const Globe = ({ className }: { className?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme, resolvedTheme } = useTheme();
   const [isDark, setIsDark] = useState(0);
-  const [color, setColor] = useState<[number, number, number]>([
-    0.19, 0.19, 0.19,
-  ]);
+  const [color, setColor] = useState<[number, number, number]>([0.19, 0.19, 0.19]);
   const [glow, setGlow] = useState<[number, number, number]>([0, 0, 0]);
-  const [markerColor, setMarkerColor] = useState<[number, number, number]>([
-    0.97, 0.81, 0.035,
-  ]);
+  const [markerColor, setMarkerColor] = useState<[number, number, number]>([0.97, 0.81, 0.035]);
 
   useEffect(() => {
-    setIsDark(theme === "dark" || resolvedTheme === "dark" ? 1 : 0);
-    setColor(
-      theme === "dark" || resolvedTheme === "dark"
-        ? [0.19, 0.19, 0.19]
-        : [1, 1, 1],
-    );
-    setGlow(
-      theme === "dark" || resolvedTheme === "dark"
-        ? [0, 0.65, 0.71]
-        : [0.5, 0.5, 0.5],
-    );
-    setMarkerColor(
-      theme === "dark" || resolvedTheme === "dark"
-        ? [0, 0.65, 0.71]
-        : [0.97, 0.81, 0.035],
-    );
+    setIsDark(theme === 'dark' || resolvedTheme === 'dark' ? 1 : 0);
+    setColor(theme === 'dark' || resolvedTheme === 'dark' ? [0.19, 0.19, 0.19] : [1, 1, 1]);
+    setGlow(theme === 'dark' || resolvedTheme === 'dark' ? [0, 0.65, 0.71] : [0.5, 0.5, 0.5]);
+    setMarkerColor(theme === 'dark' || resolvedTheme === 'dark' ? [0, 0.65, 0.71] : [0.97, 0.81, 0.035]);
   }, [theme, resolvedTheme]);
 
   useEffect(() => {
@@ -505,67 +455,36 @@ export const Globe = ({ className }: { className?: string }) => {
   return (
     <canvas
       ref={canvasRef}
-      style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+      style={{ width: 600, height: 600, maxWidth: '100%', aspectRatio: 1 }}
       className={className}
     />
   );
 };
 
 // Card structure
-const CardSkeletonBody = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("relative h-full w-full overflow-hidden", className)}>
-      {children}
-    </div>
-  );
+const CardSkeletonBody = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <div className={cn('relative h-full w-full overflow-hidden', className)}>{children}</div>;
 };
 
-const CardContent = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return <div className={cn("p-6", className)}>{children}</div>;
+const CardContent = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return <div className={cn('p-6', className)}>{children}</div>;
 };
 
-const CardTitle = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const CardTitle = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <h3
-      className={cn(
-        "font-sans text-base font-medium tracking-tight text-neutral-700 dark:text-neutral-100",
-        className,
-      )}
+      className={cn('font-sans text-base font-medium tracking-tight text-neutral-700 dark:text-neutral-100', className)}
     >
       {children}
     </h3>
   );
 };
-const CardDescription = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const CardDescription = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <p
       className={cn(
-        "max-w-xm mt-2 font-sans text-base font-normal tracking-tight text-neutral-500 dark:text-neutral-400",
-        className,
+        'max-w-xm mt-2 font-sans text-base font-normal tracking-tight text-neutral-500 dark:text-neutral-400',
+        className
       )}
     >
       {children}
@@ -573,19 +492,13 @@ const CardDescription = ({
   );
 };
 
-const Card = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+const Card = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <motion.div
       whileHover="animate"
       className={cn(
-        "group isolate flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] dark:bg-neutral-900",
-        className,
+        'group isolate flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05),0_4px_6px_rgba(34,42,53,0.04),0_24px_68px_rgba(47,48,55,0.05),0_2px_3px_rgba(0,0,0,0.04)] dark:bg-neutral-900',
+        className
       )}
     >
       {children}
