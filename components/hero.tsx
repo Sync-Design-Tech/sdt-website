@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import Balancer from 'react-wrap-balancer';
 import Link from 'next/link';
 import { Button } from './button';
+import { FlipWords } from './flip-words';
 import { useCalEmbed } from '@/app/hooks/useCalEmbed';
 import { CONSTANTS } from '@/constants/links';
 import { BentoGridDemo } from './services/services';
@@ -99,29 +100,14 @@ export function Hero() {
           </motion.h1>
 
           <motion.h6 className="mt-2 text-lg tracking-wider md:text-2xl">
-            {'TECHNOLOGY, MARKETING AND DESIGN SOLUTIONS FOR BRAND SUCCESS'.split(' ').map((word, index) => (
-              <motion.span
-                initial={{
-                  filter: 'blur(10px)',
-                  opacity: 0.01,
-                  y: 10,
-                }}
-                animate={{
-                  filter: 'blur(0px)',
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                }}
-                className="inline-block"
-                key={index}
-                style={{ fontSize: '1.6rem' }}
-              >
-                {word}&nbsp;
-              </motion.span>
-            ))}
+            <span className="inline-flex flex-wrap items-baseline">
+              <FlipWords
+                className="text-inherit"
+                duration={3000}
+                words={['TECHNOLOGY SOLUTIONS', 'MARKETING SOLUTIONS', 'DESIGN SOLUTIONS']}
+              />
+              <span className="inline-block">FOR BRAND SUCCESS</span>
+            </span>
           </motion.h6>
         </Balancer>
       </div>
