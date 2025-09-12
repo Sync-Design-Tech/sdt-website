@@ -1,4 +1,4 @@
-import { HoverEffect } from "./CardHoverEffect";
+import { HoverEffect } from './CardHoverEffect';
 
 interface Client {
   title: string;
@@ -7,6 +7,8 @@ interface Client {
   url: string;
   alt: string;
   darkUrl: string;
+  newTab?: boolean;
+  disableLink?: boolean;
 }
 
 interface CardHoverEffectDemoProps {

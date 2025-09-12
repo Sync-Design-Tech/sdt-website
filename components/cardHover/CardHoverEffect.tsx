@@ -1,9 +1,9 @@
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
+import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
 interface HoverEffectProps {
   client: {
@@ -11,6 +11,8 @@ interface HoverEffectProps {
     darkUrl: string;
     url: string;
     alt: string;
+    newTab?: boolean;
+    disableLink?: boolean;
   };
 }
 
@@ -20,15 +22,20 @@ export const HoverEffect: React.FC<HoverEffectProps> = ({ client }) => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setIsDark(theme === "dark" || resolvedTheme === "dark");
+    setIsDark(theme === 'dark' || resolvedTheme === 'dark');
   }, [theme, resolvedTheme]);
 
   return (
-    <div className={cn("m-auto grid h-full w-full")}>
+    <div className={cn('m-auto grid h-full w-full')}>
       <Link
-        href={client.link}
-        className="group relative block h-20 w-full p-2"
-        style={{ alignContent: "center" }}
+        href={client.disableLink ? '#' : client.link}
+        className={cn(
+          'group relative block h-20 w-full p-2',
+          client.disableLink && 'pointer-events-none cursor-not-allowed'
+        )}
+        style={{ alignContent: 'center' }}
+        target={client.newTab ? '_blank' : '_self'}
+        rel={client.newTab ? 'noopener noreferrer' : undefined}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -43,10 +50,7 @@ export const HoverEffect: React.FC<HoverEffectProps> = ({ client }) => {
             />
           )}
         </AnimatePresence>
-        <div
-          className="relative m-auto h-full w-full"
-          style={{ alignContent: "center" }}
-        >
+        <div className="relative m-auto h-full w-full" style={{ alignContent: 'center' }}>
           <Image
             src={isDark ? client.darkUrl : client.url}
             alt={client.alt}
@@ -54,7 +58,7 @@ export const HoverEffect: React.FC<HoverEffectProps> = ({ client }) => {
             height={200}
             className=""
             loading="lazy"
-            style={{ objectFit: "contain", height: "100%", width: "100%" }}
+            style={{ objectFit: 'contain', height: '100%', width: '100%' }}
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
           />
         </div>
