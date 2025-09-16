@@ -23,6 +23,7 @@
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
+    "dotted-map": "^2.2.3",
     "framer-motion": "^11.11.1",
     "gsap": "^3.12.5",
     "lucide-react": "^0.429.0",
@@ -38,6 +39,7 @@
     "react-toastify": "^10.0.5",
     "react-wrap-balancer": "^1.1.1",
     "sharp": "^0.34.3",
+    "simplex-noise": "^4.0.3",
     "tailwind-merge": "^2.5.3",
     "tech-stack-icons": "^2.1.0",
     "three": "^0.168.0"

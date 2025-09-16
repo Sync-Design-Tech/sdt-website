@@ -1,13 +1,13 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import createGlobe from 'cobe';
 import { AnimatedPinDemo } from './animatedPin/animated';
-import { useTheme } from 'next-themes';
 import { Metadata } from 'next';
+import { Vortex } from './vortex';
+import { useTheme } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'Our Services',
@@ -392,72 +392,32 @@ const AWSLogo = () => {
     </svg>
   );
 };
-
 export const SkeletonTwo = () => {
+  const { theme } = useTheme();
   return (
-    <div className="relative mt-10 flex h-60 flex-col items-center bg-transparent dark:bg-transparent md:h-60">
-      <Globe className="absolute -bottom-80 -right-0 md:-bottom-72 md:-right-10" />
+    <div className="relative flex h-60 flex-col items-center bg-transparent dark:bg-transparent md:h-60">
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Image
+            src="/world-map.svg"
+            alt="World Map"
+            fill
+            className="object-contain opacity-20 invert-[0.6] dark:opacity-10 dark:invert"
+          />
+        </div>
+      </div>
+      <Vortex
+        className="absolute -bottom-20 -right-5 md:-bottom-16 md:-right-8"
+        containerClassName="z-10"
+        particleCount={200}
+        baseSpeed={0.3}
+        rangeSpeed={0.8}
+        baseRadius={0.5}
+        rangeRadius={1.2}
+        backgroundColor="transparent"
+        isDark={theme === 'dark'}
+      />
     </div>
-  );
-};
-
-export const Globe = ({ className }: { className?: string }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { theme, resolvedTheme } = useTheme();
-  const [isDark, setIsDark] = useState(0);
-  const [color, setColor] = useState<[number, number, number]>([0.19, 0.19, 0.19]);
-  const [glow, setGlow] = useState<[number, number, number]>([0, 0, 0]);
-  const [markerColor, setMarkerColor] = useState<[number, number, number]>([0.97, 0.81, 0.035]);
-
-  useEffect(() => {
-    setIsDark(theme === 'dark' || resolvedTheme === 'dark' ? 1 : 0);
-    setColor(theme === 'dark' || resolvedTheme === 'dark' ? [0.19, 0.19, 0.19] : [1, 1, 1]);
-    setGlow(theme === 'dark' || resolvedTheme === 'dark' ? [0, 0.65, 0.71] : [0.5, 0.5, 0.5]);
-    setMarkerColor(theme === 'dark' || resolvedTheme === 'dark' ? [0, 0.65, 0.71] : [0.97, 0.81, 0.035]);
-  }, [theme, resolvedTheme]);
-
-  useEffect(() => {
-    let phi = 0;
-
-    if (!canvasRef.current) return;
-
-    const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: 600 * 2,
-      height: 600 * 2,
-      phi: 0,
-      theta: 0,
-      dark: isDark,
-      diffuse: 0.5,
-      mapSamples: 56000,
-      mapBrightness: 10,
-      baseColor: color,
-      markerColor: markerColor,
-      glowColor: glow,
-      markers: [
-        // longitude latitude
-        { location: [37.7595, -122.4367], size: 0.03 },
-        { location: [40.7128, -74.006], size: 0.1 },
-      ],
-      onRender: (state) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
-        state.phi = phi;
-        phi += 0.005;
-      },
-    });
-
-    return () => {
-      globe.destroy();
-    };
-  }, [isDark, color]);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ width: 600, height: 600, maxWidth: '100%', aspectRatio: 1 }}
-      className={className}
-    />
   );
 };
 
