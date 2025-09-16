@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, LazyMotion, m, domAnimation } from 'framer-motion';
 // import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import Balancer from 'react-wrap-balancer';
@@ -9,12 +9,98 @@ import { Button } from './button';
 import { FlipWords } from './flip-words';
 import { useCalEmbed } from '@/app/hooks/useCalEmbed';
 import { CONSTANTS } from '@/constants/links';
-import { BentoGridDemo } from './services/services';
+import dynamic from 'next/dynamic';
+import { BackgroundGradientAnimation, ColorScheme } from './background-gradient-animation';
+
+// 🎨 Color scheme configurations
+const COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
+  {
+    gradientBackgroundStart: 'rgb(255, 255, 255)',
+    gradientBackgroundEnd: 'rgb(245, 245, 245)',
+    firstColor: '183, 1, 73',
+    secondColor: '220, 40, 110',
+    thirdColor: '140, 0, 55',
+    fourthColor: '200, 200, 200',
+    fifthColor: '230, 230, 230',
+    pointerColor: '183, 1, 73',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-rose-700',
+  },
+  {
+    gradientBackgroundStart: 'rgb(50, 49, 49)',
+    gradientBackgroundEnd: 'rgb(30, 30, 30)',
+    firstColor: '248, 207, 5',
+    secondColor: '255, 230, 80',
+    thirdColor: '200, 160, 0',
+    fourthColor: '100, 100, 100',
+    fifthColor: '150, 150, 150',
+    pointerColor: '248, 207, 5',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-amber-500',
+  },
+  {
+    gradientBackgroundStart: 'rgb(0, 0, 0)',
+    gradientBackgroundEnd: 'rgb(20, 20, 25)',
+    firstColor: '255, 255, 255',
+    secondColor: '240, 240, 245',
+    thirdColor: '250, 250, 255',
+    fourthColor: '230, 230, 235',
+    fifthColor: '245, 245, 250',
+    pointerColor: '0, 0, 0',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-slate-200',
+  },
+  {
+    gradientBackgroundStart: 'rgb(10, 25, 47)',
+    gradientBackgroundEnd: 'rgb(0, 12, 24)',
+    firstColor: '59, 130, 246',
+    secondColor: '147, 197, 253',
+    thirdColor: '29, 78, 216',
+    fourthColor: '30, 64, 175',
+    fifthColor: '96, 165, 250',
+    pointerColor: '59, 130, 246',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-blue-600',
+  },
+  {
+    gradientBackgroundStart: 'rgb(22, 30, 22)',
+    gradientBackgroundEnd: 'rgb(10, 15, 10)',
+    firstColor: '34, 197, 94',
+    secondColor: '74, 222, 128',
+    thirdColor: '21, 128, 61',
+    fourthColor: '22, 163, 74',
+    fifthColor: '134, 239, 172',
+    pointerColor: '34, 197, 94',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-emerald-600',
+  },
+];
+const BentoGridDemo = dynamic(() => import('./services/services').then((m) => m.BentoGridDemo), { ssr: false });
 import { LampDemo } from './lamp/LampDemo';
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
+  const [currentSchemeIndex, setCurrentSchemeIndex] = useState(0);
+  const [prevSchemeIndex, setPrevSchemeIndex] = useState(0);
+
+  // Auto-change color scheme every 6s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPrevSchemeIndex(currentSchemeIndex);
+      setCurrentSchemeIndex((prev) => (prev + 1) % COLOR_SCHEMES.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [currentSchemeIndex]);
+
+  const currentScheme = COLOR_SCHEMES[currentSchemeIndex];
+  const prevScheme = COLOR_SCHEMES[prevSchemeIndex];
+
   const calOptions = useCalEmbed({
     namespace: CONSTANTS.CALCOM_NAMESPACE,
     styles: {
@@ -26,12 +112,18 @@ export function Hero() {
     layout: CONSTANTS.CALCOM_LAYOUT,
   });
   return (
-    <div
-      ref={parentRef}
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-50 px-4 pt-10 dark:bg-neutral-900 md:px-8 md:pt-40"
-    >
-      <BackgroundGrids />
-      {/* <CollisionMechanism
+    <LazyMotion features={domAnimation}>
+      <div
+        ref={parentRef}
+        className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-900 px-4 pt-10 md:px-8 md:pt-40"
+      >
+        <BackgroundGradientAnimation
+          interactive
+          containerClassName="absolute inset-0 z-0"
+          colorScheme={currentScheme}
+          prevColorScheme={prevScheme}
+        />
+        {/* <CollisionMechanism
         beamOptions={{
           initialX: -400,
           translateX: 600,
@@ -41,7 +133,7 @@ export function Hero() {
         containerRef={containerRef}
         parentRef={parentRef}
       /> */}
-      {/* <CollisionMechanism
+        {/* <CollisionMechanism
         beamOptions={{
           initialX: -200,
           translateX: 800,
@@ -51,7 +143,7 @@ export function Hero() {
         containerRef={containerRef}
         parentRef={parentRef}
       /> */}
-      {/* <CollisionMechanism
+        {/* <CollisionMechanism
         beamOptions={{
           initialX: 200,
           translateX: 1200,
@@ -61,87 +153,94 @@ export function Hero() {
         containerRef={containerRef}
         parentRef={parentRef}
       /> */}
-      <CollisionMechanism
-        containerRef={containerRef}
-        parentRef={parentRef}
-        beamOptions={{
-          initialX: 400,
-          translateX: 1400,
-          duration: 6,
-          repeatDelay: 3,
-        }}
-      />
+        {/* comet animation removed */}
 
-      <div className="relative z-20 mx-auto mb-10 mt-5 max-w-4xl text-balance text-center text-3xl font-semibold tracking-tight text-gray-700 dark:text-neutral-300 md:mt-5 md:text-7xl">
-        <Balancer>
-          <motion.h1 className="mb-10 mt-20 text-3xl leading-none md:mb-10 md:mt-0 md:text-7xl">
-            {'YOUR ALL-IN-ONE DIGITAL PARTNER'.split(' ').map((word, index) => (
-              <motion.span
-                initial={{
-                  filter: 'blur(10px)',
-                  opacity: 0.01,
-                  y: 10,
-                }}
-                animate={{
-                  filter: 'blur(0px)',
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                }}
-                className="mt-2 inline-block md:mt-5"
-                key={index}
-              >
-                {word}&nbsp;
-              </motion.span>
-            ))}
-          </motion.h1>
-
-          <motion.h6 className="mt-2 text-lg tracking-wider md:text-2xl">
-            <span className="inline-flex flex-wrap items-baseline">
-              <FlipWords
-                className="text-inherit"
-                duration={3000}
-                words={['TECHNOLOGY SOLUTIONS', 'MARKETING SOLUTIONS', 'DESIGN SOLUTIONS']}
-              />
-              <span className="inline-block">FOR BRAND SUCCESS</span>
-            </span>
-          </motion.h6>
-        </Balancer>
-      </div>
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2, delay: 0.5 }}
-        className="relative z-20 mx-auto mt-4 max-w-lg px-4 text-center text-base/6 text-gray-600 dark:text-gray-200"
-      >
-        Use the Calendar widget and schedule a 30 min discovery call where you’ll tell us about your needs.
-        {/* Enhance your digital presence with our premier tech agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services. */}
-      </motion.p>
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2, delay: 0.7 }}
-        className="mb-10 mt-8 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row md:mb-20"
-      >
-        <Button as={Link} href="/login" variant="dark" className="hidden w-40 text-center md:block">
-          Go to The Oracle
-        </Button>
-
-        <Button
-          data-cal-namespace={calOptions.namespace}
-          data-cal-link={CONSTANTS.CALCOM_LINK}
-          data-cal-config={`{"layout":"${calOptions.layout}"}`}
-          as="button"
-          variant="primary"
-          className="w-40 md:block"
+        <div
+          className={cn(
+            'relative z-20 mx-auto mb-10 mt-5 max-w-4xl text-balance text-center text-3xl font-semibold tracking-tight transition-colors duration-1000 md:mt-5 md:text-7xl',
+            currentScheme.textColor
+          )}
         >
-          Book a call
-        </Button>
-      </motion.div>
-      <motion.div
+          <Balancer>
+            <m.h1
+              className={cn(
+                'mb-10 mt-20 text-3xl leading-none transition-colors duration-1000 md:mb-10 md:mt-0 md:text-7xl',
+                currentScheme.textColor
+              )}
+            >
+              {'YOUR ALL-IN-ONE DIGITAL PARTNER'.split(' ').map((word, index) => (
+                <m.span
+                  initial={{
+                    filter: 'blur(10px)',
+                    opacity: 0.01,
+                    y: 10,
+                  }}
+                  animate={{
+                    filter: 'blur(0px)',
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.05,
+                  }}
+                  className="mt-2 inline-block md:mt-5"
+                  key={index}
+                >
+                  {word}&nbsp;
+                </m.span>
+              ))}
+            </m.h1>
+
+            <m.h6 className="mt-2 text-lg tracking-wider md:text-2xl">
+              <span className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-3">
+                <FlipWords
+                  className={cn('text-center transition-colors duration-1000', currentScheme.textColor)}
+                  duration={3000}
+                  words={['TECHNOLOGY SOLUTIONS', 'MARKETING SOLUTIONS', 'DESIGN SOLUTIONS']}
+                />
+                <span className={cn('text-center transition-colors duration-1000', currentScheme.textColor)}>
+                  FOR BRAND SUCCESS
+                </span>
+              </span>
+            </m.h6>
+          </Balancer>
+        </div>
+        <m.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, delay: 0.5 }}
+          className={cn(
+            'relative z-20 mx-auto mt-4 max-w-lg px-4 text-center text-base/6 transition-colors duration-1000',
+            currentScheme.textColor
+          )}
+        >
+          Use the Calendar widget and schedule a 30 min discovery call where you’ll tell us about your needs.
+          {/* Enhance your digital presence with our premier tech agency. We specialize in software development, digital marketing, and graphic design. Whether a startup or established business, our expert team brings your vision to life. Elevate your brand with our tailored services. */}
+        </m.p>
+        <m.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2, delay: 0.7 }}
+          className="mb-10 mt-8 flex w-full flex-col items-center justify-center gap-4 px-8 sm:flex-row md:mb-20"
+        >
+          <Button as={Link} href="/login" variant="dark" className="hidden w-40 text-center md:block">
+            Go to The Oracle
+          </Button>
+
+          <Button
+            data-cal-namespace={calOptions.namespace}
+            data-cal-link={CONSTANTS.CALCOM_LINK}
+            data-cal-config={`{"layout":"${calOptions.layout}"}`}
+            as="button"
+            variant="primary"
+            className="w-40 md:block"
+          >
+            Book a call
+          </Button>
+        </m.div>
+      </div>
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.9, ease: 'easeOut' }}
@@ -151,7 +250,7 @@ export function Hero() {
         style={{ width: '100vw', position: 'relative', bottom: '0' }}
       >
         {/* <LampDemo /> */}
-        <div className="border border-neutral-200 bg-white p-2 dark:border-neutral-700 dark:bg-neutral-950">
+        <div className="bg-white p-2 dark:bg-neutral-950">
           <BentoGridDemo />
           {/* <Image
             src="https://assets.aceternity.com/pro/dashboard-new.webp"
@@ -161,8 +260,8 @@ export function Hero() {
             className="rounded-[20px]"
           /> */}
         </div>
-      </motion.div>
-    </div>
+      </m.div>
+    </LazyMotion>
   );
 }
 
@@ -269,7 +368,7 @@ const CollisionMechanism = React.forwardRef<
 
   return (
     <>
-      <motion.div
+      <m.div
         key={beamKey}
         ref={beamRef}
         animate="animate"
@@ -330,15 +429,15 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
 
   return (
     <div {...props} className={cn('absolute z-50 h-2 w-2', props.className)}>
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
         className="absolute -inset-x-10 top-0 m-auto h-[4px] w-10 rounded-full bg-gradient-to-r from-transparent via-blue-500 to-transparent blur-sm"
-      ></motion.div>
+      ></m.div>
       {spans.map((span) => (
-        <motion.span
+        <m.span
           key={span.id}
           initial={{ x: span.initialX, y: span.initialY, opacity: 1 }}
           animate={{

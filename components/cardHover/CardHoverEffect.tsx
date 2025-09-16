@@ -58,6 +58,7 @@ export const HoverEffect: React.FC<HoverEffectProps> = ({ client }) => {
             height={200}
             className=""
             loading="lazy"
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 60vw, 400px"
             style={{ objectFit: 'contain', height: '100%', width: '100%' }}
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
           />
