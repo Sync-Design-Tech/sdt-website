@@ -101,10 +101,12 @@ export const BackgroundGradientAnimation = ({
       if (!interactiveRef.current) return;
       const pos = mousePositionRef.current;
 
-      pos.curX += (pos.tgX - pos.curX) / 20;
-      pos.curY += (pos.tgY - pos.curY) / 20;
+      // slow down (30 instead of 20 → smoother)
+      pos.curX += (pos.tgX - pos.curX) / 30;
+      pos.curY += (pos.tgY - pos.curY) / 30;
 
       interactiveRef.current.style.transform = `translate(${Math.round(pos.curX)}px, ${Math.round(pos.curY)}px)`;
+
       animationFrameRef.current = requestAnimationFrame(updateMousePosition);
     }
 

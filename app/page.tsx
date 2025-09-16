@@ -16,7 +16,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { GoogleTagManager } from '@next/third-parties/google';
 
 export default function Home() {
-  const [showIntro, setShowIntro] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
   const [idle, setIdle] = useState(false);
 
   useEffect(() => {
@@ -25,6 +25,8 @@ export default function Home() {
       if (!hasPlayedIntro) {
         setShowIntro(true);
         localStorage.setItem('hasPlayedIntro', 'true');
+      } else {
+        setShowIntro(false);
       }
     };
     if (document.readyState === 'complete') onLoad();

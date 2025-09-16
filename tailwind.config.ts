@@ -11,44 +11,72 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        first: 'moveVertical 30s ease infinite',
-        second: 'moveInCircle 20s reverse infinite',
-        third: 'moveInCircle 40s linear infinite',
-        fourth: 'moveHorizontal 40s ease infinite',
-        fifth: 'moveInCircle 20s ease infinite',
+        first: 'moveTopLeft 30s ease infinite',
+        second: 'moveTopRight 20s reverse infinite',
+        third: 'moveBottomLeft 40s linear infinite',
+        fourth: 'moveBottomRight 40s ease infinite',
+        fifth: 'moveCornerCycle 20s ease infinite',
       },
       keyframes: {
-        moveHorizontal: {
+        moveTopLeft: {
           '0%': {
-            transform: 'translateX(-50%) translateY(-10%)',
+            transform: 'translate(-100%, -100%)',
           },
           '50%': {
-            transform: 'translateX(50%) translateY(10%)',
+            transform: 'translate(-20%, -20%)',
           },
           '100%': {
-            transform: 'translateX(-50%) translateY(-10%)',
+            transform: 'translate(-100%, -100%)',
           },
         },
-        moveInCircle: {
+        moveTopRight: {
           '0%': {
-            transform: 'rotate(0deg)',
+            transform: 'translate(100%, -100%)',
           },
           '50%': {
-            transform: 'rotate(180deg)',
+            transform: 'translate(20%, -20%)',
           },
           '100%': {
-            transform: 'rotate(360deg)',
+            transform: 'translate(100%, -100%)',
           },
         },
-        moveVertical: {
+        moveBottomLeft: {
           '0%': {
-            transform: 'translateY(-50%)',
+            transform: 'translate(-100%, 100%)',
           },
           '50%': {
-            transform: 'translateY(50%)',
+            transform: 'translate(-20%, 20%)',
           },
           '100%': {
-            transform: 'translateY(-50%)',
+            transform: 'translate(-100%, 100%)',
+          },
+        },
+        moveBottomRight: {
+          '0%': {
+            transform: 'translate(100%, 100%)',
+          },
+          '50%': {
+            transform: 'translate(20%, 20%)',
+          },
+          '100%': {
+            transform: 'translate(100%, 100%)',
+          },
+        },
+        moveCornerCycle: {
+          '0%': {
+            transform: 'translate(-100%, -100%)',
+          },
+          '25%': {
+            transform: 'translate(100%, -100%)',
+          },
+          '50%': {
+            transform: 'translate(100%, 100%)',
+          },
+          '75%': {
+            transform: 'translate(-100%, 100%)',
+          },
+          '100%': {
+            transform: 'translate(-100%, -100%)',
           },
         },
       },

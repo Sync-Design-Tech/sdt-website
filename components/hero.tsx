@@ -15,17 +15,17 @@ import { BackgroundGradientAnimation, ColorScheme } from './background-gradient-
 // 🎨 Color scheme configurations
 const COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
   {
-    gradientBackgroundStart: 'rgb(255, 255, 255)',
-    gradientBackgroundEnd: 'rgb(245, 245, 245)',
-    firstColor: '183, 1, 73',
-    secondColor: '220, 40, 110',
-    thirdColor: '140, 0, 55',
-    fourthColor: '200, 200, 200',
-    fifthColor: '230, 230, 230',
-    pointerColor: '183, 1, 73',
+    gradientBackgroundStart: 'rgb(0, 0, 0)',
+    gradientBackgroundEnd: 'rgb(20, 20, 25)',
+    firstColor: '255, 255, 255',
+    secondColor: '240, 240, 245',
+    thirdColor: '250, 250, 255',
+    fourthColor: '230, 230, 235',
+    fifthColor: '245, 245, 250',
+    pointerColor: '0, 0, 0',
     size: '80%',
     blendingValue: 'soft-light',
-    textColor: 'text-rose-700',
+    textColor: 'text-slate-200',
   },
   {
     gradientBackgroundStart: 'rgb(50, 49, 49)',
@@ -40,19 +40,7 @@ const COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
     blendingValue: 'soft-light',
     textColor: 'text-amber-500',
   },
-  {
-    gradientBackgroundStart: 'rgb(0, 0, 0)',
-    gradientBackgroundEnd: 'rgb(20, 20, 25)',
-    firstColor: '255, 255, 255',
-    secondColor: '240, 240, 245',
-    thirdColor: '250, 250, 255',
-    fourthColor: '230, 230, 235',
-    fifthColor: '245, 245, 250',
-    pointerColor: '0, 0, 0',
-    size: '80%',
-    blendingValue: 'soft-light',
-    textColor: 'text-slate-200',
-  },
+
   {
     gradientBackgroundStart: 'rgb(10, 25, 47)',
     gradientBackgroundEnd: 'rgb(0, 12, 24)',
@@ -79,6 +67,19 @@ const COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
     blendingValue: 'soft-light',
     textColor: 'text-emerald-600',
   },
+  {
+    gradientBackgroundStart: 'rgb(255, 255, 255)',
+    gradientBackgroundEnd: 'rgb(245, 245, 245)',
+    firstColor: '183, 1, 73',
+    secondColor: '220, 40, 110',
+    thirdColor: '140, 0, 55',
+    fourthColor: '200, 200, 200',
+    fifthColor: '230, 230, 230',
+    pointerColor: '183, 1, 73',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-rose-700',
+  },
 ];
 const BentoGridDemo = dynamic(() => import('./services/services').then((m) => m.BentoGridDemo), { ssr: false });
 import { LampDemo } from './lamp/LampDemo';
@@ -94,7 +95,7 @@ export function Hero() {
     const interval = setInterval(() => {
       setPrevSchemeIndex(currentSchemeIndex);
       setCurrentSchemeIndex((prev) => (prev + 1) % COLOR_SCHEMES.length);
-    }, 6000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [currentSchemeIndex]);
 
