@@ -92,7 +92,7 @@ const Skeleton = (props: SkeletonProps) => {
 const items = [
   {
     title: 'Main10',
-    description: 'Property Management Software',
+    description: 'Real Estate',
     header: (
       <Skeleton
         url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/main10/Main10+Logo+Icon+Blue.png"
@@ -185,7 +185,7 @@ const items = [
   },
   {
     title: 'Cassvensi',
-    description: 'Luxury Bedding',
+    description: 'Retail',
     header: (
       <Skeleton
         url="https://cassvensi.co.uk/wp-content/uploads/2025/02/Logo-Icon-Dark-Blue.png"

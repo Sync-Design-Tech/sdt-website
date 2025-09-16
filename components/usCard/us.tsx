@@ -14,7 +14,24 @@ export function CanvasRevealEffectDemo() {
         >
           <CanvasRevealEffect animationSpeed={5.1} containerClassName="bg-emerald-900" colors={[[0, 73, 183]]} />
         </Card>
-
+        <Card
+          title="Alvina is a Front-End Developer and Graphic Artist from Armenia, blending her strong technical skills with a sharp artistic vision. She excels at creating intuitive, visually striking interfaces that not only function seamlessly but also tell a brand’s story through design."
+          icon={<AceternityIcon name="Alvina Harutyunyan" title="Front-End Developer" />}
+        >
+          <CanvasRevealEffect animationSpeed={3} containerClassName="bg-purple-700" colors={[[255, 215, 0]]} />
+        </Card>
+        <Card
+          title="Gabriel is a Software Engineer and QA Tester currently based in Scotland. With a strong eye for detail and a structured approach to problem solving, he ensures that applications meet the highest standards of quality, reliability, and user experience."
+          icon={<AceternityIcon name="Gabriel Villanueva" title="Junior Software Engineer" />}
+        >
+          <CanvasRevealEffect animationSpeed={2.5} containerClassName="bg-blue-800" colors={[[255, 255, 255]]} />
+        </Card>
+        <Card
+          title="Jagath is a Computer Science graduate with experience across multiple product-based startups. He has worked as a Front-End Engineer and App Developer, building scalable applications with a focus on performance and usability. In addition, he brings strong expertise in SEO, helping products gain visibility and reach wider audiences."
+          icon={<AceternityIcon name="Jagath Jijo" title="Software Engineer & SEO specialist" />}
+        >
+          <CanvasRevealEffect animationSpeed={3} containerClassName="bg-green-700" colors={[[255, 255, 255]]} />
+        </Card>
         <Card
           title="A passionate Full Stack Developer with a diverse background, originally from Venezuela and currently residing in the vibrant tech community of Spain. With a strong foundation in both front-end and back-end technologies, I create seamless, user-friendly experiences from concept to implementation."
           icon={<AceternityIcon name="Alfonso Villanueva" title="Full Stack Developer" />}
@@ -39,26 +56,6 @@ export function CanvasRevealEffectDemo() {
           icon={<AceternityIcon name="Mateo Jackson" title="PR / Digital Marketing" />}
         >
           <CanvasRevealEffect animationSpeed={3} containerClassName="bg-yellow-600" colors={[[0, 0, 0]]} />
-        </Card>
-
-        {/* New People */}
-        <Card
-          title="Alvina is a Front-End Developer and Graphic Artist from Armenia, blending her strong technical skills with a sharp artistic vision. She excels at creating intuitive, visually striking interfaces that not only function seamlessly but also tell a brand’s story through design."
-          icon={<AceternityIcon name="Alvina Harutyunyan" title="Front-End Developer & Graphic Artist" />}
-        >
-          <CanvasRevealEffect animationSpeed={3} containerClassName="bg-purple-700" colors={[[255, 215, 0]]} />
-        </Card>
-        <Card
-          title="Gabriel is a Software Engineer and QA Tester currently based in Scotland. With a strong eye for detail and a structured approach to problem solving, he ensures that applications meet the highest standards of quality, reliability, and user experience."
-          icon={<AceternityIcon name="Gabriel Villanueva" title="Software Engineer & QA Tester" />}
-        >
-          <CanvasRevealEffect animationSpeed={2.5} containerClassName="bg-blue-800" colors={[[255, 255, 255]]} />
-        </Card>
-        <Card
-          title="Jagath is a Computer Science graduate with experience across multiple product-based startups. He has worked as a Front-End Engineer and App Developer, building scalable applications with a focus on performance and usability. In addition, he brings strong expertise in SEO, helping products gain visibility and reach wider audiences."
-          icon={<AceternityIcon name="Jagath Jijo" title="Software Engineer / SEO Specialist" />}
-        >
-          <CanvasRevealEffect animationSpeed={3} containerClassName="bg-green-700" colors={[[255, 255, 255]]} />
         </Card>
       </div>
     </>
