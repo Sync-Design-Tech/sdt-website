@@ -189,7 +189,7 @@ export function Hero() {
         parentRef={parentRef}
       /> */}
         {/* comet animation removed */}
-        <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-[20vh] w-full bg-gradient-to-t from-white to-transparent dark:from-[rgb(10,10,10)] dark:to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-[40vh] w-full bg-gradient-to-t from-white to-transparent dark:from-[rgb(10,10,10)] dark:to-transparent" />
 
         <div
           className={cn(

@@ -15,6 +15,12 @@ export function CanvasRevealEffectDemo() {
           <CanvasRevealEffect animationSpeed={5.1} containerClassName="bg-emerald-900" colors={[[0, 73, 183]]} />
         </Card>
         <Card
+          title="Cris is a seasoned technology leader with over 15 years of experience in software development department. Throughout his career delivering innovative solutions to leading companies in London, he spearheads the company's technological vision and strategy, ensuring the delivery of innovative solutions that drive business growth and operational excellence."
+          icon={<AceternityIcon name="Cris Naranjo" title="CTO" />}
+        >
+          <CanvasRevealEffect animationSpeed={5.1} containerClassName="bg-emerald-900" colors={[[0, 73, 183]]} />
+        </Card>
+        <Card
           title="Alvina is a Front-End Developer and Graphic Artist from Armenia, blending her strong technical skills with a sharp artistic vision. She excels at creating intuitive, visually striking interfaces that not only function seamlessly but also tell a brand’s story through design."
           icon={<AceternityIcon name="Alvina Harutyunyan" title="Front-End Developer" />}
         >
@@ -22,7 +28,7 @@ export function CanvasRevealEffectDemo() {
         </Card>
         <Card
           title="Gabriel is a Software Engineer and QA Tester currently based in Scotland. With a strong eye for detail and a structured approach to problem solving, he ensures that applications meet the highest standards of quality, reliability, and user experience."
-          icon={<AceternityIcon name="Gabriel Villanueva" title="Junior Software Engineer" />}
+          icon={<AceternityIcon name="Gabriel Villanueva" title="Software Engineer" />}
         >
           <CanvasRevealEffect animationSpeed={2.5} containerClassName="bg-blue-800" colors={[[255, 255, 255]]} />
         </Card>
@@ -40,7 +46,7 @@ export function CanvasRevealEffectDemo() {
         </Card>
         <Card
           title="Andres is an art director and motion designer from Venezuela currenly living in Paris. He is experienced working on Branding, Logo Design, Custom Lettering, Packaging and Motion Graphics. With over a decade of experience. Andres has collaborated with awesome folks in the industry such as Studio Chong, Golden Wolf, Anomaly, BBDO and JKR"
-          icon={<AceternityIcon name="Andres Clerc" title="Graphic / Motion designer" />}
+          icon={<AceternityIcon name="Andres Clerc" title="Graphic designer" />}
         >
           <CanvasRevealEffect
             animationSpeed={3}

@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '@/lib/utils';
-import { Navbar } from '@/components/navbar';
-import { Footer } from '@/components/footer';
 import { ThemeProvider } from '@/context/providers';
 import { Ubuntu } from 'next/font/google';
 import { siteSchema } from '@/constants/schema';
 import { MetadataProvider } from '@/context/metadata';
+import { LayoutWrapper } from './layout-wrapper';
 
 const ubuntu = Ubuntu({
   subsets: ['latin'],
@@ -72,12 +71,10 @@ export default function RootLayout({
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
       </head>
-      <body className={cn('bg-white antialiased dark:bg-black', ubuntu.variable)}>
+      <body className={cn('bg-white antialiased dark:bg-black', ubuntu.variable)} suppressHydrationWarning>
         <MetadataProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <Navbar />
-            {children}
-            <Footer />
+            <LayoutWrapper>{children}</LayoutWrapper>
           </ThemeProvider>
         </MetadataProvider>
       </body>

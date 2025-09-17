@@ -32,7 +32,7 @@ export type Plan = {
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Discover our passionate team of experts in web development, design, and digital marketing. We're an international group based in London with members in Madrid, Oslo, and Paris, dedicated to providing innovative solutions for businesses worldwide. Our mission is to help companies grow and succeed in the digital landscape through high-quality services and unwavering support. Learn how our collaborative approach and diverse expertise can propel your business towards its goals in today's competitive online environment.",
+    "Discover our passionate team of experts in web development, design, and digital marketing. We're an international group based in London with members all over Europe, dedicated to providing innovative solutions for businesses worldwide. Our mission is to help companies grow and succeed in the digital landscape through high-quality services and unwavering support. Learn how our collaborative approach and diverse expertise can propel your business towards its goals in today's competitive online environment.",
 };
 
 export function AboutUs() {
@@ -59,7 +59,7 @@ export function AboutUs() {
           </p>
           <p className="mx-auto mt-8 max-w-md text-center text-sm text-neutral-600 dark:text-neutral-400 md:mx-0 md:text-left md:text-base">
             Our company is based in London. But we are an international team,
-            with members in Madrid, Oslo and Paris.
+            with members all over Europe.
           </p>
         </div>
         <SkeletonTwo />
@@ -143,7 +143,7 @@ export const Globe = ({ className }: { className?: string }) => {
       dark: isDark,
       diffuse: 0.5,
       mapSamples: 56000,
-      mapBrightness: 10,
+      mapBrightness: 5,
       baseColor: color,
       markerColor: markerColor,
       glowColor: glow,
