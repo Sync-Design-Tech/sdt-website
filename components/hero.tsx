@@ -1,5 +1,6 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
+
 import { AnimatePresence, LazyMotion, m, domAnimation } from 'framer-motion';
 // import Image from 'next/image';
 import { cn } from '@/lib/utils';
@@ -10,11 +11,63 @@ import { FlipWords } from './flip-words';
 import { useCalEmbed } from '@/app/hooks/useCalEmbed';
 import { CONSTANTS } from '@/constants/links';
 import dynamic from 'next/dynamic';
+import { useTheme } from 'next-themes';
+
 import { BackgroundGradientAnimation, ColorScheme } from './background-gradient-animation';
+const BentoGridDemo = dynamic(() => import('./services/services').then((m) => m.BentoGridDemo), { ssr: false });
+import { LampDemo } from './lamp/LampDemo';
 
 // 🎨 Color scheme configurations
-const COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
+
+// 🌞 Light Theme Variants
+const LIGHT_COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
   {
+    // Light version of scheme #1 (black/white)
+    gradientBackgroundStart: 'rgb(255, 255, 255)',
+    gradientBackgroundEnd: 'rgb(245, 245, 245)',
+    firstColor: '30, 30, 30',
+    secondColor: '60, 60, 65',
+    thirdColor: '90, 90, 95',
+    fourthColor: '120, 120, 125',
+    fifthColor: '160, 160, 165',
+    pointerColor: '255, 255, 255',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-slate-800',
+  },
+  {
+    // Light version of yellow scheme
+    gradientBackgroundStart: 'rgb(255, 255, 255)',
+    gradientBackgroundEnd: 'rgb(250, 250, 250)',
+    firstColor: '249, 207, 9', // updated yellow
+    secondColor: '255, 230, 80',
+    thirdColor: '200, 160, 0',
+    fourthColor: '200, 200, 200',
+    fifthColor: '220, 220, 220',
+    pointerColor: '249, 207, 9',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-slate-800',
+  },
+  {
+    // Light version of blue scheme
+    gradientBackgroundStart: 'rgb(255, 255, 255)',
+    gradientBackgroundEnd: 'rgb(240, 245, 255)',
+    firstColor: '0, 73, 183', // updated main blue
+    secondColor: '147, 197, 253',
+    thirdColor: '29, 78, 216',
+    fourthColor: '30, 64, 175',
+    fifthColor: '96, 165, 250',
+    pointerColor: '0, 73, 183',
+    size: '80%',
+    blendingValue: 'soft-light',
+    textColor: 'text-slate-800',
+  },
+];
+
+const DARK_COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
+  {
+    // Dark version of black/white scheme
     gradientBackgroundStart: 'rgb(0, 0, 0)',
     gradientBackgroundEnd: 'rgb(20, 20, 25)',
     firstColor: '255, 255, 255',
@@ -28,67 +81,48 @@ const COLOR_SCHEMES: (ColorScheme & { textColor: string })[] = [
     textColor: 'text-slate-200',
   },
   {
+    // Dark yellow theme (bg updated already)
     gradientBackgroundStart: 'rgb(50, 49, 49)',
     gradientBackgroundEnd: 'rgb(30, 30, 30)',
-    firstColor: '248, 207, 5',
+    firstColor: '249, 207, 9', // updated yellow
     secondColor: '255, 230, 80',
     thirdColor: '200, 160, 0',
     fourthColor: '100, 100, 100',
     fifthColor: '150, 150, 150',
-    pointerColor: '248, 207, 5',
+    pointerColor: '249, 207, 9',
     size: '80%',
     blendingValue: 'soft-light',
     textColor: 'text-amber-500',
   },
-
   {
+    // Dark blue theme
     gradientBackgroundStart: 'rgb(10, 25, 47)',
     gradientBackgroundEnd: 'rgb(0, 12, 24)',
-    firstColor: '59, 130, 246',
+    firstColor: '0, 73, 183', // updated main blue
     secondColor: '147, 197, 253',
     thirdColor: '29, 78, 216',
     fourthColor: '30, 64, 175',
     fifthColor: '96, 165, 250',
-    pointerColor: '59, 130, 246',
+    pointerColor: '0, 73, 183',
     size: '80%',
     blendingValue: 'soft-light',
     textColor: 'text-blue-600',
   },
-  {
-    gradientBackgroundStart: 'rgb(22, 30, 22)',
-    gradientBackgroundEnd: 'rgb(10, 15, 10)',
-    firstColor: '34, 197, 94',
-    secondColor: '74, 222, 128',
-    thirdColor: '21, 128, 61',
-    fourthColor: '22, 163, 74',
-    fifthColor: '134, 239, 172',
-    pointerColor: '34, 197, 94',
-    size: '80%',
-    blendingValue: 'soft-light',
-    textColor: 'text-emerald-600',
-  },
-  {
-    gradientBackgroundStart: 'rgb(255, 255, 255)',
-    gradientBackgroundEnd: 'rgb(245, 245, 245)',
-    firstColor: '183, 1, 73',
-    secondColor: '220, 40, 110',
-    thirdColor: '140, 0, 55',
-    fourthColor: '200, 200, 200',
-    fifthColor: '230, 230, 230',
-    pointerColor: '183, 1, 73',
-    size: '80%',
-    blendingValue: 'soft-light',
-    textColor: 'text-rose-700',
-  },
 ];
-const BentoGridDemo = dynamic(() => import('./services/services').then((m) => m.BentoGridDemo), { ssr: false });
-import { LampDemo } from './lamp/LampDemo';
 
 export function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const parentRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
+  const COLOR_SCHEMES = theme === 'light' ? LIGHT_COLOR_SCHEMES : DARK_COLOR_SCHEMES;
+
   const [currentSchemeIndex, setCurrentSchemeIndex] = useState(0);
   const [prevSchemeIndex, setPrevSchemeIndex] = useState(0);
+
+  const currentScheme = COLOR_SCHEMES[currentSchemeIndex];
+  const prevScheme = COLOR_SCHEMES[prevSchemeIndex];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const parentRef = useRef<HTMLDivElement>(null);
+  // const [currentSchemeIndex, setCurrentSchemeIndex] = useState(0);
+  // const [prevSchemeIndex, setPrevSchemeIndex] = useState(0);
 
   // Auto-change color scheme every 6s
   useEffect(() => {
@@ -99,8 +133,8 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [currentSchemeIndex]);
 
-  const currentScheme = COLOR_SCHEMES[currentSchemeIndex];
-  const prevScheme = COLOR_SCHEMES[prevSchemeIndex];
+  // const currentScheme = COLOR_SCHEMES[currentSchemeIndex];
+  // const prevScheme = COLOR_SCHEMES[prevSchemeIndex];
 
   const calOptions = useCalEmbed({
     namespace: CONSTANTS.CALCOM_NAMESPACE,
@@ -155,18 +189,19 @@ export function Hero() {
         parentRef={parentRef}
       /> */}
         {/* comet animation removed */}
+        <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-[20vh] w-full bg-gradient-to-t from-white to-transparent dark:from-[rgb(10,10,10)] dark:to-transparent" />
 
         <div
           className={cn(
             'relative z-20 mx-auto mb-10 mt-5 max-w-4xl text-balance text-center text-3xl font-semibold tracking-tight transition-colors duration-1000 md:mt-5 md:text-7xl',
-            currentScheme.textColor
+            'text-black dark:text-white'
           )}
         >
           <Balancer>
             <m.h1
               className={cn(
                 'mb-10 mt-20 text-3xl leading-none transition-colors duration-1000 md:mb-10 md:mt-0 md:text-7xl',
-                currentScheme.textColor
+                'text-black dark:text-white'
               )}
             >
               {'YOUR ALL-IN-ONE DIGITAL PARTNER'.split(' ').map((word, index) => (
@@ -196,11 +231,11 @@ export function Hero() {
             <m.h6 className="mt-2 text-lg tracking-wider md:text-2xl">
               <span className="flex flex-col items-center justify-center gap-2 md:flex-row md:gap-3">
                 <FlipWords
-                  className={cn('text-center transition-colors duration-1000', currentScheme.textColor)}
+                  className={cn('text-center transition-colors duration-1000', 'text-black dark:text-white')}
                   duration={3000}
                   words={['TECHNOLOGY SOLUTIONS', 'MARKETING SOLUTIONS', 'DESIGN SOLUTIONS']}
                 />
-                <span className={cn('text-center transition-colors duration-1000', currentScheme.textColor)}>
+                <span className={cn('text-center transition-colors duration-1000', 'text-black dark:text-white')}>
                   FOR BRAND SUCCESS
                 </span>
               </span>
@@ -213,7 +248,7 @@ export function Hero() {
           transition={{ duration: 0.2, delay: 0.5 }}
           className={cn(
             'relative z-20 mx-auto mt-4 max-w-lg px-4 text-center text-base/6 transition-colors duration-1000',
-            currentScheme.textColor
+            'text-black dark:text-white'
           )}
         >
           Use the Calendar widget and schedule a 30 min discovery call where you’ll tell us about your needs.
