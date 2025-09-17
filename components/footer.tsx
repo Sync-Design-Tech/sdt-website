@@ -86,7 +86,7 @@ export function Footer() {
             <Logo />
           </div>
 
-          <div className="ml-2 mt-2">&copy; copyright Sync Design Tech Limited 2024. All rights reserved.</div>
+          <div className="ml-2 mt-2">&copy; copyright Sync Design Tech Limited {new Date().getFullYear()}. All rights reserved.</div>
         </div>
         <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-4">
           <div className="flex w-full flex-col justify-center space-y-4">

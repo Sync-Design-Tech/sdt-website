@@ -123,11 +123,11 @@ export const SignupFormDemo: NextPage = () => {
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="your-email@domain" type="email" {...register('email', { required: true })} />
+          <Input id="email" placeholder="your-email@domain.com" type="email" {...register('email', { required: true })} />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="phone">Phone Number</Label>
-          <Input id="phone" placeholder="+44 020 0000 0000" type="tel" {...register('phone')} />
+          <Input id="phone" placeholder="+44 07490 452 840" type="tel" {...register('phone')} />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="message">Message</Label>
