@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   keywords: [
+    "websites",
     'technology agency London',
     'custom software development',
     'UI UX design',
