@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Script from 'next/script'; // <-- ① import Script
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/context/providers';
 import { Ubuntu } from 'next/font/google';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   keywords: [
-    "websites",
+    'websites',
     'technology agency London',
     'custom software development',
     'UI UX design',
@@ -70,8 +71,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* existing JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
+
+        {/* ② Google Ads tag ------------------------------------------------ */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16519668055" />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-16519668055');
+          `}
+        </Script>
+        {/* ---------------------------------------------------------------- */}
       </head>
+
       <body className={cn('bg-white antialiased dark:bg-black', ubuntu.variable)} suppressHydrationWarning>
         <MetadataProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
