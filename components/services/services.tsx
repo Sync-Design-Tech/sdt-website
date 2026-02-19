@@ -188,8 +188,8 @@ const items = [
     description: 'Retail',
     header: (
       <Skeleton
-        url="https://cassvensi.co.uk/wp-content/uploads/2025/02/Logo-Icon-Dark-Blue.png"
-        darkUrl="https://cassvensi.co.uk/wp-content/uploads/2025/02/Logo-Icon-Dark-Blue.png"
+        url="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/Logo-Icon-Dark-Blue.webp"
+        darkUrl="https://s3websitedata.s3.eu-west-2.amazonaws.com/logos/Logo-Icon-Dark-Blue.webp"
         alt="mc-logo"
         link="https://cassvensi.co.uk/?v=7885444af42e"
         idx={3}
