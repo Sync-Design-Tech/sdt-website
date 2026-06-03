@@ -3,6 +3,7 @@ import React from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { CanvasRevealEffect } from './canvasRevealEffect';
+import { WebGLErrorBoundary } from '../webgl-error-boundary';
 
 export function CanvasRevealEffectDemo() {
   return (
@@ -84,7 +85,7 @@ const Card = ({ title, icon, children }: { title: string; icon: React.ReactNode;
       <AnimatePresence>
         {hovered && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.2 }} className="absolute inset-0 h-full w-full">
-            {children}
+            <WebGLErrorBoundary>{children}</WebGLErrorBoundary>
           </motion.div>
         )}
       </AnimatePresence>
